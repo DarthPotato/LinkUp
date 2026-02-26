@@ -479,6 +479,8 @@ Feedback should:
 
 ![Yilmaz Signature.](/docs/yilmazsignature.PNG)
 
+![Danny LaBore Signature.](/docs/DannySignature.png)
+
 ## Contacts
 
 Danny LaBore: danny.labore@uri.edu
