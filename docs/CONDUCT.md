@@ -477,6 +477,8 @@ Feedback should:
 
 ![Aidan Leach Signature.](/docs/AidanLeachSignature.jpg)
 
+![Yilmaz Signature.](/docs/yilmazsignature.PNG)
+
 ## Contacts
 
 Danny LaBore: danny.labore@uri.edu
