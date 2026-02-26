@@ -475,7 +475,7 @@ Feedback should:
 
 ## Signatures (Required)
 
-
+![Aidan Leach Signature.](/docs/AidanLeachSignature.jpg)
 
 ## Contacts
 
