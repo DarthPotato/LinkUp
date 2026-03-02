@@ -481,6 +481,9 @@ Feedback should:
 
 ![Danny LaBore Signature.](/docs/DannySignature.png)
 
+![Nick Aksanov Signature.](/docs/aksanovsig.jpg)
+
+
 ## Contacts
 
 Danny LaBore: danny.labore@uri.edu
