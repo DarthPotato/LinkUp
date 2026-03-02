@@ -483,6 +483,7 @@ Feedback should:
 
 ![Nick Aksanov Signature.](/docs/aksanovsig.jpg)
 
+![Jacob Mathews Signature.](/docs/Jacob Mathews Signature.png)
 
 ## Contacts
 
