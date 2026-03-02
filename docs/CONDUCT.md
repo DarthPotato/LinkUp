@@ -483,7 +483,7 @@ Feedback should:
 
 ![Nick Aksanov Signature.](/docs/aksanovsig.jpg)
 
-![Jacob Mathews Signature.](/docs/Jacob Mathews Signature.png)
+![Jacob Mathews Signature.](/docs/Jacob_Mathews_Signature.png)
 
 ## Contacts
 
@@ -495,7 +495,7 @@ Yilmaz Kasapoglu: ykasapoglu@uri.edu discord handle: darth_potato_
 
 Nick Aksonov: naksanov@uri.edu 
 
-Jacob Matthews: jacob_mathews32@uri.edu
+Jacob Mathews: jacob_mathews32@uri.edu
 
 
 ## Primary Communication:
