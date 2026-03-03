@@ -1,6 +1,4 @@
-Summarize the user information in the personas into the Customer Segments rectangle in your lean canvas business model.
-
-slide link:
+Persona slide links:
 
 1: https://docs.google.com/presentation/d/1wGZb6a9v-E9uHdSLFSOOf8Yte6uxOpq7J9y2i2WO7sA/edit?slide=id.g3cc0c6f5949_0_739#slide=id.g3cc0c6f5949_0_739
 
