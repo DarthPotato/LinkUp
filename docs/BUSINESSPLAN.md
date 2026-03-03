@@ -1,19 +1,9 @@
-## Embedded View
+## 📽 Google Slides
 
-<iframe 
-  src="https://docs.google.com/presentation/d/1qap2qY1P8VHZqJ75YB-alFbysm6emIQnUxHFgNJ_Y4E/embed?start=false&loop=false&delayms=3000" 
-  frameborder="0" 
-  width="960" 
-  height="569" 
-  allowfullscreen="true" 
-  mozallowfullscreen="true" 
-  webkitallowfullscreen="true">
-</iframe>
+[Click here to view the presentation](https://docs.google.com/presentation/d/1qap2qY1P8VHZqJ75YB-alFbysm6emIQnUxHFgNJ_Y4E/view?usp=sharing)
 
 ---
 
-## Direct Link
+## Preview
 
-If the embed does not load, click here:
-
-[Open Google Slides Presentation](https://docs.google.com/presentation/d/1qap2qY1P8VHZqJ75YB-alFbysm6emIQnUxHFgNJ_Y4E/view?usp=sharing)
+[![Google Slides Presentation Preview](https://docs.google.com/presentation/d/1qap2qY1P8VHZqJ75YB-alFbysm6emIQnUxHFgNJ_Y4E/export/png?pageid=p)](https://docs.google.com/presentation/d/1qap2qY1P8VHZqJ75YB-alFbysm6emIQnUxHFgNJ_Y4E/view?usp=sharing)
