@@ -23,3 +23,9 @@
 
 - Team Action (if any): Work on implementing aspects that can help users build confidence when it comes to conversations or meetings with professionals.
 
+### Observation 4:
+Observation Statement: Most respondents are undergraduate students who are actively searching for internships.
+
+Supporting Data: 97.4% of respondents identified as undergraduate students, and 71.8% reported that they are currently looking for internships.
+
+Team Action (if any): Focus the tool primarily on undergraduate students preparing for internships, since they represent the overwhelming majority of users.
