@@ -100,6 +100,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => SignupLoginWidget(),
         ),
         FFRoute(
+          name: ProfileWidget.routeName,
+          path: ProfileWidget.routePath,
+          builder: (context, params) => ProfileWidget(),
+        ),
+        FFRoute(
           name: CompanyWidget.routeName,
           path: CompanyWidget.routePath,
           builder: (context, params) => CompanyWidget(),
@@ -115,9 +120,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => EmailWidget(),
         ),
         FFRoute(
-          name: ProfileWidget.routeName,
-          path: ProfileWidget.routePath,
-          builder: (context, params) => ProfileWidget(),
+          name: Us5Widget.routeName,
+          path: Us5Widget.routePath,
+          builder: (context, params) => Us5Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
