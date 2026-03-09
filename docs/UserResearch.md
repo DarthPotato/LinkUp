@@ -7,7 +7,7 @@
 - Team Action (if any): Implement said feature ideas, as the majority of users want all of them.
 
 
-Observation 2:
+### Observation 2:
 Observation Statement: We have a mostly even split on whether people send follow-up emails after meetings or not
 
 Supporting Data: 18.4% responded Never AND Rarely, 15.8% responded I don't know what to say in one AND Always
