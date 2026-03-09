@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1068038229245",
+    "project_id": "link-up-305soft",
+    "storage_bucket": "link-up-305soft.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068038229245:android:98c2b12fd7ab1a7b17c294",
+        "android_client_info": {
+          "package_name": "com.soft305.linkup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGo0CKiui5YyEtkUeSGG54mcmidopkUOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
