@@ -29,3 +29,10 @@ Observation Statement: Most respondents are undergraduate students who are activ
 Supporting Data: 97.4% of respondents identified as undergraduate students, and 71.8% reported that they are currently looking for internships.
 
 Team Action (if any): Focus the tool primarily on undergraduate students preparing for internships, since they represent the overwhelming majority of users.
+
+### Observation 5:
+Observation Statement: Most users would likely use a tool that significantly reduces the time required to prepare for networking meetings.
+
+Supporting Data: 23 users responded “Likely” and 10 responded “Very likely”, meaning 84.6% of respondents indicated they would use a tool that reduces preparation time from hours to minutes. Only 5 users were neutral and 1 user responded unlikely.
+
+Team Action (if any): Focus development on speed and automation of preparation, such as generating company briefings, suggested talking points, and personalized questions quickly so users can prepare in minutes instead of spending significant time researching.
