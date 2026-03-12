@@ -130,6 +130,106 @@ Adding **only a resume image upload option connected to Firebase Storage** will 
 ## Variation A — No Resume Upload (Control)
 - Profile page does not include a resume upload option
 
+Nick Aksanov
+A/B Test Name:
+"Login Assistance Visibility — Hidden Help vs Visible Help Links"
+User Story Number:
+US2 (User Authentication / Login)
+Metrics (HEART Framework):
+Happiness: Reduced frustration signals (rage clicks, repeated password attempts)
+
+
+Engagement: Interaction with login assistance links
+
+
+Adoption: Successful login sessions
+
+
+Retention: Users returning within 7 days after recovering account access
+
+
+Task Success: Login completion rate, password reset success rate, time to successful login
+
+
+
+Hypothesis:
+Displaying clear and visible login assistance options (such as “Forgot Password?” and “Need Help Logging In?”) directly on the login screen will increase login completion rates because users who encounter problems will be able to quickly resolve them instead of abandoning the login process.
+
+What problem are we trying to solve? Its impact?
+Problem:
+Users who forget their passwords or encounter login issues may not immediately notice recovery options, especially if those links are small or placed in less visible areas.
+Bottleneck:
+When help links are hidden or visually minimized, users may repeatedly attempt to log in unsuccessfully or leave the app entirely.
+Impact:
+Increased failed login attempts
+
+
+Higher abandonment rate on the login screen
+
+
+User frustration due to difficulty locating support options
+
+
+Narrowed Hypothesis:
+Making login assistance links more visible and clearly labeled will improve task success and reduce login abandonment.
+
+Experiment (Firebase Setup):
+Use Firebase Remote Config + Firebase A/B Testing
+
+
+Audience split:
+
+
+50% Control (standard help visibility)
+
+
+50% Variant (enhanced help visibility)
+
+
+Firebase Analytics Events to Track:
+login_screen_view
+
+
+login_cta_click
+
+
+login_success
+
+
+forgot_password_click
+
+
+login_abandon
+
+
+password_reset_success
+
+
+
+Variations:
+Variation A — Standard Help Visibility (Control)
+“Forgot Password?” link displayed in small text under the password field
+
+
+No additional assistance messaging
+
+
+Default styling consistent with current login page
+
+
+Variation B — Enhanced Help Visibility (Variant)
+“Forgot Password?” link displayed in larger text directly below password field
+
+
+Additional “Need help logging in?” support link
+
+
+Slightly increased spacing to visually separate assistance links from form inputs
+
+
+Same login form structure, colors, and button placement as control.
+
+
 ## Variation B — Resume Upload Enabled (Variant)
 - Profile page includes an option to upload a resume picture
 - Resume image is stored in Firebase Storage
