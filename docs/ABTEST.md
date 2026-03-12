@@ -1,21 +1,69 @@
-Each team member is to commit  to ABTEST.md a description of a different A/B test using this format:
+### JACOB MATHEWS
+## A/B Test Name:
+"Login Page Density — Compact Layout vs Spacious Layout"
 
-A/B Test Name:  Make a meaningful name for the test. For example  "Signup/Sign In 1 screen or 2 screens", could be a title for an A/B test to determine if users prefer having account creation and login on a single screen, or two screens.
+## User Story Number:
+US2 (User Authentication / Login)
 
-User Story Number: For instance, the "Signup/Sign In 1 screen or 2 screens" A/B test would be a task under US1 (Account Creation). 
+## Metrics (HEART Framework):
 
-Metrics:  Your team's HEART metrics that this A/B test measures.
+- **Happiness:** Reduced frustration signals (rapid clicks, repeated focus changes)
+- **Engagement:** Login screen drop-off rate
+- **Adoption:** Successful login sessions
+- **Retention:** Returning users who log in again within 7 days
+- **Task Success:** Login completion rate, time to successful login, login CTA click rate
 
-Hypothesis: State your hypothesis for this A/B test
+---
 
-What problem are we trying to solve? Its impact? (e.g. how big this problem is to our customers?) In formulating the hypothesis, first you need to define the problem you want to solve. For example, you are an SaaS that offers free trial and you want to improve Adoption. But that problem might be too broad to form an A/B test as you can simply test one variable in an A/B test to be effective (otherwise you won’t know which variable is causing the change). So to narrow down the problem you want to solve, you need to find out the bottle-neck in the conversion funnel – where do people drop off the most? Are there any key information or call-to-action buttons that you expect people to read/click but they didn’t? 
+## Hypothesis:
 
-After narrowing down the problem you want to solve, you then need to make a hypothesis as to what causes those bottlenecks and what you can do to improve. For example, you noticed most of the visitors will visit your “Features” page but very few of them will actually scroll past even half of the page so many features that you think are important are not actually viewed by the visitors. To improve this, one hypothesis might be using tab or toggle list design to make your page shorter and visitors can select to dig deeper into content that they are interested in by expanding the content. Remember when formulating your hypothesis, change only one variable so that you will know it’s really that variable that is causing the change in conversion..
+A **more spacious login layout with increased padding and visual breathing room** will improve login completion rates because users will find the interface easier to scan and interact with.
 
-Experiment - Detail out the experiment setup that you will use to test your hypothesis using Firebase capabilities. Describe the audiences – will all users be able to view the experiment? Or you will only allocate x% of your user base to the experiment? Lay out the details with the rationale behind this decision. Describe the tracking using Firebase Analytics. With your HEART metrics, what tracking needs to be set up? 
+---
 
-Variations - In this section, describe what variations you would like to test. Layout the design work related and add diagrams, mockups and designs related to the confirmed variation that you’d like to test.
+## What problem are we trying to solve? Its impact?
 
-Each team member must have a separate A/B test committed to the ABTEST.md file. TAs check the commit history of ABTEST.md when grading.
+### Problem:
+Users may feel overwhelmed or rushed when UI elements are tightly packed, especially on mobile devices.
 
-Each team member is add to the team GitHub Project a PBI task card for their A/B test, where it is a task under the user story it is testing.  Each PBI’s content should be the text copied from ABTEST.md as described above.  Add a label to your repo for “A/B Test”. And put that "A/B Test" label, along with the correct user story label, on each of these PBI cards.
+### Bottleneck:
+High visual density can reduce readability and slow down user interaction with key elements such as input fields and the login button.
+
+### Impact:
+- Slower login task completion  
+- Increased hesitation on the login screen  
+- Potential early drop-off before authentication  
+
+### Narrowed Hypothesis:
+Changing **only the spacing and padding of UI elements** will improve usability and task success.
+
+---
+
+## Experiment (Firebase Setup):
+
+- Use **Firebase Remote Config + Firebase A/B Testing**
+- Audience split:
+  - 50% Control (compact layout)
+  - 50% Variant (spacious layout)
+
+### Firebase Analytics Events to Track:
+- `login_screen_view`
+- `login_cta_click`
+- `login_success`
+- `login_abandon`
+- `time_to_login_success`
+
+---
+
+## Variations:
+
+### Variation A — Compact Layout (Control)
+- Small vertical spacing between fields  
+- Standard padding inside form container  
+- Login button close to password field  
+
+### Variation B — Spacious Layout (Variant)
+- Increased vertical spacing between elements  
+- Larger padding around form container  
+- More separation between password field and login button  
+- Same colors, text, and placement structure  
