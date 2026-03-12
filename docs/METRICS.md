@@ -25,3 +25,13 @@ Track whether users use the core app features after logging in, based on the mai
 ### Metric 3 (Adoption): How to collect - 
 Compare total downloads to number of active users to see the adoption rate. Send data to database
 
+
+
+
+### Metric 5 (AI mode usage): How to collect -
+To determine which type of prompt user is using the most (Email, Meeting, Interview, etc), every time an AI call is made to do that event, the number will be logged and stored in the metrics table. The different types of AI features will be compared and analyzed to understand what people actually use it for; writing follow-up emails, conducting research, or something else.
+
+
+
+
+
