@@ -26,6 +26,8 @@ Track whether users use the core app features after logging in, based on the mai
 Compare total downloads to number of active users to see the adoption rate. Send data to database
 
 
+### Metric 4 (WAU): How to collect –
+Track Weekly Active Users by logging a user as “active” whenever they perform a meaningful action in the app (e.g., login, creating a meeting prep, using an AI feature, etc.). Use Firebase Analytics to capture these events and associate them with a unique user ID.
 
 
 ### Metric 5 (AI mode usage): How to collect -
