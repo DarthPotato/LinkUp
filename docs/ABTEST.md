@@ -318,3 +318,69 @@ These events let us measure the full funnel from screen view → CTA click → s
 - Input field borders gain a subtle accent-color focus state on tap
 - Same layout, same copy, same field order, same typography
 - Only the color palette changes — no structural or content differences
+
+
+### Danny LaBore
+
+## A/B Test Name:
+"CTA Button Text – Submit vs Start Now"
+
+## User Story Number:
+US1 (Account Creation) / US2 (User Authentication / Login)
+
+## Metrics (HEART Framework):
+Happiness: User satisfaction with clarity of actions (post-login micro-survey or sentiment signals)
+Engagement: Interaction rate with CTA button, time to click CTA
+Adoption: Sign-up completion rate for new users
+Retention: Return login rate within 7 days
+Task Success: CTA button click rate, sign-up/login completion rate, form abandonment rate
+
+## Hypothesis:
+A more action-oriented CTA button text like “Start Now” instead of “Submit” will increase user interaction and completion rates because it feels more inviting and clearly communicates the benefit of taking action.
+
+## What problem are we trying to solve? Its impact?
+### Problem:
+The current CTA text “Submit” is generic and does not clearly communicate the value of the action. Users may hesitate or feel unsure about what will happen after clicking, leading to lower interaction and completion rates.
+
+### Bottleneck:
+If the CTA text is unclear or not engaging, users may delay clicking or abandon the process entirely, especially during sign-up or login where clarity and confidence are important.
+
+### Impact:
+Lower CTA click-through rate
+Increased hesitation before taking action
+Higher form abandonment rates
+Reduced sign-up/login completion
+
+### Narrowed Hypothesis:
+Changing only the CTA button text (keeping layout, color, and functionality identical) will isolate whether wording alone impacts user interaction and completion rates.
+
+## Experiment (Firebase Setup):
+Use Firebase Remote Config + Firebase A/B Testing
+Remote Config Variable: cta_button_text
+A = "Submit" (Control)
+B = "Start Now" (Variant)
+Audience split:
+50% Control (Variation A)
+50% Variant (Variation B)
+All users are included in the experiment since this CTA is part of the main user flow (Golden Path).
+
+### Firebase Analytics Events to Track:
+auth_screen_view — tracks impressions of the login/sign-up page
+cta_click — tracks taps on the CTA button
+signup_success — tracks completed account creation
+login_success — tracks completed logins
+form_abandon — tracks users who leave without completing
+time_to_click — tracks time from screen load to CTA interaction
+
+### Rationale:
+These events allow measurement of the full funnel from screen view → CTA click → completion/abandonment. If Variation B ("Start Now") results in a higher click-through rate and faster time-to-action with equal or better completion rates, it indicates that clearer, more action-driven language improves user behavior.
+
+## Variations:
+### Variation A – Default CTA (Control)
+Button text: “Submit”
+Standard wording with neutral tone
+Same layout, color, and placement
+### Variation B – Action-Oriented CTA (Variant)
+Button text: “Start Now”
+More engaging and action-driven language
+Same layout, color, and placement
