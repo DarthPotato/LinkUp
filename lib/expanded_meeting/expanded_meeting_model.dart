@@ -1,8 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'interview_network_widget.dart' show InterviewNetworkWidget;
+import '/index.dart';
+import 'expanded_meeting_widget.dart' show ExpandedMeetingWidget;
 import 'package:flutter/material.dart';
 
-class InterviewNetworkModel extends FlutterFlowModel<InterviewNetworkWidget> {
+class ExpandedMeetingModel extends FlutterFlowModel<ExpandedMeetingWidget> {
   @override
   void initState(BuildContext context) {}
 

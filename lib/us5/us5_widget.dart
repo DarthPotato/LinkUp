@@ -26,6 +26,7 @@ class _Us5WidgetState extends State<Us5Widget> {
     super.initState();
     _model = createModel(context, () => Us5Model());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'US5'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -50,7 +51,9 @@ class _Us5WidgetState extends State<Us5Widget> {
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
           title: Text(
-            'Page Title',
+            FFLocalizations.of(context).getText(
+              'i9cnlg73' /* Page Title */,
+            ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   font: GoogleFonts.readexPro(
                     fontWeight:

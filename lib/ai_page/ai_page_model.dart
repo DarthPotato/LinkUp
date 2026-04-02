@@ -1,8 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'questions_widget.dart' show QuestionsWidget;
+import '/index.dart';
+import 'ai_page_widget.dart' show AiPageWidget;
 import 'package:flutter/material.dart';
 
-class QuestionsModel extends FlutterFlowModel<QuestionsWidget> {
+class AiPageModel extends FlutterFlowModel<AiPageWidget> {
   @override
   void initState(BuildContext context) {}
 

@@ -10,7 +10,8 @@ Future initFirebase() async {
             projectId: "link-up-305soft",
             storageBucket: "link-up-305soft.firebasestorage.app",
             messagingSenderId: "1068038229245",
-            appId: "1:1068038229245:web:6617d0d94c35c55517c294"));
+            appId: "1:1068038229245:web:6617d0d94c35c55517c294",
+            measurementId: "G-S078TD8PG1"));
   } else {
     await Firebase.initializeApp();
   }

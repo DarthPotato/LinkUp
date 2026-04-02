@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'company_widget.dart' show CompanyWidget;
+import 'professionals_widget.dart' show ProfessionalsWidget;
 import 'package:flutter/material.dart';
 
-class CompanyModel extends FlutterFlowModel<CompanyWidget> {
+class ProfessionalsModel extends FlutterFlowModel<ProfessionalsWidget> {
   @override
   void initState(BuildContext context) {}
 

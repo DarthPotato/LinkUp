@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'signup_login_widget.dart' show SignupLoginWidget;
@@ -22,7 +23,9 @@ class SignupLoginModel extends FlutterFlowModel<SignupLoginWidget> {
   String? _signupEmailTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Email is required';
+      return FFLocalizations.of(context).getText(
+        '0bjre6o9' /* Email is required */,
+      );
     }
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
@@ -40,7 +43,9 @@ class SignupLoginModel extends FlutterFlowModel<SignupLoginWidget> {
   String? _signupPasswordTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Password is required';
+      return FFLocalizations.of(context).getText(
+        'cprmfx3d' /* Password is required */,
+      );
     }
 
     if (val.length < 7) {
@@ -59,7 +64,9 @@ class SignupLoginModel extends FlutterFlowModel<SignupLoginWidget> {
   String? _signupConfirmPasswordTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Confirm Password is required';
+      return FFLocalizations.of(context).getText(
+        'p9sgdcxu' /* Confirm Password is required */,
+      );
     }
 
     if (val.length < 7) {
@@ -76,7 +83,9 @@ class SignupLoginModel extends FlutterFlowModel<SignupLoginWidget> {
   String? _loginEmailTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Email is required';
+      return FFLocalizations.of(context).getText(
+        'l0b7rwmy' /* Email is required */,
+      );
     }
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
@@ -93,7 +102,9 @@ class SignupLoginModel extends FlutterFlowModel<SignupLoginWidget> {
   String? _loginPasswordTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Password is required';
+      return FFLocalizations.of(context).getText(
+        'gbrvpn9l' /* Password is required */,
+      );
     }
 
     if (val.length < 7) {
@@ -102,6 +113,9 @@ class SignupLoginModel extends FlutterFlowModel<SignupLoginWidget> {
 
     return null;
   }
+
+  // Stores action output result for [Firestore Query - Query a collection] action in Login-Button widget.
+  MetricsPersonalRecord? metricsPersonalDoc;
 
   @override
   void initState(BuildContext context) {

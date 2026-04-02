@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -75,44 +76,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? CompanyWidget() : SignupLoginWidget(),
+      errorBuilder: (context, state) => appStateNotifier.loggedIn
+          ? BaseMeetingPrepWidget()
+          : SignupLoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? CompanyWidget() : SignupLoginWidget(),
-        ),
-        FFRoute(
-          name: QuestionsWidget.routeName,
-          path: QuestionsWidget.routePath,
-          builder: (context, params) => QuestionsWidget(),
-        ),
-        FFRoute(
-          name: HistoryWidget.routeName,
-          path: HistoryWidget.routePath,
-          builder: (context, params) => HistoryWidget(),
-        ),
-        FFRoute(
-          name: SignupLoginWidget.routeName,
-          path: SignupLoginWidget.routePath,
-          builder: (context, params) => SignupLoginWidget(),
-        ),
-        FFRoute(
-          name: ProfileWidget.routeName,
-          path: ProfileWidget.routePath,
-          builder: (context, params) => ProfileWidget(),
-        ),
-        FFRoute(
-          name: CompanyWidget.routeName,
-          path: CompanyWidget.routePath,
-          builder: (context, params) => CompanyWidget(),
-        ),
-        FFRoute(
-          name: InterviewNetworkWidget.routeName,
-          path: InterviewNetworkWidget.routePath,
-          builder: (context, params) => InterviewNetworkWidget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? BaseMeetingPrepWidget()
+              : SignupLoginWidget(),
         ),
         FFRoute(
           name: EmailWidget.routeName,
@@ -123,6 +96,44 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: Us5Widget.routeName,
           path: Us5Widget.routePath,
           builder: (context, params) => Us5Widget(),
+        ),
+        FFRoute(
+          name: ExpandedMeetingWidget.routeName,
+          path: ExpandedMeetingWidget.routePath,
+          asyncParams: {
+            'responseDoc': getDoc(['responses'], ResponsesRecord.fromSnapshot),
+          },
+          builder: (context, params) => ExpandedMeetingWidget(
+            responseDoc: params.getParam(
+              'responseDoc',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: SignupLoginWidget.routeName,
+          path: SignupLoginWidget.routePath,
+          builder: (context, params) => SignupLoginWidget(),
+        ),
+        FFRoute(
+          name: AiPageWidget.routeName,
+          path: AiPageWidget.routePath,
+          builder: (context, params) => AiPageWidget(),
+        ),
+        FFRoute(
+          name: ProfileWidget.routeName,
+          path: ProfileWidget.routePath,
+          builder: (context, params) => ProfileWidget(),
+        ),
+        FFRoute(
+          name: BaseMeetingPrepWidget.routeName,
+          path: BaseMeetingPrepWidget.routePath,
+          builder: (context, params) => BaseMeetingPrepWidget(),
+        ),
+        FFRoute(
+          name: NPSQuestionWidget.routeName,
+          path: NPSQuestionWidget.routePath,
+          builder: (context, params) => NPSQuestionWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -242,6 +253,7 @@ class FFParameters {
     ParamType type, {
     bool isList = false,
     List<String>? collectionNamePath,
+    StructBuilder<T>? structBuilder,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -260,6 +272,7 @@ class FFParameters {
       type,
       isList,
       collectionNamePath: collectionNamePath,
+      structBuilder: structBuilder,
     );
   }
 }

@@ -25,6 +25,7 @@ class _EmailWidgetState extends State<EmailWidget> {
     super.initState();
     _model = createModel(context, () => EmailModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Email'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -49,7 +50,9 @@ class _EmailWidgetState extends State<EmailWidget> {
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
           title: Text(
-            'Page Title',
+            FFLocalizations.of(context).getText(
+              '2e50qn7z' /* Page Title */,
+            ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   font: GoogleFonts.readexPro(
                     fontWeight:
