@@ -1,4 +1,4 @@
-links to the Google Slide files with the test cases. TESTCASES.md should look like:
+Put links to the Google Slide files with the test cases. TESTCASES.md should look like:
 
 <link to template slide> US1: User Account Creation
 
@@ -8,6 +8,6 @@ links to the Google Slide files with the test cases. TESTCASES.md should look li
 
 <link to template slide> US4: {Golden Path description}
 
-<link to template slide> US5: …
+<[link to template slide](https://docs.google.com/presentation/d/1EK6TRIul25-J9bOngOim4-kgrIFgtPBSWDPv4wtWbjE/edit?usp=sharing)> US5: Further AI Testing
 
 Each team member must have at least one test case committed to the TESTCASES.md file with the link going the Google slide on their personal account (the graders will check for commits to the file). 
