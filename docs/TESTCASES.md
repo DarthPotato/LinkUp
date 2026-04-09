@@ -1,13 +1,13 @@
 Put links to the Google Slide files with the test cases. TESTCASES.md should look like:
 
-<link to template slide> US1: User Account Creation
+\n <link to template slide> US1: User Account Creation
 
-<link to template slide> US2: User Login
+\n<link to template slide> US2: User Login
 
-<link to template slide> US3: Backend Management
+\n<link to template slide> US3: Backend Management
 
-<link to template slide> US4: {Golden Path description}
+\n<link to template slide> US4: {Golden Path description}
 
-<[link to template slide](https://docs.google.com/presentation/d/1EK6TRIul25-J9bOngOim4-kgrIFgtPBSWDPv4wtWbjE/edit?usp=sharing)> US5: Further AI Testing
+\n<[link to template slide](https://docs.google.com/presentation/d/1EK6TRIul25-J9bOngOim4-kgrIFgtPBSWDPv4wtWbjE/edit?usp=sharing)> US5: Further AI Testing
 
 Each team member must have at least one test case committed to the TESTCASES.md file with the link going the Google slide on their personal account (the graders will check for commits to the file). 
