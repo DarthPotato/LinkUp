@@ -5,36 +5,36 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'expanded_meeting_model.dart';
-export 'expanded_meeting_model.dart';
+import 'expanded_email_model.dart';
+export 'expanded_email_model.dart';
 
-class ExpandedMeetingWidget extends StatefulWidget {
-  const ExpandedMeetingWidget({
+class ExpandedEmailWidget extends StatefulWidget {
+  const ExpandedEmailWidget({
     super.key,
     required this.responseDoc,
   });
 
   final ResponsesRecord? responseDoc;
 
-  static String routeName = 'ExpandedMeeting';
-  static String routePath = '/expandedMeeting';
+  static String routeName = 'ExpandedEmail';
+  static String routePath = '/expandedEmail';
 
   @override
-  State<ExpandedMeetingWidget> createState() => _ExpandedMeetingWidgetState();
+  State<ExpandedEmailWidget> createState() => _ExpandedEmailWidgetState();
 }
 
-class _ExpandedMeetingWidgetState extends State<ExpandedMeetingWidget> {
-  late ExpandedMeetingModel _model;
+class _ExpandedEmailWidgetState extends State<ExpandedEmailWidget> {
+  late ExpandedEmailModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ExpandedMeetingModel());
+    _model = createModel(context, () => ExpandedEmailModel());
 
     logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'ExpandedMeeting'});
+        parameters: {'screen_name': 'ExpandedEmail'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -54,6 +54,7 @@ class _ExpandedMeetingWidgetState extends State<ExpandedMeetingWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: SafeArea(
           top: true,
           child: Align(
@@ -77,7 +78,7 @@ class _ExpandedMeetingWidgetState extends State<ExpandedMeetingWidget> {
                         children: [
                           Text(
                             FFLocalizations.of(context).getText(
-                              'p6h6h1in' /* Prep Details */,
+                              'ku12fajj' /* Prep Details */,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
@@ -118,7 +119,7 @@ class _ExpandedMeetingWidgetState extends State<ExpandedMeetingWidget> {
                               ),
                               Text(
                                 FFLocalizations.of(context).getText(
-                                  'xemm0iqj' /* LinkUp */,
+                                  'uo3gg8u6' /* LinkUp */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
@@ -150,7 +151,7 @@ class _ExpandedMeetingWidgetState extends State<ExpandedMeetingWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: Text(
-                          'Professional Preparation: ${widget.responseDoc?.shortDescription}',
+                          'Email Preparation: ${widget.responseDoc?.shortDescription}',
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
@@ -233,13 +234,13 @@ class _ExpandedMeetingWidgetState extends State<ExpandedMeetingWidget> {
                         child: FFButtonWidget(
                           onPressed: () async {
                             logFirebaseEvent(
-                                'EXPANDED_MEETING_PAGE_GO_BACK_BTN_ON_TAP');
+                                'EXPANDED_EMAIL_PAGE_GO_BACK_BTN_ON_TAP');
                             logFirebaseEvent('Button_navigate_to');
 
-                            context.goNamed(BaseMeetingPrepWidget.routeName);
+                            context.pushNamed(EmailWidget.routeName);
                           },
                           text: FFLocalizations.of(context).getText(
-                            'phz4m8my' /* Go Back */,
+                            'g5hehkav' /* Go Back */,
                           ),
                           options: FFButtonOptions(
                             width: double.infinity,

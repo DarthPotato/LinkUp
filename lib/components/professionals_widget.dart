@@ -51,7 +51,7 @@ class _ProfessionalsWidgetState extends State<ProfessionalsWidget> {
         children: [
           Container(
             width: 300.0,
-            height: 200.0,
+            height: 150.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
               borderRadius: BorderRadius.circular(24.0),

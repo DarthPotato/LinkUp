@@ -1255,7 +1255,13 @@ class _SignupLoginWidgetState extends State<SignupLoginWidget>
                                         16.0, 0.0, 16.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: Color(0xFF9AD1D4),
+                                    color:
+                                        getRemoteConfigString('colorScheme') ==
+                                                'orange'
+                                            ? FlutterFlowTheme.of(context)
+                                                .aBTest
+                                            : FlutterFlowTheme.of(context)
+                                                .linkupGreen,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(

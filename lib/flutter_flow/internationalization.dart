@@ -144,43 +144,6 @@ bool _isSupportedLocale(Locale locale) {
 }
 
 final kTranslationsMap = <Map<String, Map<String, String>>>[
-  // Email
-  {
-    '2e50qn7z': {
-      'en': 'Page Title',
-      'zh_Hans': '',
-    },
-    'w9hshe06': {
-      'en': 'Home',
-      'zh_Hans': '',
-    },
-  },
-  // US5
-  {
-    'i9cnlg73': {
-      'en': 'Page Title',
-      'zh_Hans': '',
-    },
-    'ygeqecv0': {
-      'en': 'Home',
-      'zh_Hans': '',
-    },
-  },
-  // ExpandedMeeting
-  {
-    'p6h6h1in': {
-      'en': 'Prep Details',
-      'zh_Hans': '',
-    },
-    'xemm0iqj': {
-      'en': 'LinkUp',
-      'zh_Hans': '',
-    },
-    'phz4m8my': {
-      'en': 'Go Back',
-      'zh_Hans': '',
-    },
-  },
   // Signup_Login
   {
     'a5luvs7u': {
@@ -268,98 +231,44 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zh_Hans': '',
     },
   },
-  // AiPage
+  // NPS_Question
   {
-    'xzuu13hb': {
-      'en': 'AI Assistant',
+    'yiep5gos': {
+      'en': 'How would you rate LinkUp on a scale from 1-10?',
       'zh_Hans': '',
     },
-    'pzrr0e1k': {
-      'en': 'Start Something New',
+    '78qm2kgw': {
+      'en': 'Submit',
       'zh_Hans': '',
     },
-    '6xwybq1f': {
-      'en': 'New Meeting',
+    '7ijfyxip': {
+      'en': 'Home',
       'zh_Hans': '',
     },
-    'u5sml69f': {
-      'en': 'New Email',
+  },
+  // Email
+  {
+    'o056gm9p': {
+      'en': 'Email Prep',
       'zh_Hans': '',
     },
-    'vrgwzy6s': {
-      'en': 'Interview Prep',
+    'p7jhea1b': {
+      'en': 'Search email prep...',
       'zh_Hans': '',
     },
-    '3nappri6': {
-      'en': 'Recent Meetings',
+  },
+  // ExpandedMeeting
+  {
+    'p6h6h1in': {
+      'en': 'Prep Details',
       'zh_Hans': '',
     },
-    '921kcsbl': {
-      'en': 'See all',
+    'xemm0iqj': {
+      'en': 'LinkUp',
       'zh_Hans': '',
     },
-    'jj4uavvs': {
-      'en': 'Q3 Strategy Review',
-      'zh_Hans': '',
-    },
-    '9hmrt8xb': {
-      'en': 'Today, 10:30 AM · 45 min',
-      'zh_Hans': '',
-    },
-    'qspicb91': {
-      'en': 'Team Standup',
-      'zh_Hans': '',
-    },
-    'k16yo9g3': {
-      'en': 'Yesterday, 9:00 AM · 30 min',
-      'zh_Hans': '',
-    },
-    'fjm81hr3': {
-      'en': 'Client Onboarding Call',
-      'zh_Hans': '',
-    },
-    'enuf7mtp': {
-      'en': 'Mon, 2:00 PM · 60 min',
-      'zh_Hans': '',
-    },
-    'a087denu': {
-      'en': 'Recent Emails',
-      'zh_Hans': '',
-    },
-    'p81jmnrd': {
-      'en': 'See all',
-      'zh_Hans': '',
-    },
-    'aexy727h': {
-      'en': 'Follow-up: Partnership Proposal',
-      'zh_Hans': '',
-    },
-    '8eq6gq71': {
-      'en': 'Today · Draft ready',
-      'zh_Hans': '',
-    },
-    'slbc069g': {
-      'en': 'Re: Project Timeline Update',
-      'zh_Hans': '',
-    },
-    '5628j0x9': {
-      'en': 'Yesterday · Sent',
-      'zh_Hans': '',
-    },
-    '7vg86bfz': {
-      'en': 'Interview Preps',
-      'zh_Hans': '',
-    },
-    '9w7la8g4': {
-      'en': 'See all',
-      'zh_Hans': '',
-    },
-    'virjc6n5': {
-      'en': 'Senior Product Manager',
-      'zh_Hans': '',
-    },
-    'yusxftpb': {
-      'en': '2 days ago · 12 questions',
+    'phz4m8my': {
+      'en': 'Go Back',
       'zh_Hans': '',
     },
   },
@@ -377,6 +286,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Career Interest...',
       'zh_Hans': '',
     },
+    'axfu4y1w': {
+      'en': 'Upload Resume (PDF)',
+      'zh_Hans': '',
+    },
     'obxp33ws': {
       'en': 'Complete Profile',
       'zh_Hans': '',
@@ -386,40 +299,95 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zh_Hans': '',
     },
   },
-  // Base_Meeting_Prep
+  // AiPage
   {
-    '6f283pyz': {
-      'en': 'Professional Prep',
+    'wakh6v4o': {
+      'en': 'LinkUp AI',
       'zh_Hans': '',
     },
-    'ija3v91t': {
-      'en': 'Temp Log Out',
+    'hppmc2a3': {
+      'en':
+          'Hello and welcome to the LinkUp AI. See your recent requests here. Click to see expanded view or see all to see and add more.',
       'zh_Hans': '',
     },
-    'l0cha1xp': {
-      'en': 'Search professional preps...',
+    'ua39h0kp': {
+      'en': 'Recent Professional Prep:',
+      'zh_Hans': '',
+    },
+    'v447sgnj': {
+      'en': 'See all',
+      'zh_Hans': '',
+    },
+    'pv8hox47': {
+      'en': 'Recent Email Prep:',
+      'zh_Hans': '',
+    },
+    '8qd000ix': {
+      'en': 'See all',
       'zh_Hans': '',
     },
   },
-  // NPS_Question
+  // Base_Meeting_Prep
   {
-    'yiep5gos': {
-      'en': 'How would you rate LinkUp on a scale from 1-10?',
+    'uisbavmw': {
+      'en': 'Professional Prep',
       'zh_Hans': '',
     },
-    '78qm2kgw': {
-      'en': 'Submit',
+    'l0cha1xp': {
+      'en': 'Search professional prep...',
       'zh_Hans': '',
     },
-    '7ijfyxip': {
+  },
+  // ExpandedEmail
+  {
+    'ku12fajj': {
+      'en': 'Prep Details',
+      'zh_Hans': '',
+    },
+    'uo3gg8u6': {
+      'en': 'LinkUp',
+      'zh_Hans': '',
+    },
+    'g5hehkav': {
+      'en': 'Go Back',
+      'zh_Hans': '',
+    },
+    'rntwumkz': {
       'en': 'Home',
+      'zh_Hans': '',
+    },
+  },
+  // EmailPrepInputs
+  {
+    'sxeoegaa': {
+      'en': 'New Preparation for an Email',
+      'zh_Hans': '',
+    },
+    'sc54e8lr': {
+      'en': 'Person Name',
+      'zh_Hans': '',
+    },
+    'h3flrh12': {
+      'en': 'Company Name',
+      'zh_Hans': '',
+    },
+    'i8wqswhs': {
+      'en': 'Extra Details',
+      'zh_Hans': '',
+    },
+    'hapdldz9': {
+      'en': 'Cancel',
+      'zh_Hans': '',
+    },
+    'knhvhmr9': {
+      'en': 'Submit',
       'zh_Hans': '',
     },
   },
   // ProfessionalPrepInputs
   {
     'd099cx41': {
-      'en': 'New Professional Preparation',
+      'en': 'New Preparation for a Professional Event',
       'zh_Hans': '',
     },
     'gj5h7nnm': {

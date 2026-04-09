@@ -5,9 +5,9 @@ import '/components/professionals_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:collection/collection.dart';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -86,30 +86,6 @@ class _BaseMeetingPrepWidgetState extends State<BaseMeetingPrepWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-          automaticallyImplyLeading: false,
-          title: Text(
-            FFLocalizations.of(context).getText(
-              '6f283pyz' /* Professional Prep */,
-            ),
-            style: FlutterFlowTheme.of(context).headlineLarge.override(
-                  font: GoogleFonts.readexPro(
-                    fontWeight: FontWeight.bold,
-                    fontStyle:
-                        FlutterFlowTheme.of(context).headlineLarge.fontStyle,
-                  ),
-                  fontSize: 28.0,
-                  letterSpacing: 0.0,
-                  fontWeight: FontWeight.bold,
-                  fontStyle:
-                      FlutterFlowTheme.of(context).headlineLarge.fontStyle,
-                ),
-          ),
-          actions: [],
-          centerTitle: true,
-          elevation: 0.0,
-        ),
         body: Align(
           alignment: AlignmentDirectional(0.0, 0.0),
           child: Container(
@@ -129,51 +105,49 @@ class _BaseMeetingPrepWidgetState extends State<BaseMeetingPrepWidget> {
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          FFButtonWidget(
-                            onPressed: () async {
-                              logFirebaseEvent(
-                                  'BASE_MEETING_PREP_TEMP_LOG_OUT_BTN_ON_TA');
-                              logFirebaseEvent('Button_auth');
-                              GoRouter.of(context).prepareAuthEvent();
-                              await authManager.signOut();
-                              GoRouter.of(context).clearRedirectLocation();
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              FlutterFlowIconButton(
+                                borderRadius: 8.0,
+                                buttonSize: 40.0,
+                                fillColor: Color(0xFF9AD1D4),
+                                icon: Icon(
+                                  Icons.arrow_back,
+                                  color: FlutterFlowTheme.of(context).info,
+                                  size: 24.0,
+                                ),
+                                onPressed: () async {
+                                  logFirebaseEvent(
+                                      'BASE_MEETING_PREP_arrow_back_ICN_ON_TAP');
+                                  logFirebaseEvent('IconButton_navigate_to');
 
-                              context.goNamedAuth(
-                                  SignupLoginWidget.routeName, context.mounted);
-                            },
-                            text: FFLocalizations.of(context).getText(
-                              'ija3v91t' /* Temp Log Out */,
-                            ),
-                            options: FFButtonOptions(
-                              height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context).primary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontWeight,
+                                  context.goNamed(AiPageWidget.routeName);
+                                },
+                              ),
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  'uisbavmw' /* Professional Prep */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineLarge
+                                    .override(
+                                      font: GoogleFonts.readexPro(
+                                        fontWeight: FontWeight.bold,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineLarge
+                                            .fontStyle,
+                                      ),
+                                      fontSize: 28.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.bold,
                                       fontStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
+                                          .headlineLarge
                                           .fontStyle,
                                     ),
-                                    color: Colors.white,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
-                              elevation: 0.0,
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
+                              ),
+                            ].divide(SizedBox(width: 12.0)),
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
@@ -183,11 +157,24 @@ class _BaseMeetingPrepWidgetState extends State<BaseMeetingPrepWidget> {
                               child: TextFormField(
                                 controller: _model.textController,
                                 focusNode: _model.textFieldFocusNode,
+                                onChanged: (_) => EasyDebounce.debounce(
+                                  '_model.textController',
+                                  Duration(milliseconds: 2000),
+                                  () async {
+                                    logFirebaseEvent(
+                                        'BASE_MEETING_PREP_TextField_d5t83dt7_ON_');
+                                    logFirebaseEvent(
+                                        'TextField_update_page_state');
+                                    _model.searchText =
+                                        _model.textController.text;
+                                    safeSetState(() {});
+                                  },
+                                ),
                                 autofocus: false,
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   hintText: FFLocalizations.of(context).getText(
-                                    'l0cha1xp' /* Search professional preps... */,
+                                    'l0cha1xp' /* Search professional prep... */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -274,11 +261,23 @@ class _BaseMeetingPrepWidgetState extends State<BaseMeetingPrepWidget> {
                           ),
                           StreamBuilder<List<ResponsesRecord>>(
                             stream: queryResponsesRecord(
-                              queryBuilder: (responsesRecord) =>
-                                  responsesRecord.where(
-                                'user',
-                                isEqualTo: currentUserReference,
-                              ),
+                              queryBuilder: (responsesRecord) => responsesRecord
+                                  .where(
+                                    'user',
+                                    isEqualTo: currentUserReference,
+                                  )
+                                  .whereIn(
+                                      'type',
+                                      _model.allowedTypes != ''
+                                          ? _model.allowedTypes
+                                          : null)
+                                  .where(
+                                    'short_description',
+                                    isEqualTo: _model.searchText != ''
+                                        ? _model.searchText
+                                        : null,
+                                  )
+                                  .orderBy('time', descending: true),
                             ),
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.

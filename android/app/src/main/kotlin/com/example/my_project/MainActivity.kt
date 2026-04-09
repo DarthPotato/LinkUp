@@ -1,4 +1,4 @@
-package com.soft305.linkup
+package com.uricsc305.linkup
 
 import io.flutter.embedding.android.FlutterActivity
 

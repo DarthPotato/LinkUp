@@ -1,8 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'us5_widget.dart' show Us5Widget;
+import '/index.dart';
+import 'expanded_email_widget.dart' show ExpandedEmailWidget;
 import 'package:flutter/material.dart';
 
-class Us5Model extends FlutterFlowModel<Us5Widget> {
+class ExpandedEmailModel extends FlutterFlowModel<ExpandedEmailWidget> {
   @override
   void initState(BuildContext context) {}
 

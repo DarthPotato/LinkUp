@@ -6,7 +6,6 @@ import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 import '/index.dart';
@@ -76,26 +75,29 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? BaseMeetingPrepWidget()
-          : SignupLoginWidget(),
+      errorBuilder: (context, state) =>
+          appStateNotifier.loggedIn ? AiPageWidget() : SignupLoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? BaseMeetingPrepWidget()
-              : SignupLoginWidget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? AiPageWidget() : SignupLoginWidget(),
+        ),
+        FFRoute(
+          name: SignupLoginWidget.routeName,
+          path: SignupLoginWidget.routePath,
+          builder: (context, params) => SignupLoginWidget(),
+        ),
+        FFRoute(
+          name: NPSQuestionWidget.routeName,
+          path: NPSQuestionWidget.routePath,
+          builder: (context, params) => NPSQuestionWidget(),
         ),
         FFRoute(
           name: EmailWidget.routeName,
           path: EmailWidget.routePath,
           builder: (context, params) => EmailWidget(),
-        ),
-        FFRoute(
-          name: Us5Widget.routeName,
-          path: Us5Widget.routePath,
-          builder: (context, params) => Us5Widget(),
         ),
         FFRoute(
           name: ExpandedMeetingWidget.routeName,
@@ -111,9 +113,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: SignupLoginWidget.routeName,
-          path: SignupLoginWidget.routePath,
-          builder: (context, params) => SignupLoginWidget(),
+          name: ProfileWidget.routeName,
+          path: ProfileWidget.routePath,
+          builder: (context, params) => ProfileWidget(),
         ),
         FFRoute(
           name: AiPageWidget.routeName,
@@ -121,19 +123,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => AiPageWidget(),
         ),
         FFRoute(
-          name: ProfileWidget.routeName,
-          path: ProfileWidget.routePath,
-          builder: (context, params) => ProfileWidget(),
-        ),
-        FFRoute(
           name: BaseMeetingPrepWidget.routeName,
           path: BaseMeetingPrepWidget.routePath,
           builder: (context, params) => BaseMeetingPrepWidget(),
         ),
         FFRoute(
-          name: NPSQuestionWidget.routeName,
-          path: NPSQuestionWidget.routePath,
-          builder: (context, params) => NPSQuestionWidget(),
+          name: ExpandedEmailWidget.routeName,
+          path: ExpandedEmailWidget.routePath,
+          asyncParams: {
+            'responseDoc': getDoc(['responses'], ResponsesRecord.fromSnapshot),
+          },
+          builder: (context, params) => ExpandedEmailWidget(
+            responseDoc: params.getParam(
+              'responseDoc',
+              ParamType.Document,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -320,15 +325,11 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
-                    ),
+              ? Container(
+                  color: Colors.transparent,
+                  child: Image.asset(
+                    'assets/images/908.jpg',
+                    fit: BoxFit.cover,
                   ),
                 )
               : page;

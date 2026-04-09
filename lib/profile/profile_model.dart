@@ -14,6 +14,10 @@ class ProfileModel extends FlutterFlowModel<ProfileWidget> {
   FocusNode? careerFieldFocusNode;
   TextEditingController? careerFieldTextController;
   String? Function(BuildContext, String?)? careerFieldTextControllerValidator;
+  bool isDataUploading_uploadedResume = false;
+  FFUploadedFile uploadedLocalFile_uploadedResume =
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
+  String uploadedFileUrl_uploadedResume = '';
 
   @override
   void initState(BuildContext context) {}

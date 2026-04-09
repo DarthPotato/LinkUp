@@ -1,8 +1,10 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_data.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -55,7 +57,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFFD9D9D9),
         body: SafeArea(
           top: true,
           child: Align(
@@ -324,15 +325,112 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       ),
                     ),
                   ),
+                  Align(
+                    alignment: AlignmentDirectional(0.0, 0.0),
+                    child: FFButtonWidget(
+                      onPressed: () async {
+                        logFirebaseEvent('PROFILE_PAGE_resumeButton_ON_TAP');
+                        logFirebaseEvent(
+                            'resumeButton_upload_file_to_firebase');
+                        final selectedFiles = await selectFiles(
+                          allowedExtensions: ['pdf'],
+                          multiFile: false,
+                        );
+                        if (selectedFiles != null) {
+                          safeSetState(() =>
+                              _model.isDataUploading_uploadedResume = true);
+                          var selectedUploadedFiles = <FFUploadedFile>[];
+
+                          var downloadUrls = <String>[];
+                          try {
+                            selectedUploadedFiles = selectedFiles
+                                .map((m) => FFUploadedFile(
+                                      name: m.storagePath.split('/').last,
+                                      bytes: m.bytes,
+                                      originalFilename: m.originalFilename,
+                                    ))
+                                .toList();
+
+                            downloadUrls = (await Future.wait(
+                              selectedFiles.map(
+                                (f) async =>
+                                    await uploadData(f.storagePath, f.bytes),
+                              ),
+                            ))
+                                .where((u) => u != null)
+                                .map((u) => u!)
+                                .toList();
+                          } finally {
+                            _model.isDataUploading_uploadedResume = false;
+                          }
+                          if (selectedUploadedFiles.length ==
+                                  selectedFiles.length &&
+                              downloadUrls.length == selectedFiles.length) {
+                            safeSetState(() {
+                              _model.uploadedLocalFile_uploadedResume =
+                                  selectedUploadedFiles.first;
+                              _model.uploadedFileUrl_uploadedResume =
+                                  downloadUrls.first;
+                            });
+                          } else {
+                            safeSetState(() {});
+                            return;
+                          }
+                        }
+
+                        logFirebaseEvent('resumeButton_backend_call');
+
+                        await currentUserReference!
+                            .update(createUsersRecordData(
+                          resume: _model.uploadedFileUrl_uploadedResume,
+                        ));
+                      },
+                      text: FFLocalizations.of(context).getText(
+                        'axfu4y1w' /* Upload Resume (PDF) */,
+                      ),
+                      options: FFButtonOptions(
+                        width: 342.0,
+                        height: 70.0,
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 16.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: Color(0xFF9AD1D4),
+                        textStyle:
+                            FlutterFlowTheme.of(context).headlineSmall.override(
+                                  font: GoogleFonts.roboto(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .fontStyle,
+                                  ),
+                                  fontSize: 22.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .fontStyle,
+                                ),
+                        elevation: 0.0,
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.circular(24.0),
+                      ),
+                    ),
+                  ),
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                     child: Container(
                       width: 100.0,
                       height: 120.5,
-                      decoration: BoxDecoration(
-                        color: Color(0xFFD9D9D9),
-                      ),
+                      decoration: BoxDecoration(),
                     ),
                   ),
                   Align(
@@ -349,7 +447,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         ));
                         logFirebaseEvent('profileButton_navigate_to');
 
-                        context.goNamed(BaseMeetingPrepWidget.routeName);
+                        context.goNamed(AiPageWidget.routeName);
                       },
                       text: FFLocalizations.of(context).getText(
                         'obxp33ws' /* Complete Profile */,
@@ -387,6 +485,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       .fontStyle,
                                 ),
                         elevation: 0.0,
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          width: 1.0,
+                        ),
                         borderRadius: BorderRadius.circular(24.0),
                       ),
                     ),

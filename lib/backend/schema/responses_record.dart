@@ -35,11 +35,17 @@ class ResponsesRecord extends FirestoreRecord {
   DocumentReference? get user => _user;
   bool hasUser() => _user != null;
 
+  // "time" field.
+  DateTime? _time;
+  DateTime? get time => _time;
+  bool hasTime() => _time != null;
+
   void _initializeFields() {
     _type = snapshotData['type'] as String?;
     _shortDescription = snapshotData['short_description'] as String?;
     _response = snapshotData['response'] as String?;
     _user = snapshotData['user'] as DocumentReference?;
+    _time = snapshotData['time'] as DateTime?;
   }
 
   static CollectionReference get collection =>
@@ -81,6 +87,7 @@ Map<String, dynamic> createResponsesRecordData({
   String? shortDescription,
   String? response,
   DocumentReference? user,
+  DateTime? time,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -88,6 +95,7 @@ Map<String, dynamic> createResponsesRecordData({
       'short_description': shortDescription,
       'response': response,
       'user': user,
+      'time': time,
     }.withoutNulls,
   );
 
@@ -102,12 +110,13 @@ class ResponsesRecordDocumentEquality implements Equality<ResponsesRecord> {
     return e1?.type == e2?.type &&
         e1?.shortDescription == e2?.shortDescription &&
         e1?.response == e2?.response &&
-        e1?.user == e2?.user;
+        e1?.user == e2?.user &&
+        e1?.time == e2?.time;
   }
 
   @override
   int hash(ResponsesRecord? e) => const ListEquality()
-      .hash([e?.type, e?.shortDescription, e?.response, e?.user]);
+      .hash([e?.type, e?.shortDescription, e?.response, e?.user, e?.time]);
 
   @override
   bool isValidKey(Object? o) => o is ResponsesRecord;
