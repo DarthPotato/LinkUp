@@ -42,6 +42,17 @@ void main() async {
     await tester.enterText(
         find.byKey(const ValueKey('Login-Password_o9kx')), 'uu.UU2275765');
     FocusManager.instance.primaryFocus?.unfocus();
+    await tester.scrollUntilVisible(
+      find.byKey(const ValueKey('Login-Button_0q8t')),
+      100.0,
+      scrollable: find
+          .descendant(
+            of: find.byKey(const ValueKey('Column_v5m4')),
+            matching: find.byType(Scrollable),
+          )
+          .first,
+    );
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.tap(find.byKey(const ValueKey('Login-Button_0q8t')));
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     expect(find.text('Recent Professional Prep:'), findsOneWidget);

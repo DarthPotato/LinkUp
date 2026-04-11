@@ -91,6 +91,7 @@ class _SignupLoginWidgetState extends State<SignupLoginWidget>
               child: Padding(
                 padding: EdgeInsets.all(24.0),
                 child: SingleChildScrollView(
+                  key: ValueKey('Column_v5m4'),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
