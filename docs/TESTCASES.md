@@ -6,7 +6,7 @@ Put links to the Google Slide files with the test cases. TESTCASES.md should loo
 
 \n<link to template slide> US3: Backend Management
 
-\n<link to template slide> US4: {Golden Path description}
+\n<[link to template slide](https://docs.google.com/presentation/d/1F9-YJGj87CTbaEmBWt_cLbb1Od49y7HFnHDTSogROcw/edit?usp=sharing)> US4: Meeting Prep Brief Generation
 
 \n<[link to template slide](https://docs.google.com/presentation/d/1EK6TRIul25-J9bOngOim4-kgrIFgtPBSWDPv4wtWbjE/edit?usp=sharing)> US5: Further AI Testing
 
