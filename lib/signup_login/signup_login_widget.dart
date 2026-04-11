@@ -222,6 +222,7 @@ class _SignupLoginWidgetState extends State<SignupLoginWidget>
                                   ),
                                 ),
                                 Tab(
+                                  key: ValueKey('LoginTab_cqp0'),
                                   text: FFLocalizations.of(context).getText(
                                     '0rv8pc31' /* Login */,
                                   ),
@@ -795,6 +796,7 @@ class _SignupLoginWidgetState extends State<SignupLoginWidget>
                                         child: Container(
                                           width: double.infinity,
                                           child: TextFormField(
+                                            key: ValueKey('Login-Email_3m1l'),
                                             controller:
                                                 _model.loginEmailTextController,
                                             focusNode:
@@ -979,6 +981,7 @@ class _SignupLoginWidgetState extends State<SignupLoginWidget>
                                       Container(
                                         width: double.infinity,
                                         child: TextFormField(
+                                          key: ValueKey('Login-Password_o9kx'),
                                           controller: _model
                                               .loginPasswordTextController,
                                           focusNode:
@@ -1175,6 +1178,7 @@ class _SignupLoginWidgetState extends State<SignupLoginWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 20.0),
                                 child: FFButtonWidget(
+                                  key: ValueKey('Login-Button_0q8t'),
                                   onPressed: () async {
                                     logFirebaseEvent(
                                         'SIGNUP_LOGIN_PAGE_Login-Button_ON_TAP');
