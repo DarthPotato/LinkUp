@@ -249,6 +249,7 @@ class _AiPageWidgetState extends State<AiPageWidget> {
                                       .goNamed(BaseMeetingPrepWidget.routeName);
                                 },
                                 child: Text(
+                                  key: ValueKey('Text_kihw'),
                                   FFLocalizations.of(context).getText(
                                     'v447sgnj' /* See all */,
                                   ),

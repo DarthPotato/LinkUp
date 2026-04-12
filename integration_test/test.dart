@@ -57,6 +57,26 @@ void main() async {
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     expect(find.text('Recent Professional Prep:'), findsOneWidget);
   });
+
+  testWidgets('US4 Golden Path', (WidgetTester tester) async {
+    _overrideOnError();
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'testtest@gmail.com', password: 'testtest');
+    await tester.pumpWidget(MyApp(
+      entryPage: AiPageWidget(),
+    ));
+    await GoogleFonts.pendingFonts();
+
+    await tester.tap(find.byKey(const ValueKey('Text_kihw')));
+    await tester.pumpAndSettle(const Duration(milliseconds: 10000));
+    await tester.tap(find.byKey(const ValueKey('IconButton_d08i')));
+    await tester.pumpAndSettle(const Duration(milliseconds: 1000));
+    await tester.tap(find.text('Select...'));
+    await tester.pumpAndSettle(const Duration(milliseconds: 1000));
+    await tester.tap(find.text('Get Company Information'));
+    await tester.pumpAndSettle(const Duration(milliseconds: 1000000));
+    expect(find.text('Search professional prep...'), findsOneWidget);
+  });
 }
 
 // There are certain types of errors that can happen during tests but
