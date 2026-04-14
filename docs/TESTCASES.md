@@ -1,6 +1,6 @@
 Put links to the Google Slide files with the test cases. TESTCASES.md should look like:
 
-\n<link to template slide> US1: User Account Creation
+\n<[link to template slide] (https://docs.google.com/presentation/d/1KQAJ62JQLs4rO4aUA3MoaP7jopIRUVtyxxzIzXUp03c/edit?usp=sharing) US1: User Account Creation
 
 \n<[link to template slide](https://docs.google.com/presentation/d/1Xkf4sso9rE8pgEPq1aKOxa7Fb0MEMGDFpZo8gvM4T8A/edit?usp=sharing)> US2: User Login
 
