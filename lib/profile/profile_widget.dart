@@ -8,11 +8,17 @@ import '/flutter_flow/upload_data.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 import 'profile_model.dart';
 export 'profile_model.dart';
 
 class ProfileWidget extends StatefulWidget {
-  const ProfileWidget({super.key});
+  const ProfileWidget({
+    super.key,
+    required this.resumeUploadStatus,
+  });
+
+  final bool? resumeUploadStatus;
 
   static String routeName = 'Profile';
   static String routePath = '/profile';
@@ -395,7 +401,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: Color(0xFF9AD1D4),
+                        color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).headlineSmall.override(
                                   font: GoogleFonts.roboto(
@@ -431,6 +437,39 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       width: 100.0,
                       height: 120.5,
                       decoration: BoxDecoration(),
+                      child: CircularPercentIndicator(
+                        percent: 0.5,
+                        radius: 60.0,
+                        lineWidth: 12.0,
+                        animation: true,
+                        animateFromLastPercent: true,
+                        progressColor: FlutterFlowTheme.of(context).primary,
+                        backgroundColor: FlutterFlowTheme.of(context).accent4,
+                        center: Text(
+                          FFLocalizations.of(context).getText(
+                            'a0txm7db' /* 50% */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .headlineSmall
+                              .override(
+                                font: GoogleFonts.readexPro(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .fontStyle,
+                                ),
+                                letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .headlineSmall
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .headlineSmall
+                                    .fontStyle,
+                              ),
+                        ),
+                      ),
                     ),
                   ),
                   Align(

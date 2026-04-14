@@ -105,49 +105,54 @@ class _BaseMeetingPrepWidgetState extends State<BaseMeetingPrepWidget> {
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              FlutterFlowIconButton(
-                                borderRadius: 8.0,
-                                buttonSize: 40.0,
-                                fillColor: Color(0xFF9AD1D4),
-                                icon: Icon(
-                                  Icons.arrow_back,
-                                  color: FlutterFlowTheme.of(context).info,
-                                  size: 24.0,
-                                ),
-                                onPressed: () async {
-                                  logFirebaseEvent(
-                                      'BASE_MEETING_PREP_arrow_back_ICN_ON_TAP');
-                                  logFirebaseEvent('IconButton_navigate_to');
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 24.0, 0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                FlutterFlowIconButton(
+                                  borderRadius: 8.0,
+                                  buttonSize: 40.0,
+                                  fillColor: Color(0xFF9AD1D4),
+                                  icon: Icon(
+                                    Icons.arrow_back,
+                                    color: FlutterFlowTheme.of(context).info,
+                                    size: 24.0,
+                                  ),
+                                  onPressed: () async {
+                                    logFirebaseEvent(
+                                        'BASE_MEETING_PREP_arrow_back_ICN_ON_TAP');
+                                    logFirebaseEvent('IconButton_navigate_to');
 
-                                  context.goNamed(AiPageWidget.routeName);
-                                },
-                              ),
-                              Text(
-                                FFLocalizations.of(context).getText(
-                                  'uisbavmw' /* Professional Prep */,
+                                    context.goNamed(AiPageWidget.routeName);
+                                  },
                                 ),
-                                style: FlutterFlowTheme.of(context)
-                                    .headlineLarge
-                                    .override(
-                                      font: GoogleFonts.readexPro(
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    'uisbavmw' /* Professional Prep */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .override(
+                                        font: GoogleFonts.readexPro(
+                                          fontWeight: FontWeight.bold,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineLarge
+                                                  .fontStyle,
+                                        ),
+                                        fontSize: 28.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,
                                         fontStyle: FlutterFlowTheme.of(context)
                                             .headlineLarge
                                             .fontStyle,
                                       ),
-                                      fontSize: 28.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.bold,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .headlineLarge
-                                          .fontStyle,
-                                    ),
-                              ),
-                            ].divide(SizedBox(width: 12.0)),
+                                ),
+                              ].divide(SizedBox(width: 12.0)),
+                            ),
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(

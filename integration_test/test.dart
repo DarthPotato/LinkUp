@@ -77,6 +77,33 @@ void main() async {
     await tester.pumpAndSettle(const Duration(milliseconds: 1000000));
     expect(find.text('Search professional prep...'), findsOneWidget);
   });
+
+  testWidgets('US1 Account Creation', (WidgetTester tester) async {
+    _overrideOnError();
+
+    await tester.pumpWidget(const MyApp());
+    await GoogleFonts.pendingFonts();
+
+    await tester.tap(find.byKey(const ValueKey('Signup-Email_f3we')));
+    await tester.pumpAndSettle(const Duration(milliseconds: 1));
+    await tester.enterText(
+        find.byKey(const ValueKey('Signup-Email_f3we')), 'email@email.com');
+    await tester.pumpAndSettle(const Duration(milliseconds: 1));
+    await tester.tap(find.byKey(const ValueKey('Signup-Password_a9r2')));
+    await tester.pumpAndSettle(const Duration(milliseconds: 1));
+    await tester.enterText(
+        find.byKey(const ValueKey('Signup-Password_a9r2')), 'password');
+    await tester.pumpAndSettle(const Duration(milliseconds: 1));
+    await tester.tap(find.byKey(const ValueKey('Signup_Login_tjeg')));
+    await tester.pumpAndSettle(const Duration(milliseconds: 1));
+    await tester.enterText(
+        find.byKey(const ValueKey('Signup-Confirm-Password_uld1')), 'password');
+    await tester.pumpAndSettle(const Duration(milliseconds: 1));
+    await tester.tap(find.byKey(const ValueKey('Signup-Button_6xu1')));
+    await tester.pumpAndSettle(const Duration(milliseconds: 1));
+    expect(find.text('Profile'), findsOneWidget);
+    await tester.pumpAndSettle(const Duration(milliseconds: 1));
+  });
 }
 
 // There are certain types of errors that can happen during tests but

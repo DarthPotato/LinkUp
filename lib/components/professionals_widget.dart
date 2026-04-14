@@ -56,7 +56,8 @@ class _ProfessionalsWidgetState extends State<ProfessionalsWidget> {
               color: FlutterFlowTheme.of(context).secondaryBackground,
               borderRadius: BorderRadius.circular(24.0),
               border: Border.all(
-                color: FlutterFlowTheme.of(context).primaryText,
+                color: FlutterFlowTheme.of(context).primary,
+                width: 2.0,
               ),
             ),
             child: ListView(
