@@ -4,7 +4,7 @@ Put links to the Google Slide files with the test cases. TESTCASES.md should loo
 
 \n<[link to template slide](https://docs.google.com/presentation/d/1Xkf4sso9rE8pgEPq1aKOxa7Fb0MEMGDFpZo8gvM4T8A/edit?usp=sharing)> US2: User Login
 
-\n<link to template slide> US3: Backend Management
+\n<[link to template slide](https://docs.google.com/presentation/d/1oLH7IjPX35K_qJnqW1NYI6tUaI00U8EAN5d2oJ7asVk/edit?usp=sharing)> US3: Profile Creation
 
 \n<[link to template slide](https://docs.google.com/presentation/d/1F9-YJGj87CTbaEmBWt_cLbb1Od49y7HFnHDTSogROcw/edit?usp=sharing)> US4: Meeting Prep Brief Generation
 
