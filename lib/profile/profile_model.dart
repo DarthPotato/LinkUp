@@ -4,6 +4,10 @@ import 'profile_widget.dart' show ProfileWidget;
 import 'package:flutter/material.dart';
 
 class ProfileModel extends FlutterFlowModel<ProfileWidget> {
+  ///  Local state fields for this page.
+
+  double? resumeUploadProgress = 0.67;
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for nameField widget.

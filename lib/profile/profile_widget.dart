@@ -13,12 +13,7 @@ import 'profile_model.dart';
 export 'profile_model.dart';
 
 class ProfileWidget extends StatefulWidget {
-  const ProfileWidget({
-    super.key,
-    required this.resumeUploadStatus,
-  });
-
-  final bool? resumeUploadStatus;
+  const ProfileWidget({super.key});
 
   static String routeName = 'Profile';
   static String routePath = '/profile';
@@ -115,6 +110,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                     child: Container(
                       width: 342.0,
                       child: TextFormField(
+                        key: ValueKey('nameField_p6b5'),
                         controller: _model.nameFieldTextController,
                         focusNode: _model.nameFieldFocusNode,
                         autofocus: false,
@@ -224,6 +220,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                     child: Container(
                       width: 342.0,
                       child: TextFormField(
+                        key: ValueKey('careerField_v43m'),
                         controller: _model.careerFieldTextController,
                         focusNode: _model.careerFieldFocusNode,
                         autofocus: false,
@@ -334,6 +331,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                   Align(
                     alignment: AlignmentDirectional(0.0, 0.0),
                     child: FFButtonWidget(
+                      key: ValueKey('resumeButton_uou1'),
                       onPressed: () async {
                         logFirebaseEvent('PROFILE_PAGE_resumeButton_ON_TAP');
                         logFirebaseEvent(
@@ -349,6 +347,11 @@ class _ProfileWidgetState extends State<ProfileWidget> {
 
                           var downloadUrls = <String>[];
                           try {
+                            showUploadMessage(
+                              context,
+                              'Uploading file...',
+                              showLoading: true,
+                            );
                             selectedUploadedFiles = selectedFiles
                                 .map((m) => FFUploadedFile(
                                       name: m.storagePath.split('/').last,
@@ -367,6 +370,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 .map((u) => u!)
                                 .toList();
                           } finally {
+                            ScaffoldMessenger.of(context).hideCurrentSnackBar();
                             _model.isDataUploading_uploadedResume = false;
                           }
                           if (selectedUploadedFiles.length ==
@@ -378,8 +382,16 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               _model.uploadedFileUrl_uploadedResume =
                                   downloadUrls.first;
                             });
+                            showUploadMessage(
+                              context,
+                              'Success!',
+                            );
                           } else {
                             safeSetState(() {});
+                            showUploadMessage(
+                              context,
+                              'Failed to upload file',
+                            );
                             return;
                           }
                         }
@@ -390,6 +402,16 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             .update(createUsersRecordData(
                           resume: _model.uploadedFileUrl_uploadedResume,
                         ));
+                        if (_model.isDataUploading_uploadedResume) {
+                          logFirebaseEvent('resumeButton_update_page_state');
+                          _model.resumeUploadProgress =
+                              _model.resumeUploadProgress! + 0.1;
+                          safeSetState(() {});
+                        } else {
+                          logFirebaseEvent('resumeButton_update_page_state');
+                          _model.resumeUploadProgress = 1.0;
+                          safeSetState(() {});
+                        }
                       },
                       text: FFLocalizations.of(context).getText(
                         'axfu4y1w' /* Upload Resume (PDF) */,
@@ -438,7 +460,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       height: 120.5,
                       decoration: BoxDecoration(),
                       child: CircularPercentIndicator(
-                        percent: 0.5,
+                        percent: _model.resumeUploadProgress!,
                         radius: 60.0,
                         lineWidth: 12.0,
                         animation: true,
@@ -446,8 +468,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         progressColor: FlutterFlowTheme.of(context).primary,
                         backgroundColor: FlutterFlowTheme.of(context).accent4,
                         center: Text(
-                          FFLocalizations.of(context).getText(
-                            'a0txm7db' /* 50% */,
+                          valueOrDefault<String>(
+                            formatNumber(
+                              _model.resumeUploadProgress,
+                              formatType: FormatType.percent,
+                            ),
+                            '0.67',
                           ),
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
@@ -475,6 +501,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                   Align(
                     alignment: AlignmentDirectional(0.0, 0.0),
                     child: FFButtonWidget(
+                      key: ValueKey('profileButton_0fbg'),
                       onPressed: () async {
                         logFirebaseEvent('PROFILE_PAGE_profileButton_ON_TAP');
                         logFirebaseEvent('profileButton_backend_call');

@@ -118,12 +118,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: ProfileWidget.routeName,
           path: ProfileWidget.routePath,
-          builder: (context, params) => ProfileWidget(
-            resumeUploadStatus: params.getParam(
-              'resumeUploadStatus',
-              ParamType.bool,
-            ),
-          ),
+          builder: (context, params) => ProfileWidget(),
         ),
         FFRoute(
           name: AiPageWidget.routeName,

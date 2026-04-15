@@ -349,6 +349,7 @@ class _EmailWidgetState extends State<EmailWidget> {
                     Align(
                       alignment: AlignmentDirectional(1.15, 0.99),
                       child: FlutterFlowIconButton(
+                        key: ValueKey('IconButton_5qm8'),
                         borderColor: Colors.transparent,
                         borderRadius: 32.0,
                         buttonSize: 64.0,

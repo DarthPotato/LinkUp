@@ -290,10 +290,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Upload Resume (PDF)',
       'zh_Hans': '',
     },
-    'a0txm7db': {
-      'en': '50%',
-      'zh_Hans': '',
-    },
     'obxp33ws': {
       'en': 'Complete Profile',
       'zh_Hans': '',

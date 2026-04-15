@@ -463,6 +463,7 @@ class _AiPageWidgetState extends State<AiPageWidget> {
                                       context.goNamed(EmailWidget.routeName);
                                     },
                                     child: Text(
+                                      key: ValueKey('Text_zrwg'),
                                       FFLocalizations.of(context).getText(
                                         '8qd000ix' /* See all */,
                                       ),

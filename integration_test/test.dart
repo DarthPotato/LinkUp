@@ -104,6 +104,65 @@ void main() async {
     expect(find.text('Profile'), findsOneWidget);
     await tester.pumpAndSettle(const Duration(milliseconds: 1));
   });
+
+  testWidgets('US3 - Profile Creation', (WidgetTester tester) async {
+    _overrideOnError();
+
+    await tester.pumpWidget(MyApp(
+      entryPage: ProfileWidget(),
+    ));
+    await GoogleFonts.pendingFonts();
+
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.enterText(
+        find.byKey(const ValueKey('nameField_p6b5')), 'Name');
+    await tester.enterText(
+        find.byKey(const ValueKey('careerField_v43m')), 'LinkUp');
+    await tester.tap(find.byKey(const ValueKey('resumeButton_uou1')));
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    expect(
+      tester
+          .widget<FFButtonWidget>(
+              find.byKey(const ValueKey('resumeButton_uou1')))
+          .onPressed,
+      isNotNull,
+    );
+    await tester.tap(find.byKey(const ValueKey('profileButton_0fbg')));
+    expect(
+      tester
+          .widget<FFButtonWidget>(
+              find.byKey(const ValueKey('profileButton_0fbg')))
+          .onPressed,
+      isNotNull,
+    );
+  });
+
+  testWidgets('US5 - AI Feature Testing', (WidgetTester tester) async {
+    _overrideOnError();
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'yilmaztest@gmail.com', password: '1234567');
+    await tester.pumpWidget(MyApp(
+      entryPage: AiPageWidget(),
+    ));
+    await GoogleFonts.pendingFonts();
+
+    await tester.tap(find.byKey(const ValueKey('Text_zrwg')));
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
+    await tester.tap(find.byKey(const ValueKey('IconButton_5qm8')));
+    await tester.pumpAndSettle(const Duration(milliseconds: 1000));
+    await tester.enterText(
+        find.bySemanticsLabel(RegExp('Person Name Field')), 'TestBot');
+    FocusManager.instance.primaryFocus?.unfocus();
+    await tester.pumpAndSettle(const Duration(milliseconds: 100));
+    await tester.enterText(
+        find.bySemanticsLabel(RegExp('Company Name Field')), 'EvilCorp');
+    FocusManager.instance.primaryFocus?.unfocus();
+    await tester.pumpAndSettle(const Duration(milliseconds: 100));
+    await tester.enterText(find.bySemanticsLabel(RegExp('Extra Details Label')),
+        'I am applying to evilcorp, draft me a thank you email');
+    FocusManager.instance.primaryFocus?.unfocus();
+    await tester.tap(find.text('Submit'));
+  });
 }
 
 // There are certain types of errors that can happen during tests but
