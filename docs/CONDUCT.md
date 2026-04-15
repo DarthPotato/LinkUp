@@ -475,15 +475,15 @@ Feedback should:
 
 ## Signatures (Required)
 
-![Aidan Leach Signature.](/docs/AidanLeachSignature.jpg)
+<img src="/docs/AidanLeachSignature.jpg" alt="Aidan Leach Signature." style="max-width: 100%; height: auto;" />
 
-![Yilmaz Signature.](/docs/yilmazsignature.PNG)
+<img src="/docs/yilmazsignature.PNG" alt="Yilmaz Signature." style="max-width: 100%; height: auto;" />
 
-![Danny LaBore Signature.](/docs/DannySignature.png)
+<img src="/docs/DannySignature.png" alt="Danny LaBore Signature." style="max-width: 100%; height: auto;" />
 
-![Nick Aksanov Signature.](/docs/aksanovsig.jpg)
+<img src="/docs/aksanovsig.jpg" alt="Nick Aksanov Signature." style="max-width: 100%; height: auto;" />
 
-![Jacob Mathews Signature.](/docs/Jacob_Mathews_Signature.png)
+<img src="/docs/Jacob_Mathews_Signature.png" alt="Jacob Mathews Signature." style="max-width: 100%; height: auto;" />
 
 ## Contacts
 
@@ -508,7 +508,6 @@ Discord will be used to communicate between developers. Discord voice chat will 
 [Mozilla CoC]: https://github.com/mozilla/diversity
 [FAQ]: https://www.contributor-covenant.org/faq
 [translations]: https://www.contributor-covenant.org/translations
-
 
 
 
