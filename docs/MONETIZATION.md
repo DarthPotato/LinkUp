@@ -16,8 +16,9 @@
 
 ## GitHub Project / PBI Tracking
 
-- Project link (set to the direct LinkUp board URL):  
-  **https://github.com/orgs/DarthPotato/projects/<PROJECT_NUMBER>**
+- Project link (current profile projects page):  
+  **https://github.com/users/DarthPotato/projects**
+- If the LinkUp board is private or not yet created, replace this with the direct board URL once available.
 - Add the following cards to the LinkUp board:
   - **MON-01:** Integrate AdMob Android test banner on Tasks screen (**Current Sprint**)
   - **MON-02:** Define premium tier pricing and feature gates (**Product Backlog**)
