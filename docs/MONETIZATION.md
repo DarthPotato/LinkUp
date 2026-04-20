@@ -62,7 +62,7 @@ As the product team, we can evaluate affiliate tools aligned with user needs to 
 - Place banner widget in Tasks screen layout and keep spacing non-blocking.
 - Validate only on Android emulator or physical device.
 
-Reference: https://docs.flutterflow.io/integrations/ads/admob#testing-adbanner
+Reference: https://docs.flutterflow.io/integrations/ads/admob
 
 ## Screenshot Evidence
 
