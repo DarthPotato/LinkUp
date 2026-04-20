@@ -16,7 +16,8 @@
 
 ## GitHub Project / PBI Tracking
 
-- Project link: **https://github.com/orgs/DarthPotato/projects**
+- Project link (set to the direct LinkUp board URL):  
+  **https://github.com/orgs/DarthPotato/projects/<PROJECT_NUMBER>**
 - Add the following cards to the LinkUp board:
   - **MON-01:** Integrate AdMob Android test banner on Tasks screen (**Current Sprint**)
   - **MON-02:** Define premium tier pricing and feature gates (**Product Backlog**)
@@ -31,7 +32,7 @@ As a LinkUp user, I can see a non-intrusive banner ad on the Tasks screen so the
 **Acceptance Criteria:**
 - AdMob is configured for Android in FlutterFlow.
 - A test banner loads from Google AdMob on the Tasks screen.
-- Banner displays on emulator or real device (not web/Test Mode).
+- Banner displays on emulator or real device (not FlutterFlow web preview, Test Mode, or Run Mode).
 - Screenshot evidence is added in this repo.
 
 ### MON-02 — Premium Subscription Definition (Backlog)
