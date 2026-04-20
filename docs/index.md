@@ -48,7 +48,7 @@ LinkUp is designed for students, early-career professionals, and anyone who want
 ## Download
 
 Android release is in progress.  
-Public listing link (to be activated): **https://darthpotato.github.io/LinkUp/**
+Public listing link (to be activated): **https://darthpotato.github.io/linkup/**
 
 ## Contact
 
