@@ -66,3 +66,6 @@ Reference: https://docs.flutterflow.io/integrations/ads/admob#testing-adbanner
 
 - Save screenshot at: `docs/res/admob-banner-android-test.png`
 - Expected content: Tasks screen showing loaded Google AdMob test banner from AdMob server.
+- Supporting screenshot link provided in issue discussion:  
+  https://github.com/user-attachments/assets/654c2e90-73db-43c6-992a-cf4cd3d47692
+- Note: this supporting image appears to document the plan text; replace/add with a real emulator/device in-app AdMob banner screenshot to satisfy the full requirement.
