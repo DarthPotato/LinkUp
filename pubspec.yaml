@@ -43,7 +43,7 @@ dependencies:
   dropdown_button2: 
     git:
       url: https://github.com/FlutterFlow/dropdown_button2.git
-      ref: 9bbeb2fd68e12615251a67208eb21bc75628c02c
+      ref: 514178337dfbea442f617daed39c704b57593fc9
       path: packages/dropdown_button2
   easy_debounce: 2.0.1
   file_picker: 10.1.9
@@ -73,6 +73,7 @@ dependencies:
   from_css_color: 2.0.0
   go_router: 12.1.3
   google_fonts: 6.3.3
+  google_mobile_ads: 6.0.0
   google_sign_in: 6.3.0
   google_sign_in_android: 6.2.1
   google_sign_in_ios: 5.9.0

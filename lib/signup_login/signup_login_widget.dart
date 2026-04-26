@@ -82,9 +82,6 @@ class _SignupLoginWidgetState extends State<SignupLoginWidget>
             child: Container(
               width: double.infinity,
               height: double.infinity,
-              constraints: BoxConstraints(
-                maxWidth: 400.0,
-              ),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
               ),
@@ -94,26 +91,41 @@ class _SignupLoginWidgetState extends State<SignupLoginWidget>
                   key: ValueKey('Column_v5m4'),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 50.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'a5luvs7u' /* LinkUp */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .displayMedium
-                                      .override(
-                                        font: GoogleFonts.readexPro(
+                      Container(
+                        width: double.infinity,
+                        height: MediaQuery.sizeOf(context).height * 0.15,
+                        decoration: BoxDecoration(),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 20.0, 0.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Align(
+                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 50.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'a5luvs7u' /* LinkUp */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .displayMedium
+                                        .override(
+                                          font: GoogleFonts.readexPro(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .displayMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .displayMedium
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
                                                   .displayMedium
@@ -123,51 +135,44 @@ class _SignupLoginWidgetState extends State<SignupLoginWidget>
                                                   .displayMedium
                                                   .fontStyle,
                                         ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .displayMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .displayMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 50.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  logFirebaseEvent(
-                                      'SIGNUP_LOGIN_PAGE_Icon_y32udlb5_ON_TAP');
-                                  logFirebaseEvent('Icon_rebuild_page');
-                                  safeSetState(() {});
-                                },
-                                child: Icon(
-                                  Icons.library_add_check_rounded,
-                                  color: valueOrDefault<Color>(
-                                    getRemoteConfigString('colorScheme') ==
-                                            'orange'
-                                        ? FlutterFlowTheme.of(context).aBTest
-                                        : FlutterFlowTheme.of(context)
-                                            .linkupGreen,
-                                    FlutterFlowTheme.of(context).linkupGreen,
                                   ),
-                                  size: 50.0,
                                 ),
                               ),
-                            ),
-                          ],
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 0.0, 50.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    logFirebaseEvent(
+                                        'SIGNUP_LOGIN_PAGE_Icon_y32udlb5_ON_TAP');
+                                    logFirebaseEvent('Icon_rebuild_page');
+                                    safeSetState(() {});
+                                  },
+                                  child: Icon(
+                                    Icons.library_add_check_rounded,
+                                    color: valueOrDefault<Color>(
+                                      getRemoteConfigString('colorScheme') ==
+                                              'orange'
+                                          ? FlutterFlowTheme.of(context).aBTest
+                                          : FlutterFlowTheme.of(context)
+                                              .linkupGreen,
+                                      FlutterFlowTheme.of(context).linkupGreen,
+                                    ),
+                                    size: 50.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       Container(
                         width: double.infinity,
-                        height: 525.0,
+                        height: MediaQuery.sizeOf(context).height * 0.5,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
@@ -1206,293 +1211,332 @@ class _SignupLoginWidgetState extends State<SignupLoginWidget>
                           ],
                         ),
                       ),
-                      Container(
-                        width: double.infinity,
-                        height: 150.0,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.rectangle,
-                        ),
-                        child: Stack(
-                          alignment: AlignmentDirectional(0.0, 1.0),
-                          children: [
-                            if (_model.tabBarCurrentIndex == 1)
-                              Align(
-                                alignment: AlignmentDirectional(0.0, 1.0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 20.0),
-                                  child: FFButtonWidget(
-                                    key: ValueKey('Login-Button_0q8t'),
-                                    onPressed: () async {
-                                      logFirebaseEvent(
-                                          'SIGNUP_LOGIN_PAGE_Login-Button_ON_TAP');
-                                      logFirebaseEvent(
-                                          'Login-Button_validate_form');
-                                      if (_model.formKey2.currentState ==
-                                              null ||
-                                          !_model.formKey2.currentState!
-                                              .validate()) {
-                                        return;
-                                      }
-                                      logFirebaseEvent('Login-Button_auth');
-                                      GoRouter.of(context).prepareAuthEvent();
-
-                                      final user =
-                                          await authManager.signInWithEmail(
-                                        context,
-                                        _model.loginEmailTextController.text,
-                                        _model.loginPasswordTextController.text,
-                                      );
-                                      if (user == null) {
-                                        return;
-                                      }
-
-                                      logFirebaseEvent(
-                                          'Login-Button_firestore_query');
-                                      _model.metricsPersonalDoc =
-                                          await queryMetricsPersonalRecordOnce(
-                                        queryBuilder: (metricsPersonalRecord) =>
-                                            metricsPersonalRecord.where(
-                                          'user',
-                                          isEqualTo: currentUserReference,
-                                        ),
-                                        singleRecord: true,
-                                      ).then((s) => s.firstOrNull);
-                                      logFirebaseEvent(
-                                          'Login-Button_backend_call');
-
-                                      await _model.metricsPersonalDoc!.reference
-                                          .update({
-                                        ...createMetricsPersonalRecordData(
-                                          activeToday: 1,
-                                          lastActive: getCurrentTimestamp,
-                                        ),
-                                        ...mapToFirestore(
-                                          {
-                                            'logins': FieldValue.increment(1),
-                                          },
-                                        ),
-                                      });
-                                      if ((_model.metricsPersonalDoc!.logins >
-                                              3) &&
-                                          (_model.metricsPersonalDoc!.logins <
-                                              5)) {
-                                        logFirebaseEvent(
-                                            'Login-Button_navigate_to');
-
-                                        context.goNamedAuth(
-                                            NPSQuestionWidget.routeName,
-                                            context.mounted);
-                                      } else {
-                                        logFirebaseEvent(
-                                            'Login-Button_navigate_to');
-
-                                        context.goNamedAuth(
-                                            AiPageWidget.routeName,
-                                            context.mounted);
-                                      }
-
-                                      safeSetState(() {});
-                                    },
-                                    text: FFLocalizations.of(context).getText(
-                                      'igpxcvot' /* Login */,
-                                    ),
-                                    options: FFButtonOptions(
-                                      width: double.infinity,
-                                      height: 60.0,
+                      Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: double.infinity,
+                            height: MediaQuery.sizeOf(context).height * 0.15,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.rectangle,
+                            ),
+                            child: Stack(
+                              alignment: AlignmentDirectional(0.0, 1.0),
+                              children: [
+                                if (_model.tabBarCurrentIndex == 1)
+                                  Align(
+                                    alignment: AlignmentDirectional(0.0, 1.0),
+                                    child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: getRemoteConfigString(
-                                                  'colorScheme') ==
-                                              'orange'
-                                          ? FlutterFlowTheme.of(context).aBTest
-                                          : FlutterFlowTheme.of(context)
-                                              .linkupGreen,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                            font: GoogleFonts.readexPro(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontStyle,
+                                          0.0, 0.0, 0.0, 20.0),
+                                      child: FFButtonWidget(
+                                        key: ValueKey('Login-Button_0q8t'),
+                                        onPressed: () async {
+                                          logFirebaseEvent(
+                                              'SIGNUP_LOGIN_PAGE_Login-Button_ON_TAP');
+                                          logFirebaseEvent(
+                                              'Login-Button_validate_form');
+                                          if (_model.formKey2.currentState ==
+                                                  null ||
+                                              !_model.formKey2.currentState!
+                                                  .validate()) {
+                                            return;
+                                          }
+                                          logFirebaseEvent('Login-Button_auth');
+                                          GoRouter.of(context)
+                                              .prepareAuthEvent();
+
+                                          final user =
+                                              await authManager.signInWithEmail(
+                                            context,
+                                            _model
+                                                .loginEmailTextController.text,
+                                            _model.loginPasswordTextController
+                                                .text,
+                                          );
+                                          if (user == null) {
+                                            return;
+                                          }
+
+                                          logFirebaseEvent(
+                                              'Login-Button_firestore_query');
+                                          _model.metricsPersonalDoc =
+                                              await queryMetricsPersonalRecordOnce(
+                                            queryBuilder:
+                                                (metricsPersonalRecord) =>
+                                                    metricsPersonalRecord.where(
+                                              'user',
+                                              isEqualTo: currentUserReference,
                                             ),
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontStyle,
+                                            singleRecord: true,
+                                          ).then((s) => s.firstOrNull);
+                                          logFirebaseEvent(
+                                              'Login-Button_backend_call');
+
+                                          await _model
+                                              .metricsPersonalDoc!.reference
+                                              .update({
+                                            ...createMetricsPersonalRecordData(
+                                              activeToday: 1,
+                                              lastActive: getCurrentTimestamp,
+                                            ),
+                                            ...mapToFirestore(
+                                              {
+                                                'logins':
+                                                    FieldValue.increment(1),
+                                              },
+                                            ),
+                                          });
+                                          if ((_model.metricsPersonalDoc!
+                                                      .logins >
+                                                  3) &&
+                                              (_model.metricsPersonalDoc!
+                                                      .logins <
+                                                  5)) {
+                                            logFirebaseEvent(
+                                                'Login-Button_navigate_to');
+
+                                            context.goNamedAuth(
+                                                NPSQuestionWidget.routeName,
+                                                context.mounted);
+                                          } else {
+                                            logFirebaseEvent(
+                                                'Login-Button_navigate_to');
+
+                                            context.goNamedAuth(
+                                                AiPageWidget.routeName,
+                                                context.mounted);
+                                          }
+
+                                          safeSetState(() {});
+                                        },
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          'igpxcvot' /* Login */,
+                                        ),
+                                        options: FFButtonOptions(
+                                          width: double.infinity,
+                                          height: 60.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 0.0, 16.0, 0.0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: getRemoteConfigString(
+                                                      'colorScheme') ==
+                                                  'orange'
+                                              ? FlutterFlowTheme.of(context)
+                                                  .aBTest
+                                              : FlutterFlowTheme.of(context)
+                                                  .linkupGreen,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .headlineSmall
+                                              .override(
+                                                font: GoogleFonts.readexPro(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                          elevation: 0.0,
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            width: 1.0,
                                           ),
-                                      elevation: 0.0,
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        width: 1.0,
+                                          borderRadius:
+                                              BorderRadius.circular(24.0),
+                                        ),
                                       ),
-                                      borderRadius: BorderRadius.circular(24.0),
                                     ),
                                   ),
-                                ),
-                              ),
-                            if (_model.tabBarCurrentIndex == 0)
-                              Align(
-                                alignment: AlignmentDirectional(0.0, 1.0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 20.0),
-                                  child: FFButtonWidget(
-                                    key: ValueKey('Signup-Button_6xu1'),
-                                    onPressed: () async {
-                                      logFirebaseEvent(
-                                          'SIGNUP_LOGIN_PAGE_Signup-Button_ON_TAP');
-                                      logFirebaseEvent(
-                                          'Signup-Button_validate_form');
-                                      if (_model.formKey1.currentState ==
-                                              null ||
-                                          !_model.formKey1.currentState!
-                                              .validate()) {
-                                        return;
-                                      }
-                                      logFirebaseEvent(
-                                          'Signup-Button_google_analytics_event');
-                                      logFirebaseEvent('sign_click');
-                                      logFirebaseEvent('Signup-Button_auth');
-                                      GoRouter.of(context).prepareAuthEvent();
-                                      if (_model.signupPasswordTextController
-                                              .text !=
-                                          _model
-                                              .signupConfirmPasswordTextController
-                                              .text) {
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          SnackBar(
-                                            content: Text(
-                                              'Passwords don\'t match!',
-                                            ),
-                                          ),
-                                        );
-                                        return;
-                                      }
+                                if (_model.tabBarCurrentIndex == 0)
+                                  Align(
+                                    alignment: AlignmentDirectional(0.0, 1.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 20.0),
+                                      child: FFButtonWidget(
+                                        key: ValueKey('Signup-Button_6xu1'),
+                                        onPressed: () async {
+                                          logFirebaseEvent(
+                                              'SIGNUP_LOGIN_PAGE_Signup-Button_ON_TAP');
+                                          logFirebaseEvent(
+                                              'Signup-Button_validate_form');
+                                          if (_model.formKey1.currentState ==
+                                                  null ||
+                                              !_model.formKey1.currentState!
+                                                  .validate()) {
+                                            return;
+                                          }
+                                          logFirebaseEvent(
+                                              'Signup-Button_google_analytics_event');
+                                          logFirebaseEvent('sign_click');
+                                          logFirebaseEvent(
+                                              'Signup-Button_auth');
+                                          GoRouter.of(context)
+                                              .prepareAuthEvent();
+                                          if (_model
+                                                  .signupPasswordTextController
+                                                  .text !=
+                                              _model
+                                                  .signupConfirmPasswordTextController
+                                                  .text) {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Passwords don\'t match!',
+                                                ),
+                                              ),
+                                            );
+                                            return;
+                                          }
 
-                                      final user = await authManager
-                                          .createAccountWithEmail(
-                                        context,
-                                        _model.signupEmailTextController.text,
-                                        _model
-                                            .signupPasswordTextController.text,
-                                      );
-                                      if (user == null) {
-                                        return;
-                                      }
-
-                                      await UsersRecord.collection
-                                          .doc(user.uid)
-                                          .update(createUsersRecordData(
-                                            email: _model
+                                          final user = await authManager
+                                              .createAccountWithEmail(
+                                            context,
+                                            _model
                                                 .signupEmailTextController.text,
-                                            createdTime: getCurrentTimestamp,
-                                          ));
+                                            _model.signupPasswordTextController
+                                                .text,
+                                          );
+                                          if (user == null) {
+                                            return;
+                                          }
 
-                                      logFirebaseEvent(
-                                          'Signup-Button_google_analytics_event');
-                                      logFirebaseEvent('sign_success');
-                                      logFirebaseEvent(
-                                          'Signup-Button_backend_call');
+                                          await UsersRecord.collection
+                                              .doc(user.uid)
+                                              .update(createUsersRecordData(
+                                                email: _model
+                                                    .signupEmailTextController
+                                                    .text,
+                                                createdTime:
+                                                    getCurrentTimestamp,
+                                              ));
 
-                                      await MetricsPersonalRecord.collection
-                                          .doc()
-                                          .set(createMetricsPersonalRecordData(
-                                            user: currentUserReference,
-                                            activeToday: 1,
-                                            firstActive: getCurrentTimestamp,
-                                            lastActive: getCurrentTimestamp,
-                                            logins: 1,
-                                            npsScore: 0.0,
-                                            adoptionFlag: 0,
-                                            clicks: 0,
-                                            impressions: 0,
-                                            aiCounts:
-                                                createAIPromptTypeCountStruct(
-                                              companyInformation: 0,
-                                              interviewMeetingPreparation: 0,
-                                              askInterviewMeetingQuestions: 0,
-                                              email: 0,
-                                              networkingPreparation: 0,
-                                              clearUnsetFields: false,
-                                              create: true,
-                                            ),
-                                          ));
-                                      logFirebaseEvent(
-                                          'Signup-Button_navigate_to');
+                                          logFirebaseEvent(
+                                              'Signup-Button_google_analytics_event');
+                                          logFirebaseEvent('sign_success');
+                                          logFirebaseEvent(
+                                              'Signup-Button_backend_call');
 
-                                      context.goNamedAuth(
-                                          ProfileWidget.routeName,
-                                          context.mounted);
-                                    },
-                                    text: FFLocalizations.of(context).getText(
-                                      '2m48nnnl' /* Sign up */,
-                                    ),
-                                    options: FFButtonOptions(
-                                      width: double.infinity,
-                                      height: 60.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: getRemoteConfigString(
-                                                  'colorScheme') ==
-                                              'orange'
-                                          ? FlutterFlowTheme.of(context).aBTest
-                                          : FlutterFlowTheme.of(context)
-                                              .linkupGreen,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                            font: GoogleFonts.readexPro(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontStyle,
-                                            ),
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontStyle,
+                                          await MetricsPersonalRecord.collection
+                                              .doc()
+                                              .set(
+                                                  createMetricsPersonalRecordData(
+                                                user: currentUserReference,
+                                                activeToday: 1,
+                                                firstActive:
+                                                    getCurrentTimestamp,
+                                                lastActive: getCurrentTimestamp,
+                                                logins: 1,
+                                                npsScore: 0.0,
+                                                adoptionFlag: 0,
+                                                clicks: 0,
+                                                impressions: 0,
+                                                aiCounts:
+                                                    createAIPromptTypeCountStruct(
+                                                  companyInformation: 0,
+                                                  interviewMeetingPreparation:
+                                                      0,
+                                                  askInterviewMeetingQuestions:
+                                                      0,
+                                                  email: 0,
+                                                  networkingPreparation: 0,
+                                                  clearUnsetFields: false,
+                                                  create: true,
+                                                ),
+                                              ));
+                                          logFirebaseEvent(
+                                              'Signup-Button_navigate_to');
+
+                                          context.goNamedAuth(
+                                              ProfileWidget.routeName,
+                                              context.mounted);
+                                        },
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          '2m48nnnl' /* Sign up */,
+                                        ),
+                                        options: FFButtonOptions(
+                                          width: double.infinity,
+                                          height: 60.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 0.0, 16.0, 0.0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: getRemoteConfigString(
+                                                      'colorScheme') ==
+                                                  'orange'
+                                              ? FlutterFlowTheme.of(context)
+                                                  .aBTest
+                                              : FlutterFlowTheme.of(context)
+                                                  .linkupGreen,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .headlineSmall
+                                              .override(
+                                                font: GoogleFonts.readexPro(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                          elevation: 0.0,
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            width: 1.0,
                                           ),
-                                      elevation: 0.0,
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        width: 1.0,
+                                          borderRadius:
+                                              BorderRadius.circular(24.0),
+                                        ),
                                       ),
-                                      borderRadius: BorderRadius.circular(24.0),
                                     ),
                                   ),
-                                ),
-                              ),
-                          ],
-                        ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),

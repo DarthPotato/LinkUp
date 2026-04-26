@@ -257,21 +257,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zh_Hans': '',
     },
   },
-  // ExpandedMeeting
-  {
-    'p6h6h1in': {
-      'en': 'Prep Details',
-      'zh_Hans': '',
-    },
-    'xemm0iqj': {
-      'en': 'LinkUp',
-      'zh_Hans': '',
-    },
-    'phz4m8my': {
-      'en': 'Go Back',
-      'zh_Hans': '',
-    },
-  },
   // Profile
   {
     'rshdrd0s': {
@@ -296,6 +281,32 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'g0uw8foz': {
       'en': 'Home',
+      'zh_Hans': '',
+    },
+  },
+  // Base_Meeting_Prep
+  {
+    'uisbavmw': {
+      'en': 'Professional Prep',
+      'zh_Hans': '',
+    },
+    'l0cha1xp': {
+      'en': 'Search professional prep...',
+      'zh_Hans': '',
+    },
+  },
+  // ExpandedMeeting
+  {
+    'p6h6h1in': {
+      'en': 'Prep Details',
+      'zh_Hans': '',
+    },
+    'xemm0iqj': {
+      'en': 'LinkUp',
+      'zh_Hans': '',
+    },
+    'phz4m8my': {
+      'en': 'Go Back',
       'zh_Hans': '',
     },
   },
@@ -327,17 +338,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zh_Hans': '',
     },
   },
-  // Base_Meeting_Prep
-  {
-    'uisbavmw': {
-      'en': 'Professional Prep',
-      'zh_Hans': '',
-    },
-    'l0cha1xp': {
-      'en': 'Search professional prep...',
-      'zh_Hans': '',
-    },
-  },
   // ExpandedEmail
   {
     'ku12fajj': {
@@ -352,7 +352,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Go Back',
       'zh_Hans': '',
     },
-    'rntwumkz': {
+    'mch2j6uo': {
       'en': 'Home',
       'zh_Hans': '',
     },

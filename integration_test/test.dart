@@ -69,7 +69,7 @@ void main() async {
 
     await tester.tap(find.byKey(const ValueKey('Text_kihw')));
     await tester.pumpAndSettle(const Duration(milliseconds: 10000));
-    await tester.tap(find.byKey(const ValueKey('IconButton_d08i')));
+    await tester.tap(find.byKey(const ValueKey('UNDEFINED')));
     await tester.pumpAndSettle(const Duration(milliseconds: 1000));
     await tester.tap(find.text('Select...'));
     await tester.pumpAndSettle(const Duration(milliseconds: 1000));

@@ -45,13 +45,13 @@ class _ProfessionalsWidgetState extends State<ProfessionalsWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300.0,
-      height: 150.0,
+      width: MediaQuery.sizeOf(context).width * 0.6,
+      height: 175.0,
       child: Stack(
         children: [
           Container(
-            width: 300.0,
-            height: 150.0,
+            width: MediaQuery.sizeOf(context).width * 0.6,
+            height: 175.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
               borderRadius: BorderRadius.circular(24.0),

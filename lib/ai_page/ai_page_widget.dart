@@ -65,11 +65,7 @@ class _AiPageWidgetState extends State<AiPageWidget> {
           child: Align(
             alignment: AlignmentDirectional(0.0, 0.0),
             child: Container(
-              width: 400.0,
               height: double.infinity,
-              constraints: BoxConstraints(
-                maxWidth: 400.0,
-              ),
               decoration: BoxDecoration(),
               child: SingleChildScrollView(
                 child: Column(
@@ -80,7 +76,7 @@ class _AiPageWidgetState extends State<AiPageWidget> {
                       alignment: AlignmentDirectional(0.0, -1.0),
                       child: Container(
                         width: double.infinity,
-                        height: 100.0,
+                        height: MediaQuery.sizeOf(context).height * 0.25,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
@@ -89,120 +85,141 @@ class _AiPageWidgetState extends State<AiPageWidget> {
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Padding(
-                              padding: EdgeInsets.all(6.0),
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'wakh6v4o' /* LinkUp AI */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .headlineMedium
-                                    .override(
-                                      font: GoogleFonts.readexPro(
+                            Container(
+                              width: double.infinity,
+                              height: MediaQuery.sizeOf(context).height * 0.075,
+                              decoration: BoxDecoration(),
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsets.all(6.0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'wakh6v4o' /* LinkUp AI */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineMedium
+                                      .override(
+                                        font: GoogleFonts.readexPro(
+                                          fontWeight: FontWeight.bold,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineMedium
+                                                  .fontStyle,
+                                        ),
+                                        color: Color(0xFF333333),
+                                        fontSize: 28.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,
                                         fontStyle: FlutterFlowTheme.of(context)
                                             .headlineMedium
                                             .fontStyle,
                                       ),
-                                      color: Color(0xFF333333),
-                                      fontSize: 28.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.bold,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .headlineMedium
-                                          .fontStyle,
-                                    ),
+                                ),
                               ),
                             ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                FlutterFlowIconButton(
-                                  borderRadius: 8.0,
-                                  buttonSize: 40.0,
-                                  fillColor: Color(0xFF9AD1D4),
-                                  icon: Icon(
-                                    Icons.logout,
-                                    color: FlutterFlowTheme.of(context).info,
-                                    size: 24.0,
-                                  ),
-                                  onPressed: () async {
-                                    logFirebaseEvent(
-                                        'AI_PAGE_PAGE_logout_ICN_ON_TAP');
-                                    logFirebaseEvent('IconButton_auth');
-                                    GoRouter.of(context).prepareAuthEvent();
-                                    await authManager.signOut();
-                                    GoRouter.of(context)
-                                        .clearRedirectLocation();
-
-                                    logFirebaseEvent('IconButton_navigate_to');
-
-                                    context.goNamedAuth(
-                                        SignupLoginWidget.routeName,
-                                        context.mounted);
-                                  },
-                                ),
-                                FlutterFlowIconButton(
-                                  borderRadius: 8.0,
-                                  buttonSize: 40.0,
-                                  fillColor: Color(0xFF9AD1D4),
-                                  icon: Icon(
-                                    Icons.person_sharp,
-                                    color: FlutterFlowTheme.of(context).info,
-                                    size: 24.0,
-                                  ),
-                                  onPressed: () async {
-                                    logFirebaseEvent(
-                                        'AI_PAGE_PAGE_person_sharp_ICN_ON_TAP');
-                                    logFirebaseEvent('IconButton_navigate_to');
-
-                                    context.goNamed(ProfileWidget.routeName);
-                                  },
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: AlignmentDirectional(0.0, -1.0),
-                      child: Container(
-                        width: double.infinity,
-                        height: 75.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.all(6.0),
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'hppmc2a3' /* Hello and welcome to the LinkU... */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyLarge
-                                    .override(
-                                      font: GoogleFonts.inter(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .fontStyle,
-                                      ),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyLarge
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyLarge
-                                          .fontStyle,
+                            Container(
+                              height: MediaQuery.sizeOf(context).height * 0.075,
+                              decoration: BoxDecoration(),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  FlutterFlowIconButton(
+                                    borderRadius: 8.0,
+                                    buttonSize:
+                                        MediaQuery.sizeOf(context).width * 0.1,
+                                    fillColor: Color(0xFF9AD1D4),
+                                    icon: Icon(
+                                      Icons.logout,
+                                      color: FlutterFlowTheme.of(context).info,
+                                      size: 24.0,
                                     ),
+                                    onPressed: () async {
+                                      logFirebaseEvent(
+                                          'AI_PAGE_PAGE_logout_ICN_ON_TAP');
+                                      logFirebaseEvent('IconButton_auth');
+                                      GoRouter.of(context).prepareAuthEvent();
+                                      await authManager.signOut();
+                                      GoRouter.of(context)
+                                          .clearRedirectLocation();
+
+                                      logFirebaseEvent(
+                                          'IconButton_navigate_to');
+
+                                      context.goNamedAuth(
+                                          SignupLoginWidget.routeName,
+                                          context.mounted);
+                                    },
+                                  ),
+                                  FlutterFlowIconButton(
+                                    borderRadius: 8.0,
+                                    buttonSize:
+                                        MediaQuery.sizeOf(context).width * 0.1,
+                                    fillColor: Color(0xFF9AD1D4),
+                                    icon: Icon(
+                                      Icons.person_sharp,
+                                      color: FlutterFlowTheme.of(context).info,
+                                      size: 24.0,
+                                    ),
+                                    onPressed: () async {
+                                      logFirebaseEvent(
+                                          'AI_PAGE_PAGE_person_sharp_ICN_ON_TAP');
+                                      logFirebaseEvent(
+                                          'IconButton_navigate_to');
+
+                                      context.goNamed(ProfileWidget.routeName);
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.0, -1.0),
+                              child: Container(
+                                width: double.infinity,
+                                height: MediaQuery.sizeOf(context).height * 0.1,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.all(6.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'hppmc2a3' /* Hello and welcome to the LinkU... */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .override(
+                                              font: GoogleFonts.inter(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ],
@@ -215,6 +232,7 @@ class _AiPageWidgetState extends State<AiPageWidget> {
                         decoration: BoxDecoration(),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Row(
                               mainAxisSize: MainAxisSize.max,
@@ -360,35 +378,40 @@ class _AiPageWidgetState extends State<AiPageWidget> {
                                       final listViewResponsesRecord =
                                           listViewResponsesRecordList[
                                               listViewIndex];
-                                      return InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          logFirebaseEvent(
-                                              'AI_PAGE_PAGE_Container_llsb5svw_ON_TAP');
-                                          logFirebaseEvent(
-                                              'Professionals_navigate_to');
+                                      return Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            logFirebaseEvent(
+                                                'AI_PAGE_PAGE_Container_llsb5svw_ON_TAP');
+                                            logFirebaseEvent(
+                                                'Professionals_navigate_to');
 
-                                          context.goNamed(
-                                            ExpandedMeetingWidget.routeName,
-                                            queryParameters: {
-                                              'responseDoc': serializeParam(
-                                                listViewResponsesRecord,
-                                                ParamType.Document,
-                                              ),
-                                            }.withoutNulls,
-                                            extra: <String, dynamic>{
-                                              'responseDoc':
+                                            context.goNamed(
+                                              ExpandedMeetingWidget.routeName,
+                                              queryParameters: {
+                                                'responseDoc': serializeParam(
                                                   listViewResponsesRecord,
-                                            },
-                                          );
-                                        },
-                                        child: ProfessionalsWidget(
-                                          key: Key(
-                                              'Keylls_${listViewIndex}_of_${listViewResponsesRecordList.length}'),
-                                          responsesDoc: listViewResponsesRecord,
+                                                  ParamType.Document,
+                                                ),
+                                              }.withoutNulls,
+                                              extra: <String, dynamic>{
+                                                'responseDoc':
+                                                    listViewResponsesRecord,
+                                              },
+                                            );
+                                          },
+                                          child: ProfessionalsWidget(
+                                            key: Key(
+                                                'Keylls_${listViewIndex}_of_${listViewResponsesRecordList.length}'),
+                                            responsesDoc:
+                                                listViewResponsesRecord,
+                                          ),
                                         ),
                                       );
                                     },
@@ -557,35 +580,40 @@ class _AiPageWidgetState extends State<AiPageWidget> {
                                       final listViewResponsesRecord =
                                           listViewResponsesRecordList[
                                               listViewIndex];
-                                      return InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          logFirebaseEvent(
-                                              'AI_PAGE_PAGE_Container_52gannvi_ON_TAP');
-                                          logFirebaseEvent(
-                                              'Professionals_navigate_to');
+                                      return Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            logFirebaseEvent(
+                                                'AI_PAGE_PAGE_Container_52gannvi_ON_TAP');
+                                            logFirebaseEvent(
+                                                'Professionals_navigate_to');
 
-                                          context.goNamed(
-                                            ExpandedEmailWidget.routeName,
-                                            queryParameters: {
-                                              'responseDoc': serializeParam(
-                                                listViewResponsesRecord,
-                                                ParamType.Document,
-                                              ),
-                                            }.withoutNulls,
-                                            extra: <String, dynamic>{
-                                              'responseDoc':
+                                            context.goNamed(
+                                              ExpandedEmailWidget.routeName,
+                                              queryParameters: {
+                                                'responseDoc': serializeParam(
                                                   listViewResponsesRecord,
-                                            },
-                                          );
-                                        },
-                                        child: ProfessionalsWidget(
-                                          key: Key(
-                                              'Key52g_${listViewIndex}_of_${listViewResponsesRecordList.length}'),
-                                          responsesDoc: listViewResponsesRecord,
+                                                  ParamType.Document,
+                                                ),
+                                              }.withoutNulls,
+                                              extra: <String, dynamic>{
+                                                'responseDoc':
+                                                    listViewResponsesRecord,
+                                              },
+                                            );
+                                          },
+                                          child: ProfessionalsWidget(
+                                            key: Key(
+                                                'Key52g_${listViewIndex}_of_${listViewResponsesRecordList.length}'),
+                                            responsesDoc:
+                                                listViewResponsesRecord,
+                                          ),
                                         ),
                                       );
                                     },

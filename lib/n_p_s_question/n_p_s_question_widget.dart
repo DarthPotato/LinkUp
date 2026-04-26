@@ -57,9 +57,6 @@ class _NPSQuestionWidgetState extends State<NPSQuestionWidget> {
           child: Align(
             alignment: AlignmentDirectional(0.0, 0.0),
             child: Container(
-              constraints: BoxConstraints(
-                maxWidth: 400.0,
-              ),
               decoration: BoxDecoration(),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -67,12 +64,13 @@ class _NPSQuestionWidgetState extends State<NPSQuestionWidget> {
                 children: [
                   Container(
                     width: double.infinity,
-                    height: 300.0,
+                    height: MediaQuery.sizeOf(context).height * 0.4,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Padding(
                           padding: EdgeInsets.all(10.0),

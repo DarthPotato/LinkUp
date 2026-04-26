@@ -103,6 +103,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => EmailWidget(),
         ),
         FFRoute(
+          name: ProfileWidget.routeName,
+          path: ProfileWidget.routePath,
+          builder: (context, params) => ProfileWidget(),
+        ),
+        FFRoute(
+          name: BaseMeetingPrepWidget.routeName,
+          path: BaseMeetingPrepWidget.routePath,
+          builder: (context, params) => BaseMeetingPrepWidget(),
+        ),
+        FFRoute(
           name: ExpandedMeetingWidget.routeName,
           path: ExpandedMeetingWidget.routePath,
           asyncParams: {
@@ -116,19 +126,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           ),
         ),
         FFRoute(
-          name: ProfileWidget.routeName,
-          path: ProfileWidget.routePath,
-          builder: (context, params) => ProfileWidget(),
-        ),
-        FFRoute(
           name: AiPageWidget.routeName,
           path: AiPageWidget.routePath,
           builder: (context, params) => AiPageWidget(),
-        ),
-        FFRoute(
-          name: BaseMeetingPrepWidget.routeName,
-          path: BaseMeetingPrepWidget.routePath,
-          builder: (context, params) => BaseMeetingPrepWidget(),
         ),
         FFRoute(
           name: ExpandedEmailWidget.routeName,

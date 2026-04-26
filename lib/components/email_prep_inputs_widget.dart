@@ -65,10 +65,6 @@ class _EmailPrepInputsWidgetState extends State<EmailPrepInputsWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 400.0,
-      constraints: BoxConstraints(
-        maxWidth: 400.0,
-      ),
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: BorderRadius.circular(16.0),
