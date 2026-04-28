@@ -65,7 +65,9 @@ class _ExpandedMeetingWidgetState extends State<ExpandedMeetingWidget> {
                 children: [
                   Container(
                     height: MediaQuery.sizeOf(context).height * 0.05,
-                    decoration: BoxDecoration(),
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).primary,
+                    ),
                     child: Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
@@ -102,14 +104,15 @@ class _ExpandedMeetingWidgetState extends State<ExpandedMeetingWidget> {
                                 width: 28.0,
                                 height: 28.0,
                                 decoration: BoxDecoration(
-                                  color: Color(0xFFC2F9BB),
+                                  color: FlutterFlowTheme.of(context).primary,
                                   shape: BoxShape.circle,
                                 ),
                                 child: Align(
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Icon(
                                     Icons.check_circle_outline,
-                                    color: Color(0xFF2E7D32),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     size: 18.0,
                                   ),
                                 ),
@@ -142,32 +145,39 @@ class _ExpandedMeetingWidgetState extends State<ExpandedMeetingWidget> {
                       ),
                     ),
                   ),
-                  Container(
-                    width: double.infinity,
-                    height: MediaQuery.sizeOf(context).height * 0.2,
-                    decoration: BoxDecoration(),
-                    child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                      child: Text(
-                        'Professional Preparation: ${widget.responseDoc?.shortDescription}',
-                        style:
-                            FlutterFlowTheme.of(context).displaySmall.override(
-                                  font: GoogleFonts.urbanist(
-                                    fontWeight: FontWeight.normal,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .displaySmall
-                                        .fontStyle,
-                                  ),
-                                  color: Color(0xFF101213),
-                                  fontSize: 34.0,
-                                  letterSpacing: 0.0,
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                    child: Container(
+                      width: double.infinity,
+                      height: MediaQuery.sizeOf(context).height * 0.2,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).primary,
+                      ),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 16.0, 0.0),
+                        child: Text(
+                          'Professional Preparation: ${widget.responseDoc?.shortDescription}',
+                          style: FlutterFlowTheme.of(context)
+                              .displaySmall
+                              .override(
+                                font: GoogleFonts.urbanist(
                                   fontWeight: FontWeight.normal,
                                   fontStyle: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .fontStyle,
-                                  lineHeight: 1.2,
                                 ),
+                                color: Color(0xFF101213),
+                                fontSize: 34.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.normal,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .displaySmall
+                                    .fontStyle,
+                                lineHeight: 1.2,
+                              ),
+                        ),
                       ),
                     ),
                   ),
@@ -199,22 +209,13 @@ class _ExpandedMeetingWidgetState extends State<ExpandedMeetingWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      font: GoogleFonts.inter(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodyMediumIsCustom,
                                     ),
                               ),
                             ),
@@ -248,39 +249,30 @@ class _ExpandedMeetingWidgetState extends State<ExpandedMeetingWidget> {
                                 16.0, 0.0, 16.0, 0.0),
                             iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: Color(0xFF9AD1D4),
+                            color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .titleSmallIsCustom,
                                 ),
                             elevation: 0.0,
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              width: 2.0,
+                            ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                         ),
                       ),
                     ),
                   ),
-                ]
-                    .divide(SizedBox(height: 16.0))
-                    .addToStart(SizedBox(height: 16.0))
-                    .addToEnd(SizedBox(height: 24.0)),
+                ].addToEnd(SizedBox(height: 24.0)),
               ),
             ),
           ),

@@ -9,7 +9,6 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'professional_prep_inputs_model.dart';
 export 'professional_prep_inputs_model.dart';
 
@@ -80,17 +79,11 @@ class _ProfessionalPrepInputsWidgetState
                 'd099cx41' /* New Preparation for a Professi... */,
               ),
               style: FlutterFlowTheme.of(context).headlineSmall.override(
-                    font: GoogleFonts.readexPro(
-                      fontWeight:
-                          FlutterFlowTheme.of(context).headlineSmall.fontWeight,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).headlineSmall.fontStyle,
-                    ),
+                    fontFamily:
+                        FlutterFlowTheme.of(context).headlineSmallFamily,
                     letterSpacing: 0.0,
-                    fontWeight:
-                        FlutterFlowTheme.of(context).headlineSmall.fontWeight,
-                    fontStyle:
-                        FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                    useGoogleFonts:
+                        !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                   ),
             ),
             Column(
@@ -101,19 +94,11 @@ class _ProfessionalPrepInputsWidgetState
                     'gj5h7nnm' /* Task Type */,
                   ),
                   style: FlutterFlowTheme.of(context).labelMedium.override(
-                        font: GoogleFonts.inter(
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .fontWeight,
-                          fontStyle: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .fontStyle,
-                        ),
+                        fontFamily:
+                            FlutterFlowTheme.of(context).labelMediumFamily,
                         letterSpacing: 0.0,
-                        fontWeight:
-                            FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                        useGoogleFonts:
+                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
                       ),
                 ),
               ].divide(SizedBox(height: 8.0)),
@@ -140,17 +125,10 @@ class _ProfessionalPrepInputsWidgetState
               width: double.infinity,
               height: 40.0,
               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                    font: GoogleFonts.inter(
-                      fontWeight:
-                          FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                    ),
+                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                     letterSpacing: 0.0,
-                    fontWeight:
-                        FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                    fontStyle:
-                        FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                    useGoogleFonts:
+                        !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                   ),
               hintText: FFLocalizations.of(context).getText(
                 'n2uzajr6' /* Select... */,
@@ -179,19 +157,11 @@ class _ProfessionalPrepInputsWidgetState
                     'mmj8udbn' /* Company Name */,
                   ),
                   style: FlutterFlowTheme.of(context).labelMedium.override(
-                        font: GoogleFonts.inter(
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .fontWeight,
-                          fontStyle: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .fontStyle,
-                        ),
+                        fontFamily:
+                            FlutterFlowTheme.of(context).labelMediumFamily,
                         letterSpacing: 0.0,
-                        fontWeight:
-                            FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                        useGoogleFonts:
+                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
                       ),
                 ),
                 TextFormField(
@@ -202,20 +172,11 @@ class _ProfessionalPrepInputsWidgetState
                   obscureText: false,
                   decoration: InputDecoration(
                     hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                          font: GoogleFonts.inter(
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
                           letterSpacing: 0.0,
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                          useGoogleFonts:
+                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                         ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -249,18 +210,11 @@ class _ProfessionalPrepInputsWidgetState
                     fillColor: FlutterFlowTheme.of(context).primaryBackground,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        font: GoogleFonts.inter(
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                        ),
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
                         letterSpacing: 0.0,
-                        fontWeight:
-                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        useGoogleFonts:
+                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                       ),
                   minLines: 1,
                   validator: _model.companyNameInputTextControllerValidator
@@ -276,19 +230,11 @@ class _ProfessionalPrepInputsWidgetState
                     '61r8jde0' /* Extra Details */,
                   ),
                   style: FlutterFlowTheme.of(context).labelMedium.override(
-                        font: GoogleFonts.inter(
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .fontWeight,
-                          fontStyle: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .fontStyle,
-                        ),
+                        fontFamily:
+                            FlutterFlowTheme.of(context).labelMediumFamily,
                         letterSpacing: 0.0,
-                        fontWeight:
-                            FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                        useGoogleFonts:
+                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
                       ),
                 ),
                 TextFormField(
@@ -299,20 +245,11 @@ class _ProfessionalPrepInputsWidgetState
                   obscureText: false,
                   decoration: InputDecoration(
                     hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                          font: GoogleFonts.inter(
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
                           letterSpacing: 0.0,
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                          useGoogleFonts:
+                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                         ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -346,18 +283,11 @@ class _ProfessionalPrepInputsWidgetState
                     fillColor: FlutterFlowTheme.of(context).primaryBackground,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        font: GoogleFonts.inter(
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                        ),
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
                         letterSpacing: 0.0,
-                        fontWeight:
-                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        useGoogleFonts:
+                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                       ),
                   maxLines: 6,
                   minLines: 3,
@@ -386,25 +316,16 @@ class _ProfessionalPrepInputsWidgetState
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primaryBackground,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          font: GoogleFonts.inter(
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .fontStyle,
-                          ),
+                          fontFamily:
+                              FlutterFlowTheme.of(context).titleSmallFamily,
                           color: FlutterFlowTheme.of(context).secondaryText,
                           letterSpacing: 0.0,
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .titleSmall
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                          useGoogleFonts:
+                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                         ),
                     elevation: 0.0,
                     borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).alternate,
+                      color: FlutterFlowTheme.of(context).secondary,
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(8.0),
@@ -546,21 +467,12 @@ class _ProfessionalPrepInputsWidgetState
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          font: GoogleFonts.inter(
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .fontStyle,
-                          ),
+                          fontFamily:
+                              FlutterFlowTheme.of(context).titleSmallFamily,
                           color: Colors.white,
                           letterSpacing: 0.0,
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .titleSmall
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                          useGoogleFonts:
+                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                         ),
                     elevation: 0.0,
                     borderSide: BorderSide(

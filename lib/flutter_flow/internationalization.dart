@@ -318,7 +318,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'hppmc2a3': {
       'en':
-          'Hello and welcome to the LinkUp AI. See your recent requests here. Click to see expanded view or see all to see and add more.',
+          'Hello and welcome to the LinkUp AI! See your recent requests here. Click to see expanded view or see all to see and add more.',
       'zh_Hans': '',
     },
     'ua39h0kp': {
@@ -360,7 +360,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // EmailPrepInputs
   {
     'sxeoegaa': {
-      'en': 'New Preparation for an Email',
+      'en': 'New Email Draft',
       'zh_Hans': '',
     },
     'sc54e8lr': {

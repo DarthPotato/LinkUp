@@ -2,7 +2,6 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'professionals_model.dart';
 export 'professionals_model.dart';
 
@@ -45,13 +44,13 @@ class _ProfessionalsWidgetState extends State<ProfessionalsWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.sizeOf(context).width * 0.6,
+      width: MediaQuery.sizeOf(context).width * 1.0,
       height: 175.0,
       child: Stack(
         children: [
           Container(
-            width: MediaQuery.sizeOf(context).width * 0.6,
-            height: 175.0,
+            width: MediaQuery.sizeOf(context).width * 1.0,
+            height: 200.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
               borderRadius: BorderRadius.circular(24.0),
@@ -60,68 +59,94 @@ class _ProfessionalsWidgetState extends State<ProfessionalsWidget> {
                 width: 2.0,
               ),
             ),
-            child: ListView(
-              padding: EdgeInsets.fromLTRB(
-                0,
-                10.0,
-                0,
-                0,
-              ),
-              shrinkWrap: true,
-              scrollDirection: Axis.vertical,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(6.0, 0.0, 6.0, 0.0),
-                  child: Text(
-                    'Type: ${valueOrDefault<String>(
-                      widget.responsesDoc?.type,
-                      'type[Default]',
-                    )}',
-                    style: FlutterFlowTheme.of(context).titleLarge.override(
-                          font: GoogleFonts.inter(
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .fontStyle,
-                          ),
-                          letterSpacing: 0.0,
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .titleLarge
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).titleLarge.fontStyle,
-                        ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(6.0, 0.0, 6.0, 10.0),
-                  child: Text(
-                    valueOrDefault<String>(
-                      widget.responsesDoc?.shortDescription,
-                      'shortDesc[Default]',
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Align(
+                alignment: AlignmentDirectional(0.0, 0.0),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 10.0, 0.0),
+                  child: Container(
+                    width: 70.0,
+                    height: 70.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).primary,
+                      borderRadius: BorderRadius.circular(12.0),
                     ),
-                    style: FlutterFlowTheme.of(context).titleLarge.override(
-                          font: GoogleFonts.inter(
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .fontStyle,
-                          ),
-                          letterSpacing: 0.0,
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .titleLarge
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                    child: Align(
+                      alignment: AlignmentDirectional(0.0, 0.0),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            12.0, 0.0, 24.0, 0.0),
+                        child: Icon(
+                          Icons.plagiarism_sharp,
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          size: 48.0,
                         ),
+                      ),
+                    ),
                   ),
                 ),
-              ].divide(SizedBox(height: 10.0)),
-            ),
+              ),
+              Expanded(
+                child: Align(
+                  alignment: AlignmentDirectional(-1.0, 0.0),
+                  child: ListView(
+                    padding: EdgeInsets.fromLTRB(
+                      0,
+                      10.0,
+                      0,
+                      0,
+                    ),
+                    shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    children: [
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(6.0, 0.0, 6.0, 0.0),
+                        child: Text(
+                          'Type: ${valueOrDefault<String>(
+                            widget.responsesDoc?.type,
+                            'type[Default]',
+                          )}',
+                          style: FlutterFlowTheme.of(context)
+                              .titleLarge
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleLargeFamily,
+                                color: FlutterFlowTheme.of(context).primary,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .titleLargeIsCustom,
+                              ),
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(6.0, 0.0, 6.0, 10.0),
+                        child: Text(
+                          valueOrDefault<String>(
+                            widget.responsesDoc?.shortDescription,
+                            'shortDesc[Default]',
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .titleLarge
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleLargeFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .titleLargeIsCustom,
+                              ),
+                        ),
+                      ),
+                    ].divide(SizedBox(height: 10.0)),
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),

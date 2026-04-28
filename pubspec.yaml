@@ -112,6 +112,7 @@ dependencies:
   sign_in_with_apple: 7.0.1
   sign_in_with_apple_platform_interface: 2.0.0
   sign_in_with_apple_web: 3.0.0
+  simple_gradient_text: 1.2.3
   sqflite: 2.3.3+1
   sqflite_common: 2.5.4+3
   stream_transform: 2.1.0
@@ -150,12 +151,13 @@ dev_dependencies:
 
 
 flutter_launcher_icons:
-  android: true
+  android: 'launcher_icon'
   ios: true
-  remove_alpha_ios: true
   web:
     generate: true
-  image_path: 'assets/images/app_launcher_icon.png'
+  image_path: 'assets/images/app_launcher_icon.PNG'
+  adaptive_icon_background: '#00000000'
+  adaptive_icon_foreground: 'assets/images/adaptive_foreground_icon.jpg'
 
 
 # For information on the generic Dart part of this file, see the
@@ -180,6 +182,10 @@ flutter:
     - assets/jsons/
 
     - assets/environment_values/
+  fonts:
+    - family: 'Minion Pro'
+      fonts:
+        - asset: assets/fonts/Minion_Pro_Regular.ttf
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

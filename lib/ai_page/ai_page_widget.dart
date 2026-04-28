@@ -7,7 +7,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'ai_page_model.dart';
 export 'ai_page_model.dart';
 
@@ -78,8 +77,7 @@ class _AiPageWidgetState extends State<AiPageWidget> {
                         width: double.infinity,
                         height: MediaQuery.sizeOf(context).height * 0.25,
                         decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: FlutterFlowTheme.of(context).tertiary,
                         ),
                         alignment: AlignmentDirectional(0.0, -1.0),
                         child: Column(
@@ -88,7 +86,9 @@ class _AiPageWidgetState extends State<AiPageWidget> {
                             Container(
                               width: double.infinity,
                               height: MediaQuery.sizeOf(context).height * 0.075,
-                              decoration: BoxDecoration(),
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context).primary,
+                              ),
                               alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
                                 padding: EdgeInsets.all(6.0),
@@ -97,79 +97,91 @@ class _AiPageWidgetState extends State<AiPageWidget> {
                                     'wakh6v4o' /* LinkUp AI */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
-                                      .headlineMedium
+                                      .titleMedium
                                       .override(
-                                        font: GoogleFonts.readexPro(
-                                          fontWeight: FontWeight.bold,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineMedium
-                                                  .fontStyle,
-                                        ),
-                                        color: Color(0xFF333333),
-                                        fontSize: 28.0,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleMediumFamily,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 34.0,
                                         letterSpacing: 0.0,
-                                        fontWeight: FontWeight.bold,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .headlineMedium
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .titleMediumIsCustom,
                                       ),
                                 ),
                               ),
                             ),
                             Container(
                               height: MediaQuery.sizeOf(context).height * 0.075,
-                              decoration: BoxDecoration(),
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context).primary,
+                              ),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  FlutterFlowIconButton(
-                                    borderRadius: 8.0,
-                                    buttonSize:
-                                        MediaQuery.sizeOf(context).width * 0.1,
-                                    fillColor: Color(0xFF9AD1D4),
-                                    icon: Icon(
-                                      Icons.logout,
-                                      color: FlutterFlowTheme.of(context).info,
-                                      size: 24.0,
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 10.0),
+                                    child: FlutterFlowIconButton(
+                                      borderRadius: 8.0,
+                                      buttonSize:
+                                          MediaQuery.sizeOf(context).width *
+                                              0.1,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      icon: Icon(
+                                        Icons.logout,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 24.0,
+                                      ),
+                                      onPressed: () async {
+                                        logFirebaseEvent(
+                                            'AI_PAGE_PAGE_logout_ICN_ON_TAP');
+                                        logFirebaseEvent('IconButton_auth');
+                                        GoRouter.of(context).prepareAuthEvent();
+                                        await authManager.signOut();
+                                        GoRouter.of(context)
+                                            .clearRedirectLocation();
+
+                                        logFirebaseEvent(
+                                            'IconButton_navigate_to');
+
+                                        context.goNamedAuth(
+                                            SignupLoginWidget.routeName,
+                                            context.mounted);
+                                      },
                                     ),
-                                    onPressed: () async {
-                                      logFirebaseEvent(
-                                          'AI_PAGE_PAGE_logout_ICN_ON_TAP');
-                                      logFirebaseEvent('IconButton_auth');
-                                      GoRouter.of(context).prepareAuthEvent();
-                                      await authManager.signOut();
-                                      GoRouter.of(context)
-                                          .clearRedirectLocation();
-
-                                      logFirebaseEvent(
-                                          'IconButton_navigate_to');
-
-                                      context.goNamedAuth(
-                                          SignupLoginWidget.routeName,
-                                          context.mounted);
-                                    },
                                   ),
-                                  FlutterFlowIconButton(
-                                    borderRadius: 8.0,
-                                    buttonSize:
-                                        MediaQuery.sizeOf(context).width * 0.1,
-                                    fillColor: Color(0xFF9AD1D4),
-                                    icon: Icon(
-                                      Icons.person_sharp,
-                                      color: FlutterFlowTheme.of(context).info,
-                                      size: 24.0,
-                                    ),
-                                    onPressed: () async {
-                                      logFirebaseEvent(
-                                          'AI_PAGE_PAGE_person_sharp_ICN_ON_TAP');
-                                      logFirebaseEvent(
-                                          'IconButton_navigate_to');
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 10.0),
+                                    child: FlutterFlowIconButton(
+                                      borderRadius: 8.0,
+                                      buttonSize:
+                                          MediaQuery.sizeOf(context).width *
+                                              0.1,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      icon: Icon(
+                                        Icons.person_sharp,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 24.0,
+                                      ),
+                                      onPressed: () async {
+                                        logFirebaseEvent(
+                                            'AI_PAGE_PAGE_person_sharp_ICN_ON_TAP');
+                                        logFirebaseEvent(
+                                            'IconButton_navigate_to');
 
-                                      context.goNamed(ProfileWidget.routeName);
-                                    },
+                                        context
+                                            .goNamed(ProfileWidget.routeName);
+                                      },
+                                    ),
                                   ),
                                 ],
                               ),
@@ -196,25 +208,13 @@ class _AiPageWidgetState extends State<AiPageWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLargeFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyLargeIsCustom,
                                             ),
                                       ),
                                     ),
@@ -238,83 +238,82 @@ class _AiPageWidgetState extends State<AiPageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      6.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'ua39h0kp' /* Recent Professional Prep: */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleLarge
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleLarge
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleLarge
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleLarge
-                                                  .fontStyle,
-                                        ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
                                   ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 6.0, 0.0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      logFirebaseEvent(
-                                          'AI_PAGE_PAGE_Text_i6a9djun_ON_TAP');
-                                      logFirebaseEvent('Text_navigate_to');
-
-                                      context.goNamed(
-                                          BaseMeetingPrepWidget.routeName);
-                                    },
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        6.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      key: ValueKey('Text_kihw'),
                                       FFLocalizations.of(context).getText(
-                                        'v447sgnj' /* See all */,
+                                        'ua39h0kp' /* Recent Professional Prep: */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .titleLarge
                                           .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleLarge
-                                                      .fontStyle,
-                                            ),
-                                            color: Color(0xFFC2F9BB),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleLargeFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleLarge
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleLarge
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleLargeIsCustom,
                                           ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      borderRadius: BorderRadius.circular(12.0),
+                                      border: Border.all(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        width: 2.0,
+                                      ),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.all(4.0),
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          logFirebaseEvent(
+                                              'AI_PAGE_PAGE_Text_i6a9djun_ON_TAP');
+                                          logFirebaseEvent('Text_navigate_to');
+
+                                          context.goNamed(
+                                              BaseMeetingPrepWidget.routeName);
+                                        },
+                                        child: Text(
+                                          key: ValueKey('Text_kihw'),
+                                          FFLocalizations.of(context).getText(
+                                            'v447sgnj' /* See all */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleLarge
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleLargeFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .titleLargeIsCustom,
+                                              ),
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -448,72 +447,67 @@ class _AiPageWidgetState extends State<AiPageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
                                         .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleLarge
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleLarge
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLargeFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleLarge
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .titleLargeIsCustom,
                                         ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 6.0, 0.0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      logFirebaseEvent(
-                                          'AI_PAGE_PAGE_Text_yzeryyno_ON_TAP');
-                                      logFirebaseEvent('Text_navigate_to');
-
-                                      context.goNamed(EmailWidget.routeName);
-                                    },
-                                    child: Text(
-                                      key: ValueKey('Text_zrwg'),
-                                      FFLocalizations.of(context).getText(
-                                        '8qd000ix' /* See all */,
+                                      0.0, 0.0, 10.0, 0.0),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      borderRadius: BorderRadius.circular(12.0),
+                                      border: Border.all(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        width: 2.0,
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleLarge
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleLarge
-                                                      .fontStyle,
-                                            ),
-                                            color: Color(0xFFC2F9BB),
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleLarge
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleLarge
-                                                    .fontStyle,
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.all(4.0),
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          logFirebaseEvent(
+                                              'AI_PAGE_PAGE_Text_yzeryyno_ON_TAP');
+                                          logFirebaseEvent('Text_navigate_to');
+
+                                          context
+                                              .goNamed(EmailWidget.routeName);
+                                        },
+                                        child: Text(
+                                          key: ValueKey('Text_zrwg'),
+                                          FFLocalizations.of(context).getText(
+                                            '8qd000ix' /* See all */,
                                           ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleLarge
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleLargeFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .titleLargeIsCustom,
+                                              ),
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),

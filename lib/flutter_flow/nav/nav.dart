@@ -331,7 +331,7 @@ class FFRoute {
               ? Container(
                   color: Colors.transparent,
                   child: Image.asset(
-                    'assets/images/908.jpg',
+                    'assets/images/ChatGPT_Image_Apr_28,_2026,_10_47_48_AM.png',
                     fit: BoxFit.cover,
                   ),
                 )

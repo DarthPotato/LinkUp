@@ -7,7 +7,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'email_prep_inputs_model.dart';
 export 'email_prep_inputs_model.dart';
 
@@ -76,20 +75,14 @@ class _EmailPrepInputsWidgetState extends State<EmailPrepInputsWidget> {
           children: [
             Text(
               FFLocalizations.of(context).getText(
-                'sxeoegaa' /* New Preparation for an Email */,
+                'sxeoegaa' /* New Email Draft */,
               ),
               style: FlutterFlowTheme.of(context).headlineSmall.override(
-                    font: GoogleFonts.readexPro(
-                      fontWeight:
-                          FlutterFlowTheme.of(context).headlineSmall.fontWeight,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).headlineSmall.fontStyle,
-                    ),
+                    fontFamily:
+                        FlutterFlowTheme.of(context).headlineSmallFamily,
                     letterSpacing: 0.0,
-                    fontWeight:
-                        FlutterFlowTheme.of(context).headlineSmall.fontWeight,
-                    fontStyle:
-                        FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                    useGoogleFonts:
+                        !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                   ),
             ),
             Column(
@@ -100,19 +93,11 @@ class _EmailPrepInputsWidgetState extends State<EmailPrepInputsWidget> {
                     'sc54e8lr' /* Person Name */,
                   ),
                   style: FlutterFlowTheme.of(context).labelMedium.override(
-                        font: GoogleFonts.inter(
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .fontWeight,
-                          fontStyle: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .fontStyle,
-                        ),
+                        fontFamily:
+                            FlutterFlowTheme.of(context).labelMediumFamily,
                         letterSpacing: 0.0,
-                        fontWeight:
-                            FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                        useGoogleFonts:
+                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
                       ),
                 ),
                 Semantics(
@@ -124,27 +109,18 @@ class _EmailPrepInputsWidgetState extends State<EmailPrepInputsWidget> {
                     textInputAction: TextInputAction.next,
                     obscureText: false,
                     decoration: InputDecoration(
-                      hintStyle:
-                          FlutterFlowTheme.of(context).bodyMedium.override(
-                                font: GoogleFonts.inter(
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
-                                letterSpacing: 0.0,
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontStyle,
-                              ),
+                      hintStyle: FlutterFlowTheme.of(context)
+                          .bodyMedium
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: !FlutterFlowTheme.of(context)
+                                .bodyMediumIsCustom,
+                          ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alternate,
+                          color: FlutterFlowTheme.of(context).primary,
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
@@ -174,20 +150,11 @@ class _EmailPrepInputsWidgetState extends State<EmailPrepInputsWidget> {
                       fillColor: FlutterFlowTheme.of(context).primaryBackground,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          font: GoogleFonts.inter(
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
                           letterSpacing: 0.0,
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                          useGoogleFonts:
+                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                         ),
                     minLines: 1,
                     validator: _model.personNameInputTextControllerValidator
@@ -204,19 +171,11 @@ class _EmailPrepInputsWidgetState extends State<EmailPrepInputsWidget> {
                     'h3flrh12' /* Company Name */,
                   ),
                   style: FlutterFlowTheme.of(context).labelMedium.override(
-                        font: GoogleFonts.inter(
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .fontWeight,
-                          fontStyle: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .fontStyle,
-                        ),
+                        fontFamily:
+                            FlutterFlowTheme.of(context).labelMediumFamily,
                         letterSpacing: 0.0,
-                        fontWeight:
-                            FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                        useGoogleFonts:
+                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
                       ),
                 ),
                 Semantics(
@@ -228,27 +187,18 @@ class _EmailPrepInputsWidgetState extends State<EmailPrepInputsWidget> {
                     textInputAction: TextInputAction.next,
                     obscureText: false,
                     decoration: InputDecoration(
-                      hintStyle:
-                          FlutterFlowTheme.of(context).bodyMedium.override(
-                                font: GoogleFonts.inter(
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
-                                letterSpacing: 0.0,
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontStyle,
-                              ),
+                      hintStyle: FlutterFlowTheme.of(context)
+                          .bodyMedium
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: !FlutterFlowTheme.of(context)
+                                .bodyMediumIsCustom,
+                          ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alternate,
+                          color: FlutterFlowTheme.of(context).primary,
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
@@ -278,20 +228,11 @@ class _EmailPrepInputsWidgetState extends State<EmailPrepInputsWidget> {
                       fillColor: FlutterFlowTheme.of(context).primaryBackground,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          font: GoogleFonts.inter(
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
                           letterSpacing: 0.0,
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                          useGoogleFonts:
+                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                         ),
                     minLines: 1,
                     validator: _model.companyNameInputTextControllerValidator
@@ -308,19 +249,11 @@ class _EmailPrepInputsWidgetState extends State<EmailPrepInputsWidget> {
                     'i8wqswhs' /* Extra Details */,
                   ),
                   style: FlutterFlowTheme.of(context).labelMedium.override(
-                        font: GoogleFonts.inter(
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .fontWeight,
-                          fontStyle: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .fontStyle,
-                        ),
+                        fontFamily:
+                            FlutterFlowTheme.of(context).labelMediumFamily,
                         letterSpacing: 0.0,
-                        fontWeight:
-                            FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                        useGoogleFonts:
+                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
                       ),
                 ),
                 Semantics(
@@ -332,27 +265,18 @@ class _EmailPrepInputsWidgetState extends State<EmailPrepInputsWidget> {
                     textInputAction: TextInputAction.done,
                     obscureText: false,
                     decoration: InputDecoration(
-                      hintStyle:
-                          FlutterFlowTheme.of(context).bodyMedium.override(
-                                font: GoogleFonts.inter(
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
-                                letterSpacing: 0.0,
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontStyle,
-                              ),
+                      hintStyle: FlutterFlowTheme.of(context)
+                          .bodyMedium
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: !FlutterFlowTheme.of(context)
+                                .bodyMediumIsCustom,
+                          ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alternate,
+                          color: FlutterFlowTheme.of(context).primary,
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
@@ -382,20 +306,11 @@ class _EmailPrepInputsWidgetState extends State<EmailPrepInputsWidget> {
                       fillColor: FlutterFlowTheme.of(context).primaryBackground,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          font: GoogleFonts.inter(
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
                           letterSpacing: 0.0,
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                          useGoogleFonts:
+                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                         ),
                     maxLines: 6,
                     minLines: 3,
@@ -425,21 +340,12 @@ class _EmailPrepInputsWidgetState extends State<EmailPrepInputsWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primaryBackground,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          font: GoogleFonts.inter(
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .fontStyle,
-                          ),
+                          fontFamily:
+                              FlutterFlowTheme.of(context).titleSmallFamily,
                           color: FlutterFlowTheme.of(context).secondaryText,
                           letterSpacing: 0.0,
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .titleSmall
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                          useGoogleFonts:
+                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                         ),
                     elevation: 0.0,
                     borderSide: BorderSide(
@@ -466,7 +372,7 @@ class _EmailPrepInputsWidgetState extends State<EmailPrepInputsWidget> {
                       agentCloudFunctionName: 'aIEmailAgent',
                       provider: 'GOOGLE',
                       agentJson:
-                          '{\"status\":\"LIVE\",\"identifier\":{\"name\":\"aIEmailAgent\",\"key\":\"89bz6\"},\"name\":\"AI Email Agent\",\"description\":\"This AI agent is for responding to users with what they prompt for, typically relating to drafting emails.\",\"aiModel\":{\"provider\":\"GOOGLE\",\"model\":\"gemini-2.5-flash\",\"parameters\":{\"temperature\":{\"inputValue\":1},\"maxTokens\":{\"inputValue\":65535},\"topP\":{\"inputValue\":0.95}},\"messages\":[{\"role\":\"SYSTEM\",\"text\":\"You are an AI Assistant for LinkUp, an app that helps people prepare in the professional world offering email drafting.\\n\\nYour role is to return a JSON response to a given prompt, typically relating to drafting emails. You will also be given a PDF file which is the user\'s resume, which you can analyze to create responses for the given circumstance. If the PDF does not look like a resume, please ignore it as the user did not follow proper instructions, and respond to the best of your ability still.\\n\\nThe JSON response format should look like this:\\n\\n{\\n\\\"type\\\": \\\"Email\\\"\\n\\\"short_description\\\": \\\"string\\\"\\n\\\"response\\\": \\\"string\\\"\\n}\\n\\n\\\"type\\\" is always Email. \\\"short_description\\\" should be a very short description (5 words or less) summarizing the response to use as a header. \\\"response\\\" should just be the email in text for the given prompt.\\n\\nYou should respond in a detailed response in proper email format with a greeting, a body, and a send off with signature.\"}]},\"requestOptions\":{\"requestTypes\":[\"PLAINTEXT\",\"PDF\"]},\"responseOptions\":{\"responseType\":\"JSON\"}}',
+                          '{\"status\":\"LIVE\",\"identifier\":{\"name\":\"aIEmailAgent\",\"key\":\"89bz6\"},\"name\":\"AI Email Agent\",\"description\":\"This AI agent is for responding to users with what they prompt for, typically relating to drafting emails.\",\"aiModel\":{\"provider\":\"GOOGLE\",\"model\":\"gemini-2.5-flash\",\"parameters\":{\"temperature\":{\"inputValue\":1},\"maxTokens\":{\"inputValue\":65535},\"topP\":{\"inputValue\":0.95}},\"messages\":[{\"role\":\"SYSTEM\",\"text\":\"You are an AI Assistant for LinkUp, an app that helps people prepare in the professional world offering email drafting.\\n\\nYour role is to return a JSON response to a given prompt, typically relating to drafting emails. You will also be given a PDF file which is the user\'s resume, which you can analyze to create responses for the given circumstance. If the PDF does not look like a resume, please ignore it as the user did not follow proper instructions, and respond to the best of your ability still.\\n\\nThe JSON response format should look like this:\\n\\n{\\n\\\"type\\\": \\\"Email\\\"\\n\\\"short_description\\\": \\\"string\\\"\\n\\\"response\\\": \\\"string\\\"\\n}\\n\\n\\\"type\\\" is always Email. \\\"short_description\\\" should be a very short description (5 words or less) summarizing the response to use as a header. \\\"response\\\" should just be the email in text for the given prompt.\\n\\nYou should respond in a detailed response in proper email format with a greeting, a body, and a send off with signature.\\n\\nAdditionally, you should assume the respondent is Jewish and greet them according to jewish custom with shalom, and mention sabbath and all that, since this is mainly a jewish networking app.\"}]},\"requestOptions\":{\"requestTypes\":[\"PLAINTEXT\",\"PDF\"]},\"responseOptions\":{\"responseType\":\"JSON\"}}',
                       responseType: 'JSON',
                     ).then((generatedText) {
                       safeSetState(() => _model.aiResponse = generatedText);
@@ -532,21 +438,12 @@ class _EmailPrepInputsWidgetState extends State<EmailPrepInputsWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          font: GoogleFonts.inter(
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .fontStyle,
-                          ),
+                          fontFamily:
+                              FlutterFlowTheme.of(context).titleSmallFamily,
                           color: Colors.white,
                           letterSpacing: 0.0,
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .titleSmall
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                          useGoogleFonts:
+                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                         ),
                     elevation: 0.0,
                     borderSide: BorderSide(
