@@ -63,400 +63,447 @@ class _EmailPrepInputsWidgetState extends State<EmailPrepInputsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: FlutterFlowTheme.of(context).secondaryBackground,
-        borderRadius: BorderRadius.circular(16.0),
-      ),
-      child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              FFLocalizations.of(context).getText(
-                'sxeoegaa' /* New Email Draft */,
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: FlutterFlowTheme.of(context).secondaryBackground,
+              borderRadius: BorderRadius.circular(16.0),
+              border: Border.all(
+                color: FlutterFlowTheme.of(context).primary,
+                width: 2.0,
               ),
-              style: FlutterFlowTheme.of(context).headlineSmall.override(
-                    fontFamily:
-                        FlutterFlowTheme.of(context).headlineSmallFamily,
-                    letterSpacing: 0.0,
-                    useGoogleFonts:
-                        !FlutterFlowTheme.of(context).headlineSmallIsCustom,
-                  ),
             ),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  FFLocalizations.of(context).getText(
-                    'sc54e8lr' /* Person Name */,
-                  ),
-                  style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).labelMediumFamily,
-                        letterSpacing: 0.0,
-                        useGoogleFonts:
-                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    width: double.infinity,
+                    height: MediaQuery.sizeOf(context).height * 0.05,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).primary,
+                    ),
+                    alignment: AlignmentDirectional(0.0, 0.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'sxeoegaa' /* New Email Draft */,
                       ),
-                ),
-                Semantics(
-                  label: 'Person Name Field',
-                  child: TextFormField(
-                    controller: _model.personNameInputTextController,
-                    focusNode: _model.personNameInputFocusNode,
-                    autofocus: false,
-                    textInputAction: TextInputAction.next,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      hintStyle: FlutterFlowTheme.of(context)
-                          .bodyMedium
-                          .override(
-                            fontFamily:
-                                FlutterFlowTheme.of(context).bodyMediumFamily,
-                            letterSpacing: 0.0,
-                            useGoogleFonts: !FlutterFlowTheme.of(context)
-                                .bodyMediumIsCustom,
+                      style:
+                          FlutterFlowTheme.of(context).headlineSmall.override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .headlineSmallFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .headlineSmallIsCustom,
+                              ),
+                    ),
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        FFLocalizations.of(context).getText(
+                          'sc54e8lr' /* Person Name */,
+                        ),
+                        style:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelMediumIsCustom,
+                                ),
+                      ),
+                      Semantics(
+                        label: 'Person Name Field',
+                        child: TextFormField(
+                          controller: _model.personNameInputTextController,
+                          focusNode: _model.personNameInputFocusNode,
+                          autofocus: false,
+                          textInputAction: TextInputAction.next,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            hintStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .bodyMediumIsCustom,
+                                ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primary,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            filled: true,
+                            fillColor: Colors.white,
                           ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).primary,
-                          width: 1.0,
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .bodyMediumIsCustom,
+                              ),
+                          minLines: 1,
+                          validator: _model
+                              .personNameInputTextControllerValidator
+                              .asValidator(context),
                         ),
-                        borderRadius: BorderRadius.circular(8.0),
                       ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      filled: true,
-                      fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).bodyMediumFamily,
-                          letterSpacing: 0.0,
-                          useGoogleFonts:
-                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
-                        ),
-                    minLines: 1,
-                    validator: _model.personNameInputTextControllerValidator
-                        .asValidator(context),
+                    ].divide(SizedBox(height: 8.0)),
                   ),
-                ),
-              ].divide(SizedBox(height: 8.0)),
-            ),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  FFLocalizations.of(context).getText(
-                    'h3flrh12' /* Company Name */,
-                  ),
-                  style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).labelMediumFamily,
-                        letterSpacing: 0.0,
-                        useGoogleFonts:
-                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        FFLocalizations.of(context).getText(
+                          'h3flrh12' /* Company Name */,
+                        ),
+                        style:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelMediumIsCustom,
+                                ),
                       ),
-                ),
-                Semantics(
-                  label: 'Company Name Field',
-                  child: TextFormField(
-                    controller: _model.companyNameInputTextController,
-                    focusNode: _model.companyNameInputFocusNode,
-                    autofocus: false,
-                    textInputAction: TextInputAction.next,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      hintStyle: FlutterFlowTheme.of(context)
-                          .bodyMedium
-                          .override(
-                            fontFamily:
-                                FlutterFlowTheme.of(context).bodyMediumFamily,
-                            letterSpacing: 0.0,
-                            useGoogleFonts: !FlutterFlowTheme.of(context)
-                                .bodyMediumIsCustom,
+                      Semantics(
+                        label: 'Company Name Field',
+                        child: TextFormField(
+                          controller: _model.companyNameInputTextController,
+                          focusNode: _model.companyNameInputFocusNode,
+                          autofocus: false,
+                          textInputAction: TextInputAction.next,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            hintStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .bodyMediumIsCustom,
+                                ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primary,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            filled: true,
+                            fillColor: Colors.white,
                           ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).primary,
-                          width: 1.0,
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .bodyMediumIsCustom,
+                              ),
+                          minLines: 1,
+                          validator: _model
+                              .companyNameInputTextControllerValidator
+                              .asValidator(context),
                         ),
-                        borderRadius: BorderRadius.circular(8.0),
                       ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      filled: true,
-                      fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).bodyMediumFamily,
-                          letterSpacing: 0.0,
-                          useGoogleFonts:
-                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
-                        ),
-                    minLines: 1,
-                    validator: _model.companyNameInputTextControllerValidator
-                        .asValidator(context),
+                    ].divide(SizedBox(height: 8.0)),
                   ),
-                ),
-              ].divide(SizedBox(height: 8.0)),
-            ),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  FFLocalizations.of(context).getText(
-                    'i8wqswhs' /* Extra Details */,
-                  ),
-                  style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).labelMediumFamily,
-                        letterSpacing: 0.0,
-                        useGoogleFonts:
-                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        FFLocalizations.of(context).getText(
+                          'i8wqswhs' /* Extra Details */,
+                        ),
+                        style:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelMediumIsCustom,
+                                ),
                       ),
-                ),
-                Semantics(
-                  label: 'Extra Details Field',
-                  child: TextFormField(
-                    controller: _model.extraDetailsInputTextController,
-                    focusNode: _model.extraDetailsInputFocusNode,
-                    autofocus: false,
-                    textInputAction: TextInputAction.done,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      hintStyle: FlutterFlowTheme.of(context)
-                          .bodyMedium
-                          .override(
-                            fontFamily:
-                                FlutterFlowTheme.of(context).bodyMediumFamily,
-                            letterSpacing: 0.0,
-                            useGoogleFonts: !FlutterFlowTheme.of(context)
-                                .bodyMediumIsCustom,
+                      Semantics(
+                        label: 'Extra Details Field',
+                        child: TextFormField(
+                          controller: _model.extraDetailsInputTextController,
+                          focusNode: _model.extraDetailsInputFocusNode,
+                          autofocus: false,
+                          textInputAction: TextInputAction.done,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            hintStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .bodyMediumIsCustom,
+                                ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primary,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            filled: true,
+                            fillColor: Colors.white,
                           ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).primary,
-                          width: 1.0,
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .bodyMediumIsCustom,
+                              ),
+                          maxLines: 7,
+                          minLines: 5,
+                          keyboardType: TextInputType.multiline,
+                          validator: _model
+                              .extraDetailsInputTextControllerValidator
+                              .asValidator(context),
                         ),
-                        borderRadius: BorderRadius.circular(8.0),
                       ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      filled: true,
-                      fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).bodyMediumFamily,
-                          letterSpacing: 0.0,
-                          useGoogleFonts:
-                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
-                        ),
-                    maxLines: 6,
-                    minLines: 3,
-                    keyboardType: TextInputType.multiline,
-                    validator: _model.extraDetailsInputTextControllerValidator
-                        .asValidator(context),
+                    ].divide(SizedBox(height: 8.0)),
                   ),
-                ),
-              ].divide(SizedBox(height: 8.0)),
+                  Container(
+                    height: MediaQuery.sizeOf(context).height * 0.1,
+                    decoration: BoxDecoration(),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        FFButtonWidget(
+                          onPressed: () async {
+                            logFirebaseEvent(
+                                'EMAIL_PREP_INPUTS_COMP_CANCEL_BTN_ON_TAP');
+                            logFirebaseEvent('Button_bottom_sheet');
+                            Navigator.pop(context);
+                          },
+                          text: FFLocalizations.of(context).getText(
+                            'hapdldz9' /* Cancel */,
+                          ),
+                          options: FFButtonOptions(
+                            width: MediaQuery.sizeOf(context).width * 0.3,
+                            height: MediaQuery.sizeOf(context).height * 0.075,
+                            padding: EdgeInsets.all(8.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: Colors.white,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .titleSmallIsCustom,
+                                ),
+                            elevation: 0.0,
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        FFButtonWidget(
+                          onPressed: () async {
+                            logFirebaseEvent(
+                                'EMAIL_PREP_INPUTS_COMP_SUBMIT_BTN_ON_TAP');
+                            logFirebaseEvent('Button_a_i_agent');
+                            await callAiAgent(
+                              context: context,
+                              prompt: functions.generateEmailPrompt(
+                                  _model.personNameInputTextController.text,
+                                  _model.companyNameInputTextController.text,
+                                  _model.extraDetailsInputTextController.text,
+                                  currentUserDisplayName),
+                              pdfUrl: valueOrDefault(
+                                  currentUserDocument?.resume, ''),
+                              threadId: 'responseID2',
+                              agentCloudFunctionName: 'aIEmailAgent',
+                              provider: 'GOOGLE',
+                              agentJson:
+                                  '{\"status\":\"LIVE\",\"identifier\":{\"name\":\"aIEmailAgent\",\"key\":\"89bz6\"},\"name\":\"AI Email Agent\",\"description\":\"This AI agent is for responding to users with what they prompt for, typically relating to drafting emails.\",\"aiModel\":{\"provider\":\"GOOGLE\",\"model\":\"gemini-2.5-flash\",\"parameters\":{\"temperature\":{\"inputValue\":1},\"maxTokens\":{\"inputValue\":65535},\"topP\":{\"inputValue\":0.95}},\"messages\":[{\"role\":\"SYSTEM\",\"text\":\"You are an AI Assistant for LinkUp, an app that helps people prepare in the professional world offering email drafting.\\n\\nYour role is to return a JSON response to a given prompt, typically relating to drafting emails. You will also be given a PDF file which is the user\'s resume, which you can analyze to create responses for the given circumstance. If the PDF does not look like a resume, please ignore it as the user did not follow proper instructions, and respond to the best of your ability still.\\n\\nThe JSON response format should look like this:\\n\\n{\\n\\\"type\\\": \\\"Email\\\"\\n\\\"short_description\\\": \\\"string\\\"\\n\\\"response\\\": \\\"string\\\"\\n}\\n\\n\\\"type\\\" is always Email. \\\"short_description\\\" should be a very short description (4 words or less) summarizing the response to use as a header. \\\"response\\\" should just be the email in text for the given prompt.\\n\\nYou should respond in a detailed response in proper email format with a greeting, a body, and a send off with signature. Make sure to sign off with the name given in the prompt.\"}]},\"requestOptions\":{\"requestTypes\":[\"PLAINTEXT\",\"PDF\"]},\"responseOptions\":{\"responseType\":\"JSON\"}}',
+                              responseType: 'JSON',
+                            ).then((generatedText) {
+                              safeSetState(
+                                  () => _model.aiResponse = generatedText);
+                            });
+
+                            logFirebaseEvent('Button_backend_call');
+
+                            await ResponsesRecord.collection
+                                .doc()
+                                .set(createResponsesRecordData(
+                                  type: getJsonField(
+                                    _model.aiResponse,
+                                    r'''$.type''',
+                                  ).toString(),
+                                  shortDescription: getJsonField(
+                                    _model.aiResponse,
+                                    r'''$.short_description''',
+                                  ).toString(),
+                                  response: getJsonField(
+                                    _model.aiResponse,
+                                    r'''$.response''',
+                                  ).toString(),
+                                  user: currentUserReference,
+                                  time: getCurrentTimestamp,
+                                ));
+                            logFirebaseEvent('Button_firestore_query');
+                            _model.metricsPersonalDoc =
+                                await queryMetricsPersonalRecordOnce(
+                              queryBuilder: (metricsPersonalRecord) =>
+                                  metricsPersonalRecord.where(
+                                'user',
+                                isEqualTo: currentUserReference,
+                              ),
+                              singleRecord: true,
+                            ).then((s) => s.firstOrNull);
+                            logFirebaseEvent('Button_backend_call');
+
+                            await _model.metricsPersonalDoc!.reference
+                                .update(createMetricsPersonalRecordData(
+                              aiCounts: createAIPromptTypeCountStruct(
+                                fieldValues: {
+                                  'Email': FieldValue.increment(1),
+                                },
+                                clearUnsetFields: false,
+                              ),
+                              adoptionFlag: 1,
+                            ));
+                            logFirebaseEvent('Button_rebuild_component');
+                            _model.updatePage(() {});
+                            logFirebaseEvent('Button_bottom_sheet');
+                            Navigator.pop(context);
+
+                            safeSetState(() {});
+                          },
+                          text: FFLocalizations.of(context).getText(
+                            'knhvhmr9' /* Submit */,
+                          ),
+                          options: FFButtonOptions(
+                            width: MediaQuery.sizeOf(context).width * 0.3,
+                            height: MediaQuery.sizeOf(context).height * 0.075,
+                            padding: EdgeInsets.all(8.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .titleSmallIsCustom,
+                                ),
+                            elevation: 0.0,
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                      ].divide(SizedBox(width: 12.0)),
+                    ),
+                  ),
+                ].divide(SizedBox(height: 16.0)),
+              ),
             ),
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
-                  },
-                  text: FFLocalizations.of(context).getText(
-                    'hapdldz9' /* Cancel */,
-                  ),
-                  options: FFButtonOptions(
-                    width: 140.0,
-                    height: 48.0,
-                    padding: EdgeInsets.all(8.0),
-                    iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primaryBackground,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).titleSmallFamily,
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          letterSpacing: 0.0,
-                          useGoogleFonts:
-                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
-                        ),
-                    elevation: 0.0,
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).alternate,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-                FFButtonWidget(
-                  onPressed: () async {
-                    logFirebaseEvent(
-                        'EMAIL_PREP_INPUTS_COMP_SUBMIT_BTN_ON_TAP');
-                    logFirebaseEvent('Button_a_i_agent');
-                    await callAiAgent(
-                      context: context,
-                      prompt: functions.generateEmailPrompt(
-                          _model.personNameInputTextController.text,
-                          _model.companyNameInputTextController.text,
-                          _model.extraDetailsInputTextController.text,
-                          currentUserDisplayName),
-                      pdfUrl: valueOrDefault(currentUserDocument?.resume, ''),
-                      threadId: 'responseID2',
-                      agentCloudFunctionName: 'aIEmailAgent',
-                      provider: 'GOOGLE',
-                      agentJson:
-                          '{\"status\":\"LIVE\",\"identifier\":{\"name\":\"aIEmailAgent\",\"key\":\"89bz6\"},\"name\":\"AI Email Agent\",\"description\":\"This AI agent is for responding to users with what they prompt for, typically relating to drafting emails.\",\"aiModel\":{\"provider\":\"GOOGLE\",\"model\":\"gemini-2.5-flash\",\"parameters\":{\"temperature\":{\"inputValue\":1},\"maxTokens\":{\"inputValue\":65535},\"topP\":{\"inputValue\":0.95}},\"messages\":[{\"role\":\"SYSTEM\",\"text\":\"You are an AI Assistant for LinkUp, an app that helps people prepare in the professional world offering email drafting.\\n\\nYour role is to return a JSON response to a given prompt, typically relating to drafting emails. You will also be given a PDF file which is the user\'s resume, which you can analyze to create responses for the given circumstance. If the PDF does not look like a resume, please ignore it as the user did not follow proper instructions, and respond to the best of your ability still.\\n\\nThe JSON response format should look like this:\\n\\n{\\n\\\"type\\\": \\\"Email\\\"\\n\\\"short_description\\\": \\\"string\\\"\\n\\\"response\\\": \\\"string\\\"\\n}\\n\\n\\\"type\\\" is always Email. \\\"short_description\\\" should be a very short description (5 words or less) summarizing the response to use as a header. \\\"response\\\" should just be the email in text for the given prompt.\\n\\nYou should respond in a detailed response in proper email format with a greeting, a body, and a send off with signature.\\n\\nAdditionally, you should assume the respondent is Jewish and greet them according to jewish custom with shalom, and mention sabbath and all that, since this is mainly a jewish networking app.\"}]},\"requestOptions\":{\"requestTypes\":[\"PLAINTEXT\",\"PDF\"]},\"responseOptions\":{\"responseType\":\"JSON\"}}',
-                      responseType: 'JSON',
-                    ).then((generatedText) {
-                      safeSetState(() => _model.aiResponse = generatedText);
-                    });
-
-                    logFirebaseEvent('Button_backend_call');
-
-                    await ResponsesRecord.collection
-                        .doc()
-                        .set(createResponsesRecordData(
-                          type: getJsonField(
-                            _model.aiResponse,
-                            r'''$.type''',
-                          ).toString(),
-                          shortDescription: getJsonField(
-                            _model.aiResponse,
-                            r'''$.short_description''',
-                          ).toString(),
-                          response: getJsonField(
-                            _model.aiResponse,
-                            r'''$.response''',
-                          ).toString(),
-                          user: currentUserReference,
-                          time: getCurrentTimestamp,
-                        ));
-                    logFirebaseEvent('Button_firestore_query');
-                    _model.metricsPersonalDoc =
-                        await queryMetricsPersonalRecordOnce(
-                      queryBuilder: (metricsPersonalRecord) =>
-                          metricsPersonalRecord.where(
-                        'user',
-                        isEqualTo: currentUserReference,
-                      ),
-                      singleRecord: true,
-                    ).then((s) => s.firstOrNull);
-                    logFirebaseEvent('Button_backend_call');
-
-                    await _model.metricsPersonalDoc!.reference
-                        .update(createMetricsPersonalRecordData(
-                      aiCounts: createAIPromptTypeCountStruct(
-                        fieldValues: {
-                          'Email': FieldValue.increment(1),
-                        },
-                        clearUnsetFields: false,
-                      ),
-                      adoptionFlag: 1,
-                    ));
-                    logFirebaseEvent('Button_rebuild_component');
-                    _model.updatePage(() {});
-                    logFirebaseEvent('Button_bottom_sheet');
-                    Navigator.pop(context);
-
-                    safeSetState(() {});
-                  },
-                  text: FFLocalizations.of(context).getText(
-                    'knhvhmr9' /* Submit */,
-                  ),
-                  options: FFButtonOptions(
-                    width: 140.0,
-                    height: 48.0,
-                    padding: EdgeInsets.all(8.0),
-                    iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).titleSmallFamily,
-                          color: Colors.white,
-                          letterSpacing: 0.0,
-                          useGoogleFonts:
-                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
-                        ),
-                    elevation: 0.0,
-                    borderSide: BorderSide(
-                      color: Colors.transparent,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-              ].divide(SizedBox(width: 12.0)),
-            ),
-          ].divide(SizedBox(height: 16.0)),
-        ),
+          ),
+        ],
       ),
     );
   }

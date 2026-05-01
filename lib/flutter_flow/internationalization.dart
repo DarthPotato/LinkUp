@@ -264,7 +264,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zh_Hans': '',
     },
     'p6qfo0u2': {
-      'en': 'Name..',
+      'en': 'Name...',
       'zh_Hans': '',
     },
     '0pt24ezq': {

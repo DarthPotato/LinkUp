@@ -69,7 +69,7 @@ class _ProfessionalsWidgetState extends State<ProfessionalsWidget> {
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 10.0, 0.0),
                   child: Container(
-                    width: 70.0,
+                    width: 50.0,
                     height: 70.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primary,
@@ -77,14 +77,10 @@ class _ProfessionalsWidgetState extends State<ProfessionalsWidget> {
                     ),
                     child: Align(
                       alignment: AlignmentDirectional(0.0, 0.0),
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            12.0, 0.0, 24.0, 0.0),
-                        child: Icon(
-                          Icons.plagiarism_sharp,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          size: 48.0,
-                        ),
+                      child: Icon(
+                        Icons.plagiarism_sharp,
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        size: 40.0,
                       ),
                     ),
                   ),

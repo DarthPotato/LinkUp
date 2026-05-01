@@ -89,273 +89,271 @@ class _BaseMeetingPrepWidgetState extends State<BaseMeetingPrepWidget> {
           alignment: AlignmentDirectional(0.0, 0.0),
           child: Container(
             decoration: BoxDecoration(),
-            child: Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                child: Stack(
-                  children: [
-                    SingleChildScrollView(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            width: double.infinity,
-                            height: MediaQuery.sizeOf(context).height * 0.1,
-                            decoration: BoxDecoration(),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 24.0, 0.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  FlutterFlowIconButton(
-                                    borderRadius: 8.0,
-                                    buttonSize: 40.0,
-                                    fillColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    icon: Icon(
-                                      Icons.arrow_back,
-                                      color: FlutterFlowTheme.of(context).info,
-                                      size: 24.0,
-                                    ),
-                                    onPressed: () async {
-                                      logFirebaseEvent(
-                                          'BASE_MEETING_PREP_arrow_back_ICN_ON_TAP');
-                                      logFirebaseEvent(
-                                          'IconButton_navigate_to');
-
-                                      context.goNamed(AiPageWidget.routeName);
-                                    },
-                                  ),
-                                  Text(
-                                    FFLocalizations.of(context).getText(
-                                      'uisbavmw' /* Professional Prep */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineLarge
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineLargeFamily,
-                                          fontSize: 28.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.bold,
-                                          useGoogleFonts:
-                                              !FlutterFlowTheme.of(context)
-                                                  .headlineLargeIsCustom,
-                                        ),
-                                  ),
-                                ].divide(SizedBox(width: 12.0)),
-                              ),
-                            ),
+            child: Container(
+              width: double.infinity,
+              height: double.infinity,
+              child: Stack(
+                children: [
+                  SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: double.infinity,
+                          height: MediaQuery.sizeOf(context).height * 0.15,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context).primary,
                           ),
-                          Container(
-                            height: MediaQuery.sizeOf(context).height * 0.1,
-                            decoration: BoxDecoration(),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 8.0, 16.0, 16.0),
-                              child: Container(
-                                width: double.infinity,
-                                child: TextFormField(
-                                  controller: _model.textController,
-                                  focusNode: _model.textFieldFocusNode,
-                                  onChanged: (_) => EasyDebounce.debounce(
-                                    '_model.textController',
-                                    Duration(milliseconds: 2000),
-                                    () async {
-                                      logFirebaseEvent(
-                                          'BASE_MEETING_PREP_TextField_d5t83dt7_ON_');
-                                      logFirebaseEvent(
-                                          'TextField_update_page_state');
-                                      _model.searchText =
-                                          _model.textController.text;
-                                      safeSetState(() {});
-                                    },
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 24.0, 0.0, 12.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                FlutterFlowIconButton(
+                                  borderRadius: 8.0,
+                                  buttonSize: 40.0,
+                                  fillColor:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  icon: Icon(
+                                    Icons.arrow_back,
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    size: 24.0,
                                   ),
-                                  autofocus: false,
-                                  obscureText: false,
-                                  decoration: InputDecoration(
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      'l0cha1xp' /* Search professional prep... */,
-                                    ),
-                                    hintStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMediumFamily,
-                                          letterSpacing: 0.0,
-                                          useGoogleFonts:
-                                              !FlutterFlowTheme.of(context)
-                                                  .labelMediumIsCustom,
-                                        ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    filled: true,
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    prefixIcon: Icon(
-                                      Icons.search_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 20.0,
-                                    ),
+                                  onPressed: () async {
+                                    logFirebaseEvent(
+                                        'BASE_MEETING_PREP_arrow_back_ICN_ON_TAP');
+                                    logFirebaseEvent('IconButton_navigate_to');
+
+                                    context.goNamed(AiPageWidget.routeName);
+                                  },
+                                ),
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    'uisbavmw' /* Professional Prep */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
+                                      .headlineLarge
                                       .override(
                                         fontFamily: FlutterFlowTheme.of(context)
-                                            .bodyMediumFamily,
+                                            .headlineLargeFamily,
+                                        fontSize: 28.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.bold,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .headlineLargeIsCustom,
+                                      ),
+                                ),
+                              ].divide(SizedBox(width: 12.0)),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: MediaQuery.sizeOf(context).height * 0.1,
+                          decoration: BoxDecoration(),
+                          alignment: AlignmentDirectional(0.0, 0.0),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 12.0, 16.0, 16.0),
+                            child: Container(
+                              width: double.infinity,
+                              child: TextFormField(
+                                controller: _model.textController,
+                                focusNode: _model.textFieldFocusNode,
+                                onChanged: (_) => EasyDebounce.debounce(
+                                  '_model.textController',
+                                  Duration(milliseconds: 2000),
+                                  () async {
+                                    logFirebaseEvent(
+                                        'BASE_MEETING_PREP_TextField_d5t83dt7_ON_');
+                                    logFirebaseEvent(
+                                        'TextField_update_page_state');
+                                    _model.searchText =
+                                        _model.textController.text;
+                                    safeSetState(() {});
+                                  },
+                                ),
+                                autofocus: false,
+                                obscureText: false,
+                                decoration: InputDecoration(
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'l0cha1xp' /* Search professional prep... */,
+                                  ),
+                                  hintStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelMediumFamily,
                                         letterSpacing: 0.0,
                                         useGoogleFonts:
                                             !FlutterFlowTheme.of(context)
-                                                .bodyMediumIsCustom,
+                                                .labelMediumIsCustom,
                                       ),
-                                  validator: _model.textControllerValidator
-                                      .asValidator(context),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(12.0),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0x00000000),
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(12.0),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0x00000000),
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(12.0),
+                                  ),
+                                  focusedErrorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0x00000000),
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(12.0),
+                                  ),
+                                  filled: true,
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  prefixIcon: Icon(
+                                    Icons.search_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 20.0,
+                                  ),
                                 ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodyMediumIsCustom,
+                                    ),
+                                validator: _model.textControllerValidator
+                                    .asValidator(context),
                               ),
                             ),
                           ),
-                          Container(
-                            width: MediaQuery.sizeOf(context).width * 0.75,
-                            decoration: BoxDecoration(),
-                            child: StreamBuilder<List<ResponsesRecord>>(
-                              stream: queryResponsesRecord(
-                                queryBuilder: (responsesRecord) =>
-                                    responsesRecord
-                                        .where(
-                                          'user',
-                                          isEqualTo: currentUserReference,
-                                        )
-                                        .whereIn(
-                                            'type',
-                                            _model.allowedTypes != ''
-                                                ? _model.allowedTypes
-                                                : null)
-                                        .where(
-                                          'short_description',
-                                          isEqualTo: _model.searchText != ''
-                                              ? _model.searchText
-                                              : null,
-                                        )
-                                        .orderBy('time', descending: true),
-                              ),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: CircularProgressIndicator(
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                          FlutterFlowTheme.of(context).primary,
-                                        ),
+                        ),
+                        Container(
+                          width: MediaQuery.sizeOf(context).width * 0.75,
+                          decoration: BoxDecoration(),
+                          child: StreamBuilder<List<ResponsesRecord>>(
+                            stream: queryResponsesRecord(
+                              queryBuilder: (responsesRecord) => responsesRecord
+                                  .where(
+                                    'user',
+                                    isEqualTo: currentUserReference,
+                                  )
+                                  .whereIn(
+                                      'type',
+                                      _model.allowedTypes != ''
+                                          ? _model.allowedTypes
+                                          : null)
+                                  .where(
+                                    'short_description',
+                                    isEqualTo: _model.searchText != ''
+                                        ? _model.searchText
+                                        : null,
+                                  )
+                                  .orderBy('time', descending: true),
+                            ),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).primary,
                                       ),
                                     ),
-                                  );
-                                }
-                                List<ResponsesRecord>
-                                    listViewResponsesRecordList =
-                                    snapshot.data!;
-
-                                return ListView.separated(
-                                  padding: EdgeInsets.zero,
-                                  shrinkWrap: true,
-                                  scrollDirection: Axis.vertical,
-                                  itemCount: listViewResponsesRecordList.length,
-                                  separatorBuilder: (_, __) =>
-                                      SizedBox(height: 12.0),
-                                  itemBuilder: (context, listViewIndex) {
-                                    final listViewResponsesRecord =
-                                        listViewResponsesRecordList[
-                                            listViewIndex];
-                                    return InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        logFirebaseEvent(
-                                            'BASE_MEETING_PREP_Container_6zwcbqzm_ON_');
-                                        logFirebaseEvent(
-                                            'Professionals_navigate_to');
-
-                                        context.goNamed(
-                                          ExpandedMeetingWidget.routeName,
-                                          queryParameters: {
-                                            'responseDoc': serializeParam(
-                                              listViewResponsesRecord,
-                                              ParamType.Document,
-                                            ),
-                                          }.withoutNulls,
-                                          extra: <String, dynamic>{
-                                            'responseDoc':
-                                                listViewResponsesRecord,
-                                          },
-                                        );
-                                      },
-                                      child: ProfessionalsWidget(
-                                        key: Key(
-                                            'Key6zw_${listViewIndex}_of_${listViewResponsesRecordList.length}'),
-                                        responsesDoc: listViewResponsesRecord,
-                                      ),
-                                    );
-                                  },
+                                  ),
                                 );
-                              },
-                            ),
+                              }
+                              List<ResponsesRecord>
+                                  listViewResponsesRecordList = snapshot.data!;
+
+                              return ListView.separated(
+                                padding: EdgeInsets.zero,
+                                shrinkWrap: true,
+                                scrollDirection: Axis.vertical,
+                                itemCount: listViewResponsesRecordList.length,
+                                separatorBuilder: (_, __) =>
+                                    SizedBox(height: 12.0),
+                                itemBuilder: (context, listViewIndex) {
+                                  final listViewResponsesRecord =
+                                      listViewResponsesRecordList[
+                                          listViewIndex];
+                                  return InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      logFirebaseEvent(
+                                          'BASE_MEETING_PREP_Container_6zwcbqzm_ON_');
+                                      logFirebaseEvent(
+                                          'Professionals_navigate_to');
+
+                                      context.goNamed(
+                                        ExpandedMeetingWidget.routeName,
+                                        queryParameters: {
+                                          'responseDoc': serializeParam(
+                                            listViewResponsesRecord,
+                                            ParamType.Document,
+                                          ),
+                                        }.withoutNulls,
+                                        extra: <String, dynamic>{
+                                          'responseDoc':
+                                              listViewResponsesRecord,
+                                        },
+                                      );
+                                    },
+                                    child: ProfessionalsWidget(
+                                      key: Key(
+                                          'Key6zw_${listViewIndex}_of_${listViewResponsesRecordList.length}'),
+                                      responsesDoc: listViewResponsesRecord,
+                                    ),
+                                  );
+                                },
+                              );
+                            },
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                    Align(
-                      alignment: AlignmentDirectional(1.0, 1.0),
-                      child: Container(
-                        decoration: BoxDecoration(),
+                  ),
+                  Align(
+                    alignment: AlignmentDirectional(1.0, 1.0),
+                    child: Container(
+                      decoration: BoxDecoration(),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0.0, 0.0, 15.0, 15.0),
                         child: FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
+                          borderColor: FlutterFlowTheme.of(context).primaryText,
                           borderRadius: 300.0,
+                          borderWidth: 2.0,
                           buttonSize: 90.0,
                           fillColor: FlutterFlowTheme.of(context).primary,
                           icon: Icon(
                             Icons.add_rounded,
-                            color: Colors.white,
+                            color: FlutterFlowTheme.of(context).primaryText,
                             size: 50.0,
                           ),
                           onPressed: () async {
@@ -411,8 +409,8 @@ class _BaseMeetingPrepWidgetState extends State<BaseMeetingPrepWidget> {
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),

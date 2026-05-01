@@ -64,428 +64,476 @@ class _ProfessionalPrepInputsWidgetState
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: FlutterFlowTheme.of(context).secondaryBackground,
-        borderRadius: BorderRadius.circular(16.0),
-      ),
-      child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              FFLocalizations.of(context).getText(
-                'd099cx41' /* New Preparation for a Professi... */,
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: FlutterFlowTheme.of(context).secondaryBackground,
+              borderRadius: BorderRadius.circular(16.0),
+              border: Border.all(
+                color: FlutterFlowTheme.of(context).primary,
+                width: 2.0,
               ),
-              style: FlutterFlowTheme.of(context).headlineSmall.override(
-                    fontFamily:
-                        FlutterFlowTheme.of(context).headlineSmallFamily,
-                    letterSpacing: 0.0,
-                    useGoogleFonts:
-                        !FlutterFlowTheme.of(context).headlineSmallIsCustom,
-                  ),
             ),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  FFLocalizations.of(context).getText(
-                    'gj5h7nnm' /* Task Type */,
-                  ),
-                  style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).labelMediumFamily,
-                        letterSpacing: 0.0,
-                        useGoogleFonts:
-                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    width: double.infinity,
+                    height: MediaQuery.sizeOf(context).height * 0.1,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).primary,
+                    ),
+                    alignment: AlignmentDirectional(0.0, 0.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'd099cx41' /* New Preparation for a Professi... */,
                       ),
-                ),
-              ].divide(SizedBox(height: 8.0)),
-            ),
-            FlutterFlowDropDown<String>(
-              controller: _model.proPrepDropDownValueController ??=
-                  FormFieldController<String>(null),
-              options: [
-                FFLocalizations.of(context).getText(
-                  'oywzhvw7' /* Get Company Information */,
-                ),
-                FFLocalizations.of(context).getText(
-                  'ny2xja9z' /* Interview/Meeting Preparation */,
-                ),
-                FFLocalizations.of(context).getText(
-                  'lr5ykhj6' /* Ask Interview/Meeting Question... */,
-                ),
-                FFLocalizations.of(context).getText(
-                  'jpjwzgr7' /* Networking Preparation */,
-                )
-              ],
-              onChanged: (val) =>
-                  safeSetState(() => _model.proPrepDropDownValue = val),
-              width: double.infinity,
-              height: 40.0,
-              textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                    letterSpacing: 0.0,
-                    useGoogleFonts:
-                        !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                      style:
+                          FlutterFlowTheme.of(context).headlineSmall.override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .headlineSmallFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .headlineSmallIsCustom,
+                              ),
+                    ),
                   ),
-              hintText: FFLocalizations.of(context).getText(
-                'n2uzajr6' /* Select... */,
-              ),
-              icon: Icon(
-                Icons.keyboard_arrow_down_rounded,
-                color: FlutterFlowTheme.of(context).secondaryText,
-                size: 24.0,
-              ),
-              fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-              elevation: 2.0,
-              borderColor: Colors.transparent,
-              borderWidth: 0.0,
-              borderRadius: 8.0,
-              margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-              hidesUnderline: true,
-              isOverButton: false,
-              isSearchable: false,
-              isMultiSelect: false,
-            ),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  FFLocalizations.of(context).getText(
-                    'mmj8udbn' /* Company Name */,
-                  ),
-                  style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).labelMediumFamily,
-                        letterSpacing: 0.0,
-                        useGoogleFonts:
-                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        FFLocalizations.of(context).getText(
+                          'gj5h7nnm' /* Task Type */,
+                        ),
+                        style:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelMediumIsCustom,
+                                ),
                       ),
-                ),
-                TextFormField(
-                  controller: _model.companyNameInputTextController,
-                  focusNode: _model.companyNameInputFocusNode,
-                  autofocus: false,
-                  textInputAction: TextInputAction.next,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                    ].divide(SizedBox(height: 8.0)),
+                  ),
+                  FlutterFlowDropDown<String>(
+                    controller: _model.proPrepDropDownValueController ??=
+                        FormFieldController<String>(null),
+                    options: [
+                      FFLocalizations.of(context).getText(
+                        'oywzhvw7' /* Get Company Information */,
+                      ),
+                      FFLocalizations.of(context).getText(
+                        'ny2xja9z' /* Interview/Meeting Preparation */,
+                      ),
+                      FFLocalizations.of(context).getText(
+                        'lr5ykhj6' /* Ask Interview/Meeting Question... */,
+                      ),
+                      FFLocalizations.of(context).getText(
+                        'jpjwzgr7' /* Networking Preparation */,
+                      )
+                    ],
+                    onChanged: (val) =>
+                        safeSetState(() => _model.proPrepDropDownValue = val),
+                    width: double.infinity,
+                    height: 40.0,
+                    textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily:
                               FlutterFlowTheme.of(context).bodyMediumFamily,
                           letterSpacing: 0.0,
                           useGoogleFonts:
                               !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                         ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).alternate,
-                        width: 1.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
+                    hintText: FFLocalizations.of(context).getText(
+                      'n2uzajr6' /* Select... */,
                     ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0x00000000),
-                        width: 1.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
+                    icon: Icon(
+                      Icons.keyboard_arrow_down_rounded,
+                      color: FlutterFlowTheme.of(context).secondaryText,
+                      size: 24.0,
                     ),
-                    errorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0x00000000),
-                        width: 1.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0x00000000),
-                        width: 1.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    filled: true,
-                    fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                    fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                    elevation: 2.0,
+                    borderColor: FlutterFlowTheme.of(context).primaryText,
+                    focusBorderColor: FlutterFlowTheme.of(context).primary,
+                    borderWidth: 2.0,
+                    borderRadius: 8.0,
+                    margin:
+                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                    hidesUnderline: true,
+                    isOverButton: false,
+                    isSearchable: false,
+                    isMultiSelect: false,
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).bodyMediumFamily,
-                        letterSpacing: 0.0,
-                        useGoogleFonts:
-                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
-                      ),
-                  minLines: 1,
-                  validator: _model.companyNameInputTextControllerValidator
-                      .asValidator(context),
-                ),
-              ].divide(SizedBox(height: 8.0)),
-            ),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  FFLocalizations.of(context).getText(
-                    '61r8jde0' /* Extra Details */,
-                  ),
-                  style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).labelMediumFamily,
-                        letterSpacing: 0.0,
-                        useGoogleFonts:
-                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
-                      ),
-                ),
-                TextFormField(
-                  controller: _model.extraDetailsInputTextController,
-                  focusNode: _model.extraDetailsInputFocusNode,
-                  autofocus: false,
-                  textInputAction: TextInputAction.done,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).bodyMediumFamily,
-                          letterSpacing: 0.0,
-                          useGoogleFonts:
-                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        FFLocalizations.of(context).getText(
+                          'mmj8udbn' /* Company Name */,
                         ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).alternate,
-                        width: 1.0,
+                        style:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelMediumIsCustom,
+                                ),
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0x00000000),
-                        width: 1.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0x00000000),
-                        width: 1.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0x00000000),
-                        width: 1.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    filled: true,
-                    fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                  ),
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).bodyMediumFamily,
-                        letterSpacing: 0.0,
-                        useGoogleFonts:
-                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
-                      ),
-                  maxLines: 6,
-                  minLines: 3,
-                  keyboardType: TextInputType.multiline,
-                  validator: _model.extraDetailsInputTextControllerValidator
-                      .asValidator(context),
-                ),
-              ].divide(SizedBox(height: 8.0)),
-            ),
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
-                  },
-                  text: FFLocalizations.of(context).getText(
-                    'yov374ko' /* Cancel */,
-                  ),
-                  options: FFButtonOptions(
-                    width: 140.0,
-                    height: 48.0,
-                    padding: EdgeInsets.all(8.0),
-                    iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primaryBackground,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).titleSmallFamily,
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          letterSpacing: 0.0,
-                          useGoogleFonts:
-                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
-                        ),
-                    elevation: 0.0,
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).secondary,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-                FFButtonWidget(
-                  onPressed: () async {
-                    logFirebaseEvent(
-                        'PROFESSIONAL_PREP_INPUTS_SUBMIT_BTN_ON_T');
-                    logFirebaseEvent('Button_a_i_agent');
-                    await callAiAgent(
-                      context: context,
-                      prompt: functions.generateResponsePrompt(
-                          _model.proPrepDropDownValue!,
-                          _model.companyNameInputTextController.text,
-                          _model.extraDetailsInputTextController.text,
-                          valueOrDefault(
-                              currentUserDocument?.careerInterest, '')),
-                      pdfUrl: valueOrDefault(currentUserDocument?.resume, ''),
-                      threadId: 'responseID',
-                      agentCloudFunctionName: 'aIResponseAgent',
-                      provider: 'GOOGLE',
-                      agentJson:
-                          '{\"status\":\"LIVE\",\"identifier\":{\"name\":\"aIResponseAgent\",\"key\":\"po24k\"},\"name\":\"AI Response Agent\",\"description\":\"This AI agent is for responding to users with what they prompt for, typically relating to company information, interview/meeting preparation, questions to ask during an interview/meeting.\",\"aiModel\":{\"provider\":\"GOOGLE\",\"model\":\"gemini-2.5-flash\",\"parameters\":{\"temperature\":{\"inputValue\":1},\"maxTokens\":{\"inputValue\":65535},\"topP\":{\"inputValue\":0.95}},\"messages\":[{\"role\":\"SYSTEM\",\"text\":\"You are an AI Assistant for LinkUp, an app that helps people prepare in the professional world offering things like company research, interview and networking prep, which will be done by you. \\n\\nYour role is to return a JSON response to a given prompt, typically relating to company information, interview/meeting preparation, networking event preparation questions to ask during an interview/meeting. You will also be given a PDF file which is the user\'s resume, which you can analyze to create responses for the given circumstance. If the PDF does not look like a resume, please ignore it as the user did not follow proper instructions, and respond to the best of your ability still.\\n\\nThe JSON response format should look like this:\\n\\n{\\n\\\"type\\\": \\\"string\\\"\\n\\\"short_description\\\": \\\"string\\\"\\n\\\"response\\\": \\\"string\\\"\\n}\\n\\n\\\"type\\\" should either be Company Information, Interview/Meeting Preparation, Ask Interview/Meeting Questions, or Networking Event Preparation. \\\"short_description\\\" should be a very short description (5 words or less) summarizing the response to use as a header. \\\"response\\\" should just be the response in text for the given prompt.\\n\\nThe user will ask a question of one of those types, and you should respond in a detailed response. If the question type if Company Information, use the deep research skill to do as much research as possible.\"}]},\"requestOptions\":{\"requestTypes\":[\"PLAINTEXT\",\"PDF\"]},\"responseOptions\":{\"responseType\":\"JSON\"}}',
-                      responseType: 'JSON',
-                    ).then((generatedText) {
-                      safeSetState(() => _model.aiResponse = generatedText);
-                    });
-
-                    logFirebaseEvent('Button_backend_call');
-
-                    await ResponsesRecord.collection
-                        .doc()
-                        .set(createResponsesRecordData(
-                          type: getJsonField(
-                            _model.aiResponse,
-                            r'''$.type''',
-                          ).toString(),
-                          shortDescription: getJsonField(
-                            _model.aiResponse,
-                            r'''$.short_description''',
-                          ).toString(),
-                          response: getJsonField(
-                            _model.aiResponse,
-                            r'''$.response''',
-                          ).toString(),
-                          user: currentUserReference,
-                          time: getCurrentTimestamp,
-                        ));
-                    logFirebaseEvent('Button_firestore_query');
-                    _model.metricsPersonalDoc =
-                        await queryMetricsPersonalRecordOnce(
-                      queryBuilder: (metricsPersonalRecord) =>
-                          metricsPersonalRecord.where(
-                        'user',
-                        isEqualTo: currentUserReference,
-                      ),
-                      singleRecord: true,
-                    ).then((s) => s.firstOrNull);
-                    if (_model.proPrepDropDownValue ==
-                        'Get Company Information') {
-                      logFirebaseEvent('Button_backend_call');
-
-                      await _model.metricsPersonalDoc!.reference
-                          .update(createMetricsPersonalRecordData(
-                        aiCounts: createAIPromptTypeCountStruct(
-                          fieldValues: {
-                            'Company_Information': FieldValue.increment(1),
-                          },
-                          clearUnsetFields: false,
-                        ),
-                        adoptionFlag: 1,
-                      ));
-                    } else {
-                      if (_model.proPrepDropDownValue ==
-                          'Interview/Meeting Preparation') {
-                        logFirebaseEvent('Button_backend_call');
-
-                        await _model.metricsPersonalDoc!.reference
-                            .update(createMetricsPersonalRecordData(
-                          aiCounts: createAIPromptTypeCountStruct(
-                            fieldValues: {
-                              'Interview_Meeting_Preparation':
-                                  FieldValue.increment(1),
-                            },
-                            clearUnsetFields: false,
+                      TextFormField(
+                        controller: _model.companyNameInputTextController,
+                        focusNode: _model.companyNameInputFocusNode,
+                        autofocus: false,
+                        textInputAction: TextInputAction.next,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          hintStyle: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .bodyMediumIsCustom,
+                              ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
                           ),
-                          adoptionFlag: 1,
-                        ));
-                      } else {
-                        if (_model.proPrepDropDownValue ==
-                            'Ask Interview/Meeting Questions') {
-                          logFirebaseEvent('Button_backend_call');
-
-                          await _model.metricsPersonalDoc!.reference
-                              .update(createMetricsPersonalRecordData(
-                            aiCounts: createAIPromptTypeCountStruct(
-                              fieldValues: {
-                                'Ask_Interview_Meeting_Questions':
-                                    FieldValue.increment(1),
-                              },
-                              clearUnsetFields: false,
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primary,
+                              width: 2.0,
                             ),
-                            adoptionFlag: 1,
-                          ));
-                        } else {
-                          logFirebaseEvent('Button_backend_call');
-
-                          await _model.metricsPersonalDoc!.reference
-                              .update(createMetricsPersonalRecordData(
-                            aiCounts: createAIPromptTypeCountStruct(
-                              fieldValues: {
-                                'Networking_Preparation':
-                                    FieldValue.increment(1),
-                              },
-                              clearUnsetFields: false,
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x00000000),
+                              width: 2.0,
                             ),
-                            adoptionFlag: 1,
-                          ));
-                        }
-                      }
-                    }
-
-                    logFirebaseEvent('Button_rebuild_component');
-                    _model.updatePage(() {});
-                    logFirebaseEvent('Button_bottom_sheet');
-                    Navigator.pop(context);
-
-                    safeSetState(() {});
-                  },
-                  text: FFLocalizations.of(context).getText(
-                    'v05yw9gz' /* Submit */,
-                  ),
-                  options: FFButtonOptions(
-                    width: 140.0,
-                    height: 48.0,
-                    padding: EdgeInsets.all(8.0),
-                    iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).titleSmallFamily,
-                          color: Colors.white,
-                          letterSpacing: 0.0,
-                          useGoogleFonts:
-                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x00000000),
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          filled: true,
+                          fillColor: Colors.white,
                         ),
-                    elevation: 0.0,
-                    borderSide: BorderSide(
-                      color: Colors.transparent,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
+                              letterSpacing: 0.0,
+                              useGoogleFonts: !FlutterFlowTheme.of(context)
+                                  .bodyMediumIsCustom,
+                            ),
+                        minLines: 1,
+                        validator: _model
+                            .companyNameInputTextControllerValidator
+                            .asValidator(context),
+                      ),
+                    ].divide(SizedBox(height: 8.0)),
                   ),
-                ),
-              ].divide(SizedBox(width: 12.0)),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        FFLocalizations.of(context).getText(
+                          '61r8jde0' /* Extra Details */,
+                        ),
+                        style:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelMediumIsCustom,
+                                ),
+                      ),
+                      TextFormField(
+                        controller: _model.extraDetailsInputTextController,
+                        focusNode: _model.extraDetailsInputFocusNode,
+                        autofocus: false,
+                        textInputAction: TextInputAction.done,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          hintStyle: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .bodyMediumIsCustom,
+                              ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primary,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x00000000),
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x00000000),
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          filled: true,
+                          fillColor: Colors.white,
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
+                              letterSpacing: 0.0,
+                              useGoogleFonts: !FlutterFlowTheme.of(context)
+                                  .bodyMediumIsCustom,
+                            ),
+                        maxLines: 7,
+                        minLines: 5,
+                        keyboardType: TextInputType.multiline,
+                        validator: _model
+                            .extraDetailsInputTextControllerValidator
+                            .asValidator(context),
+                      ),
+                    ].divide(SizedBox(height: 8.0)),
+                  ),
+                  Container(
+                    height: MediaQuery.sizeOf(context).height * 0.1,
+                    decoration: BoxDecoration(),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        FFButtonWidget(
+                          onPressed: () async {
+                            logFirebaseEvent(
+                                'PROFESSIONAL_PREP_INPUTS_CANCEL_BTN_ON_T');
+                            logFirebaseEvent('Button_bottom_sheet');
+                            Navigator.pop(context);
+                          },
+                          text: FFLocalizations.of(context).getText(
+                            'yov374ko' /* Cancel */,
+                          ),
+                          options: FFButtonOptions(
+                            width: MediaQuery.sizeOf(context).width * 0.3,
+                            height: MediaQuery.sizeOf(context).height * 0.075,
+                            padding: EdgeInsets.all(8.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: Colors.white,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .titleSmallIsCustom,
+                                ),
+                            elevation: 0.0,
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        FFButtonWidget(
+                          onPressed: () async {
+                            logFirebaseEvent(
+                                'PROFESSIONAL_PREP_INPUTS_SUBMIT_BTN_ON_T');
+                            logFirebaseEvent('Button_a_i_agent');
+                            await callAiAgent(
+                              context: context,
+                              prompt: functions.generateResponsePrompt(
+                                  _model.proPrepDropDownValue!,
+                                  _model.companyNameInputTextController.text,
+                                  _model.extraDetailsInputTextController.text,
+                                  valueOrDefault(
+                                      currentUserDocument?.careerInterest, '')),
+                              pdfUrl: valueOrDefault(
+                                  currentUserDocument?.resume, ''),
+                              threadId: 'responseID',
+                              agentCloudFunctionName: 'aIResponseAgent',
+                              provider: 'GOOGLE',
+                              agentJson:
+                                  '{\"status\":\"LIVE\",\"identifier\":{\"name\":\"aIResponseAgent\",\"key\":\"po24k\"},\"name\":\"AI Response Agent\",\"description\":\"This AI agent is for responding to users with what they prompt for, typically relating to company information, interview/meeting preparation, questions to ask during an interview/meeting.\",\"aiModel\":{\"provider\":\"GOOGLE\",\"model\":\"gemini-2.5-flash\",\"parameters\":{\"temperature\":{\"inputValue\":1},\"maxTokens\":{\"inputValue\":65535},\"topP\":{\"inputValue\":0.95}},\"messages\":[{\"role\":\"SYSTEM\",\"text\":\"You are an AI Assistant for LinkUp, an app that helps people prepare in the professional world offering things like company research, interview and networking prep, which will be done by you. \\n\\nYour role is to return a JSON response to a given prompt, typically relating to company information, interview/meeting preparation, networking event preparation questions to ask during an interview/meeting. You will also be given a PDF file which is the user\'s resume, which you can analyze to create responses for the given circumstance. If the PDF does not look like a resume, please ignore it as the user did not follow proper instructions, and respond to the best of your ability still.\\n\\nThe JSON response format should look like this:\\n\\n{\\n\\\"type\\\": \\\"string\\\"\\n\\\"short_description\\\": \\\"string\\\"\\n\\\"response\\\": \\\"string\\\"\\n}\\n\\n\\\"type\\\" should either be Company Information, Interview/Meeting Preparation, Ask Interview/Meeting Questions, or Networking Event Preparation. \\\"short_description\\\" should be a very short description (4 words or less) summarizing the response to use as a header. \\\"response\\\" should just be the response in text for the given prompt.\\n\\nThe user will ask a question of one of those types, and you should respond in a detailed response. If the question type if Company Information, use the deep research skill to do as much research as possible.\"}]},\"requestOptions\":{\"requestTypes\":[\"PLAINTEXT\",\"PDF\"]},\"responseOptions\":{\"responseType\":\"JSON\"}}',
+                              responseType: 'JSON',
+                            ).then((generatedText) {
+                              safeSetState(
+                                  () => _model.aiResponse = generatedText);
+                            });
+
+                            logFirebaseEvent('Button_backend_call');
+
+                            await ResponsesRecord.collection
+                                .doc()
+                                .set(createResponsesRecordData(
+                                  type: getJsonField(
+                                    _model.aiResponse,
+                                    r'''$.type''',
+                                  ).toString(),
+                                  shortDescription: getJsonField(
+                                    _model.aiResponse,
+                                    r'''$.short_description''',
+                                  ).toString(),
+                                  response: getJsonField(
+                                    _model.aiResponse,
+                                    r'''$.response''',
+                                  ).toString(),
+                                  user: currentUserReference,
+                                  time: getCurrentTimestamp,
+                                ));
+                            logFirebaseEvent('Button_firestore_query');
+                            _model.metricsPersonalDoc =
+                                await queryMetricsPersonalRecordOnce(
+                              queryBuilder: (metricsPersonalRecord) =>
+                                  metricsPersonalRecord.where(
+                                'user',
+                                isEqualTo: currentUserReference,
+                              ),
+                              singleRecord: true,
+                            ).then((s) => s.firstOrNull);
+                            if (_model.proPrepDropDownValue ==
+                                'Get Company Information') {
+                              logFirebaseEvent('Button_backend_call');
+
+                              await _model.metricsPersonalDoc!.reference
+                                  .update(createMetricsPersonalRecordData(
+                                aiCounts: createAIPromptTypeCountStruct(
+                                  fieldValues: {
+                                    'Company_Information':
+                                        FieldValue.increment(1),
+                                  },
+                                  clearUnsetFields: false,
+                                ),
+                                adoptionFlag: 1,
+                              ));
+                            } else {
+                              if (_model.proPrepDropDownValue ==
+                                  'Interview/Meeting Preparation') {
+                                logFirebaseEvent('Button_backend_call');
+
+                                await _model.metricsPersonalDoc!.reference
+                                    .update(createMetricsPersonalRecordData(
+                                  aiCounts: createAIPromptTypeCountStruct(
+                                    fieldValues: {
+                                      'Interview_Meeting_Preparation':
+                                          FieldValue.increment(1),
+                                    },
+                                    clearUnsetFields: false,
+                                  ),
+                                  adoptionFlag: 1,
+                                ));
+                              } else {
+                                if (_model.proPrepDropDownValue ==
+                                    'Ask Interview/Meeting Questions') {
+                                  logFirebaseEvent('Button_backend_call');
+
+                                  await _model.metricsPersonalDoc!.reference
+                                      .update(createMetricsPersonalRecordData(
+                                    aiCounts: createAIPromptTypeCountStruct(
+                                      fieldValues: {
+                                        'Ask_Interview_Meeting_Questions':
+                                            FieldValue.increment(1),
+                                      },
+                                      clearUnsetFields: false,
+                                    ),
+                                    adoptionFlag: 1,
+                                  ));
+                                } else {
+                                  logFirebaseEvent('Button_backend_call');
+
+                                  await _model.metricsPersonalDoc!.reference
+                                      .update(createMetricsPersonalRecordData(
+                                    aiCounts: createAIPromptTypeCountStruct(
+                                      fieldValues: {
+                                        'Networking_Preparation':
+                                            FieldValue.increment(1),
+                                      },
+                                      clearUnsetFields: false,
+                                    ),
+                                    adoptionFlag: 1,
+                                  ));
+                                }
+                              }
+                            }
+
+                            logFirebaseEvent('Button_rebuild_component');
+                            _model.updatePage(() {});
+                            logFirebaseEvent('Button_bottom_sheet');
+                            Navigator.pop(context);
+
+                            safeSetState(() {});
+                          },
+                          text: FFLocalizations.of(context).getText(
+                            'v05yw9gz' /* Submit */,
+                          ),
+                          options: FFButtonOptions(
+                            width: MediaQuery.sizeOf(context).width * 0.3,
+                            height: MediaQuery.sizeOf(context).height * 0.075,
+                            padding: EdgeInsets.all(8.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .titleSmallIsCustom,
+                                ),
+                            elevation: 0.0,
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                      ].divide(SizedBox(width: 12.0)),
+                    ),
+                  ),
+                ].divide(SizedBox(height: 16.0)),
+              ),
             ),
-          ].divide(SizedBox(height: 16.0)),
-        ),
+          ),
+        ],
       ),
     );
   }

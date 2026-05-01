@@ -65,7 +65,9 @@ class _AiPageWidgetState extends State<AiPageWidget> {
             alignment: AlignmentDirectional(0.0, 0.0),
             child: Container(
               height: double.infinity,
-              decoration: BoxDecoration(),
+              decoration: BoxDecoration(
+                color: Colors.white,
+              ),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -77,7 +79,7 @@ class _AiPageWidgetState extends State<AiPageWidget> {
                         width: double.infinity,
                         height: MediaQuery.sizeOf(context).height * 0.25,
                         decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).tertiary,
+                          color: Colors.white,
                         ),
                         alignment: AlignmentDirectional(0.0, -1.0),
                         child: Column(
@@ -85,102 +87,129 @@ class _AiPageWidgetState extends State<AiPageWidget> {
                           children: [
                             Container(
                               width: double.infinity,
-                              height: MediaQuery.sizeOf(context).height * 0.075,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context).primary,
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsets.all(6.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'wakh6v4o' /* LinkUp AI */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .titleMediumFamily,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        fontSize: 34.0,
-                                        letterSpacing: 0.0,
-                                        useGoogleFonts:
-                                            !FlutterFlowTheme.of(context)
-                                                .titleMediumIsCustom,
-                                      ),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              height: MediaQuery.sizeOf(context).height * 0.075,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).primary,
-                              ),
-                              child: Row(
+                              child: Column(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 10.0),
-                                    child: FlutterFlowIconButton(
-                                      borderRadius: 8.0,
-                                      buttonSize:
-                                          MediaQuery.sizeOf(context).width *
-                                              0.1,
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      icon: Icon(
-                                        Icons.logout,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        size: 24.0,
+                                  Container(
+                                    width: double.infinity,
+                                    height: MediaQuery.sizeOf(context).height *
+                                        0.075,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                    ),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Padding(
+                                      padding: EdgeInsets.all(6.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'wakh6v4o' /* LinkUp AI */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMediumFamily,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              fontSize: 34.0,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleMediumIsCustom,
+                                            ),
                                       ),
-                                      onPressed: () async {
-                                        logFirebaseEvent(
-                                            'AI_PAGE_PAGE_logout_ICN_ON_TAP');
-                                        logFirebaseEvent('IconButton_auth');
-                                        GoRouter.of(context).prepareAuthEvent();
-                                        await authManager.signOut();
-                                        GoRouter.of(context)
-                                            .clearRedirectLocation();
-
-                                        logFirebaseEvent(
-                                            'IconButton_navigate_to');
-
-                                        context.goNamedAuth(
-                                            SignupLoginWidget.routeName,
-                                            context.mounted);
-                                      },
                                     ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 10.0),
-                                    child: FlutterFlowIconButton(
-                                      borderRadius: 8.0,
-                                      buttonSize:
-                                          MediaQuery.sizeOf(context).width *
-                                              0.1,
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      icon: Icon(
-                                        Icons.person_sharp,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        size: 24.0,
-                                      ),
-                                      onPressed: () async {
-                                        logFirebaseEvent(
-                                            'AI_PAGE_PAGE_person_sharp_ICN_ON_TAP');
-                                        logFirebaseEvent(
-                                            'IconButton_navigate_to');
+                                  Container(
+                                    height: MediaQuery.sizeOf(context).height *
+                                        0.075,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 10.0),
+                                          child: FlutterFlowIconButton(
+                                            borderRadius: 8.0,
+                                            buttonSize:
+                                                MediaQuery.sizeOf(context)
+                                                        .width *
+                                                    0.1,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryText,
+                                            icon: Icon(
+                                              Icons.logout,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              size: 24.0,
+                                            ),
+                                            onPressed: () async {
+                                              logFirebaseEvent(
+                                                  'AI_PAGE_PAGE_logout_ICN_ON_TAP');
+                                              logFirebaseEvent(
+                                                  'IconButton_auth');
+                                              GoRouter.of(context)
+                                                  .prepareAuthEvent();
+                                              await authManager.signOut();
+                                              GoRouter.of(context)
+                                                  .clearRedirectLocation();
 
-                                        context
-                                            .goNamed(ProfileWidget.routeName);
-                                      },
+                                              logFirebaseEvent(
+                                                  'IconButton_navigate_to');
+
+                                              context.goNamedAuth(
+                                                  SignupLoginWidget.routeName,
+                                                  context.mounted);
+                                            },
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 10.0),
+                                          child: FlutterFlowIconButton(
+                                            borderRadius: 8.0,
+                                            buttonSize:
+                                                MediaQuery.sizeOf(context)
+                                                        .width *
+                                                    0.1,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryText,
+                                            icon: Icon(
+                                              Icons.person_sharp,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              size: 24.0,
+                                            ),
+                                            onPressed: () async {
+                                              logFirebaseEvent(
+                                                  'AI_PAGE_PAGE_person_sharp_ICN_ON_TAP');
+                                              logFirebaseEvent(
+                                                  'IconButton_navigate_to');
+
+                                              context.goNamed(
+                                                  ProfileWidget.routeName);
+                                            },
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ],

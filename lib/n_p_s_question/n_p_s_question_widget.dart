@@ -91,7 +91,7 @@ class _NPSQuestionWidgetState extends State<NPSQuestionWidget> {
                         Container(
                           width: double.infinity,
                           child: Slider(
-                            activeColor: FlutterFlowTheme.of(context).secondary,
+                            activeColor: FlutterFlowTheme.of(context).primary,
                             inactiveColor:
                                 FlutterFlowTheme.of(context).primaryText,
                             min: 1.0,
@@ -160,6 +160,10 @@ class _NPSQuestionWidgetState extends State<NPSQuestionWidget> {
                                       .titleSmallIsCustom,
                                 ),
                             elevation: 0.0,
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              width: 2.0,
+                            ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                         ),
