@@ -101,7 +101,8 @@ void main() async {
 
   testWidgets('US3 - Profile Creation', (WidgetTester tester) async {
     _overrideOnError();
-
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'yilmaztest@gmail.com', password: '1234567');
     await tester.pumpWidget(MyApp(
       entryPage: ProfileWidget(),
     ));
@@ -110,6 +111,7 @@ void main() async {
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.enterText(
         find.byKey(const ValueKey('nameField_p6b5')), 'Name');
+    FocusManager.instance.primaryFocus?.unfocus();
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.enterText(
         find.byKey(const ValueKey('careerField_v43m')), 'LinkUp');
