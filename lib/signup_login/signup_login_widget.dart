@@ -204,6 +204,7 @@ class _SignupLoginWidgetState extends State<SignupLoginWidget>
                                   FlutterFlowTheme.of(context).primary,
                               tabs: [
                                 Tab(
+                                  key: ValueKey('SignupTab_rtit'),
                                   text: FFLocalizations.of(context).getText(
                                     'lpjwin1c' /* Sign up */,
                                   ),

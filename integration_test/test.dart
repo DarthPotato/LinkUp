@@ -80,19 +80,15 @@ void main() async {
     await tester.pumpWidget(const MyApp());
     await GoogleFonts.pendingFonts();
 
-    await tester.tap(find.byKey(const ValueKey('Signup-Email_f3we')));
+    await tester.tap(find.byKey(const ValueKey('SignupTab_rtit')));
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
-    await tester.enterText(
-        find.byKey(const ValueKey('Signup-Email_f3we')), 'email@email.com');
+    await tester.enterText(find.byKey(const ValueKey('Signup-Email_f3we')),
+        'unittestemail@gmail.com');
     FocusManager.instance.primaryFocus?.unfocus();
-    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
-    await tester.tap(find.byKey(const ValueKey('Signup-Password_a9r2')));
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.enterText(
         find.byKey(const ValueKey('Signup-Password_a9r2')), 'password');
     FocusManager.instance.primaryFocus?.unfocus();
-    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
-    await tester.tap(find.byKey(const ValueKey('Signup_Login_tjeg')));
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.enterText(
         find.byKey(const ValueKey('Signup-Confirm-Password_uld1')), 'password');
@@ -111,7 +107,7 @@ void main() async {
     ));
     await GoogleFonts.pendingFonts();
 
-    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.enterText(
         find.byKey(const ValueKey('nameField_p6b5')), 'Name');
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
@@ -161,7 +157,7 @@ void main() async {
         find.bySemanticsLabel(RegExp('Company Name Field')), 'EvilCorp');
     FocusManager.instance.primaryFocus?.unfocus();
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
-    await tester.enterText(find.bySemanticsLabel(RegExp('Extra Details Label')),
+    await tester.enterText(find.bySemanticsLabel(RegExp('Extra Details Field')),
         'I am applying to evilcorp, draft me a thank you email');
     FocusManager.instance.primaryFocus?.unfocus();
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
