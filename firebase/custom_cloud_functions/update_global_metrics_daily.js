@@ -5,7 +5,7 @@ const admin = require("firebase-admin");
 
 exports.updateGlobalMetricsDaily = onSchedule(
   {
-    schedule: "every day 11:00",
+    schedule: "every day 13:50",
     timeZone: "America/New_York",
     region: "us-east1",
   },

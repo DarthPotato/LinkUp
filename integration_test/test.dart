@@ -69,12 +69,8 @@ void main() async {
 
     await tester.tap(find.byKey(const ValueKey('Text_kihw')));
     await tester.pumpAndSettle(const Duration(milliseconds: 10000));
-    await tester.tap(find.byKey(const ValueKey('UNDEFINED')));
+    await tester.tap(find.byKey(const ValueKey('IconButton_4zp4')));
     await tester.pumpAndSettle(const Duration(milliseconds: 1000));
-    await tester.tap(find.text('Select...'));
-    await tester.pumpAndSettle(const Duration(milliseconds: 1000));
-    await tester.tap(find.text('Get Company Information'));
-    await tester.pumpAndSettle(const Duration(milliseconds: 1000000));
     expect(find.text('Search professional prep...'), findsOneWidget);
   });
 
@@ -85,24 +81,26 @@ void main() async {
     await GoogleFonts.pendingFonts();
 
     await tester.tap(find.byKey(const ValueKey('Signup-Email_f3we')));
-    await tester.pumpAndSettle(const Duration(milliseconds: 1));
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.enterText(
         find.byKey(const ValueKey('Signup-Email_f3we')), 'email@email.com');
-    await tester.pumpAndSettle(const Duration(milliseconds: 1));
+    FocusManager.instance.primaryFocus?.unfocus();
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.tap(find.byKey(const ValueKey('Signup-Password_a9r2')));
-    await tester.pumpAndSettle(const Duration(milliseconds: 1));
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.enterText(
         find.byKey(const ValueKey('Signup-Password_a9r2')), 'password');
-    await tester.pumpAndSettle(const Duration(milliseconds: 1));
+    FocusManager.instance.primaryFocus?.unfocus();
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.tap(find.byKey(const ValueKey('Signup_Login_tjeg')));
-    await tester.pumpAndSettle(const Duration(milliseconds: 1));
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.enterText(
         find.byKey(const ValueKey('Signup-Confirm-Password_uld1')), 'password');
-    await tester.pumpAndSettle(const Duration(milliseconds: 1));
+    FocusManager.instance.primaryFocus?.unfocus();
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.tap(find.byKey(const ValueKey('Signup-Button_6xu1')));
-    await tester.pumpAndSettle(const Duration(milliseconds: 1));
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     expect(find.text('Profile'), findsOneWidget);
-    await tester.pumpAndSettle(const Duration(milliseconds: 1));
   });
 
   testWidgets('US3 - Profile Creation', (WidgetTester tester) async {
@@ -113,13 +111,16 @@ void main() async {
     ));
     await GoogleFonts.pendingFonts();
 
-    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.enterText(
         find.byKey(const ValueKey('nameField_p6b5')), 'Name');
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.enterText(
         find.byKey(const ValueKey('careerField_v43m')), 'LinkUp');
+    FocusManager.instance.primaryFocus?.unfocus();
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.tap(find.byKey(const ValueKey('resumeButton_uou1')));
-    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     expect(
       tester
           .widget<FFButtonWidget>(
@@ -127,7 +128,9 @@ void main() async {
           .onPressed,
       isNotNull,
     );
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.tap(find.byKey(const ValueKey('profileButton_0fbg')));
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     expect(
       tester
           .widget<FFButtonWidget>(
@@ -149,19 +152,21 @@ void main() async {
     await tester.tap(find.byKey(const ValueKey('Text_zrwg')));
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.tap(find.byKey(const ValueKey('IconButton_5qm8')));
-    await tester.pumpAndSettle(const Duration(milliseconds: 1000));
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.enterText(
         find.bySemanticsLabel(RegExp('Person Name Field')), 'TestBot');
     FocusManager.instance.primaryFocus?.unfocus();
-    await tester.pumpAndSettle(const Duration(milliseconds: 100));
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.enterText(
         find.bySemanticsLabel(RegExp('Company Name Field')), 'EvilCorp');
     FocusManager.instance.primaryFocus?.unfocus();
-    await tester.pumpAndSettle(const Duration(milliseconds: 100));
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.enterText(find.bySemanticsLabel(RegExp('Extra Details Label')),
         'I am applying to evilcorp, draft me a thank you email');
     FocusManager.instance.primaryFocus?.unfocus();
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.tap(find.text('Submit'));
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
   });
 }
 

@@ -346,6 +346,7 @@ class _BaseMeetingPrepWidgetState extends State<BaseMeetingPrepWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 0.0, 15.0, 15.0),
                         child: FlutterFlowIconButton(
+                          key: ValueKey('IconButton_4zp4'),
                           borderColor: FlutterFlowTheme.of(context).primaryText,
                           borderRadius: 300.0,
                           borderWidth: 2.0,
