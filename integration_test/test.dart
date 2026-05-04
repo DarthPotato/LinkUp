@@ -95,7 +95,7 @@ void main() async {
     FocusManager.instance.primaryFocus?.unfocus();
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.tap(find.byKey(const ValueKey('Signup-Button_6xu1')));
-    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     expect(find.text('Profile'), findsOneWidget);
   });
 
@@ -108,6 +108,8 @@ void main() async {
     ));
     await GoogleFonts.pendingFonts();
 
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.tap(find.byKey(const ValueKey('IconButton_kigo')));
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.enterText(
         find.byKey(const ValueKey('nameField_p6b5')), 'Name');
@@ -128,14 +130,8 @@ void main() async {
     );
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.tap(find.byKey(const ValueKey('profileButton_0fbg')));
-    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
-    expect(
-      tester
-          .widget<FFButtonWidget>(
-              find.byKey(const ValueKey('profileButton_0fbg')))
-          .onPressed,
-      isNotNull,
-    );
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    expect(find.text('LinkUp AI'), findsOneWidget);
   });
 
   testWidgets('US5 - AI Feature Testing', (WidgetTester tester) async {
