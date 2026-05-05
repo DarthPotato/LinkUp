@@ -357,7 +357,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 child: Padding(
                                   padding: EdgeInsets.all(24.0),
                                   child: FFButtonWidget(
-                                    key: ValueKey('resumeButton_uou1'),
                                     onPressed: () async {
                                       logFirebaseEvent(
                                           'PROFILE_PAGE_resumeButton_ON_TAP');

@@ -183,7 +183,6 @@ class _AiPageWidgetState extends State<AiPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 10.0),
                                           child: FlutterFlowIconButton(
-                                            key: ValueKey('IconButton_kigo'),
                                             borderRadius: 8.0,
                                             buttonSize:
                                                 MediaQuery.sizeOf(context)

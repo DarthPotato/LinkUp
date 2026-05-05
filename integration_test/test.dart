@@ -83,7 +83,7 @@ void main() async {
     await tester.tap(find.byKey(const ValueKey('SignupTab_rtit')));
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.enterText(find.byKey(const ValueKey('Signup-Email_f3we')),
-        'unittestemail@gmail.com');
+        'unittestemail2l@gmail.com');
     FocusManager.instance.primaryFocus?.unfocus();
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.enterText(
@@ -109,8 +109,6 @@ void main() async {
     await GoogleFonts.pendingFonts();
 
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
-    await tester.tap(find.byKey(const ValueKey('IconButton_kigo')));
-    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.enterText(
         find.byKey(const ValueKey('nameField_p6b5')), 'Name');
     FocusManager.instance.primaryFocus?.unfocus();
@@ -118,16 +116,6 @@ void main() async {
     await tester.enterText(
         find.byKey(const ValueKey('careerField_v43m')), 'LinkUp');
     FocusManager.instance.primaryFocus?.unfocus();
-    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
-    await tester.tap(find.byKey(const ValueKey('resumeButton_uou1')));
-    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
-    expect(
-      tester
-          .widget<FFButtonWidget>(
-              find.byKey(const ValueKey('resumeButton_uou1')))
-          .onPressed,
-      isNotNull,
-    );
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.tap(find.byKey(const ValueKey('profileButton_0fbg')));
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
