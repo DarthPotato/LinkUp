@@ -83,7 +83,7 @@ void main() async {
     await tester.tap(find.byKey(const ValueKey('SignupTab_rtit')));
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.enterText(find.byKey(const ValueKey('Signup-Email_f3we')),
-        'unittestemail2l@gmail.com');
+        'unittestemail8@gmail.com');
     FocusManager.instance.primaryFocus?.unfocus();
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     await tester.enterText(
